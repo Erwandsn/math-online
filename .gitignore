@@ -1,0 +1,53 @@
+# gitignore template for Drupal 8 projects
+#
+# earlier versions of Drupal are tracked in `community/PHP/`
+#
+# follows official upstream conventions:
+# https://www.drupal.org/docs/develop/using-composer
+
+# Ignore configuration files that may contain sensitive information
+/src/web/sites/*/*settings*.php
+/src/web/sites/*/*services*.yml
+
+# Ignore paths that may contain user-generated content
+/src/web/sites/*/files
+/src/web/sites/*/public
+/src/web/sites/*/private
+/src/web/sites/*/files-public
+/src/web/sites/*/files-private
+
+# Ignore paths that may contain temporary files
+/src/web/sites/*/translations
+/src/web/sites/*/tmp
+/src/web/sites/*/cache
+
+# Ignore drupal core (if not versioning drupal sources)
+/src/vendor
+/src/.editorconfig
+/src/web/modules/contrib
+/src/web/themes/contrib
+/src/web/vendor
+/src/web/core
+/src/web/modules/README.txt
+/src/web/profiles/README.txt
+/src/web/sites/development.services.yml
+/src/web/sites/example.settings.local.php
+/src/web/sites/example.sites.php
+/src/web/sites/README.txt
+/src/web/themes/README.txt
+/src/web/.csslintrc
+/src/web/.editorconfig
+/src/web/.eslintignore
+/src/web/.eslintrc.json
+/src/web/.gitattributes
+/src/web/.htaccess
+/src/web/.ht.router.php
+/src/web/autoload.php
+/src/web/example.gitignore
+/src/web/index.php
+/src/web/INSTALL.txt
+/src/web/LICENSE.txt
+/src/web/README.txt
+/src/web/robots.txt
+/src/web/update.php
+/src/web/web.config

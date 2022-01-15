@@ -1,0 +1,38 @@
+---
+version: "3.8"
+
+services:
+  mariadb:
+    build:
+      context: ./docker/mariadb
+    container_name: "${PROJECT_NAME}_mariadb"
+    stop_grace_period: 30s
+    networks:
+      - backend
+    environment:
+      MYSQL_ROOT_PASSWORD: $DB_ROOT_PASSWORD
+      MYSQL_DATABASE: $DB_NAME
+      MYSQL_USER: $DB_USER
+      MYSQL_PASSWORD: $DB_PASSWORD
+    volumes:
+      - ./docker/mariadb/docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d
+  apache:
+    build:
+      context: ./docker/apache
+      args:
+        VHOST_TYPE: $VHOST_TYPE
+        SSL_CRT: $SSL_CRT
+        SSL_KEY: $SSL_KEY
+    container_name: "${PROJECT_NAME}_apache"
+    working_dir: /var/www/html/src
+    tty: true
+    networks:
+      - backend
+    volumes:
+      - ./src:/var/www/html/src
+    ports:
+      - "3168:443"
+
+networks:
+  backend:
+    driver: bridge
