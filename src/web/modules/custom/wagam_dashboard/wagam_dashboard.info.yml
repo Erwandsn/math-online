@@ -1,0 +1,7 @@
+name: WaGamMaths Dashboard
+description: WaGamMaths Gestion du dashboard utilisateur
+package: WaGamMaths
+type: module
+core_version_requirement: ^8.8.0 || ^9
+dependencies:
+  - drupal:user

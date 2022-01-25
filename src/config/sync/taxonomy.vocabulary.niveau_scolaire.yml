@@ -1,0 +1,8 @@
+uuid: 6f55de4d-9bca-480d-bb2c-22af206ad2b9
+langcode: fr
+status: true
+dependencies: {  }
+name: 'Niveau scolaire'
+vid: niveau_scolaire
+description: ''
+weight: 0

@@ -1,0 +1,10 @@
+uuid: 8ff4de04-370f-4e1d-97b9-1fa83a53b026
+langcode: fr
+status: true
+dependencies:
+  module:
+    - user
+id: user.informations_personnelles
+label: 'Informations personnelles'
+targetEntityType: user
+cache: true

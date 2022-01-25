@@ -1,0 +1,17 @@
+uuid: 3972087c-ea9a-44f5-b87d-b48458c4d744
+langcode: fr
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: Leçon
+type: lecon
+description: ''
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: false

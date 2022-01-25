@@ -3,11 +3,83 @@ langcode: fr
 status: true
 dependencies:
   config:
+    - field.field.user.user.field_date_de_naissance
+    - field.field.user.user.field_nom
+    - field.field.user.user.field_prenom
     - field.field.user.user.user_picture
     - image.style.thumbnail
   module:
+    - datetime
+    - field_group
     - image
     - user
+third_party_settings:
+  field_group:
+    group_champs_personnel:
+      children:
+        - field_nom
+        - field_prenom
+        - field_date_de_naissance
+      label: 'Champs personnel'
+      region: content
+      parent_name: group_espace_profil
+      weight: 3
+      format_type: html_element
+      format_settings:
+        classes: col-8
+        show_empty_fields: false
+        id: ''
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+        required_fields: true
+        description: ''
+    group_image:
+      children:
+        - user_picture
+      label: Image
+      region: content
+      parent_name: group_espace_profil
+      weight: 2
+      format_type: html_element
+      format_settings:
+        classes: col-4
+        show_empty_fields: false
+        id: ''
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+        required_fields: true
+        description: ''
+    group_espace_profil:
+      children:
+        - group_image
+        - group_champs_personnel
+      label: 'Espace profil'
+      region: content
+      parent_name: ''
+      weight: 0
+      format_type: html_element
+      format_settings:
+        classes: row
+        show_empty_fields: false
+        id: ''
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+        required_fields: true
 _core:
   default_config_hash: FaQ9Ptcpxpg30AtiqRDtl_8zbJArHP1LPfug_s59TOA
 id: user.user.default
@@ -16,24 +88,42 @@ bundle: user
 mode: default
 content:
   account:
-    weight: -10
+    weight: 1
     region: content
-  contact:
+    settings: {  }
+    third_party_settings: {  }
+  field_date_de_naissance:
+    type: datetime_default
     weight: 5
     region: content
-  language:
-    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+  field_nom:
+    type: string_textfield
+    weight: 3
     region: content
-  timezone:
-    weight: 6
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_prenom:
+    type: string_textfield
+    weight: 4
     region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
   user_picture:
     type: image_image
-    weight: -1
+    weight: 2
     region: content
     settings:
       progress_indicator: throbber
       preview_image_style: thumbnail
     third_party_settings: {  }
 hidden:
+  contact: true
   langcode: true
+  language: true
+  timezone: true

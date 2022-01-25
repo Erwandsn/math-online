@@ -1,0 +1,24 @@
+uuid: 12431958-31cf-4ca6-8df6-0c434e30199e
+langcode: fr
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.niveau_scolaire
+id: taxonomy_term.niveau_scolaire.default
+targetEntityType: taxonomy_term
+bundle: niveau_scolaire
+mode: default
+content:
+  name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  description: true
+  langcode: true
+  path: true
+  status: true

@@ -1,0 +1,22 @@
+uuid: cc34e467-c225-4385-93c2-7039a8111417
+langcode: fr
+status: true
+dependencies:
+  config:
+    - node.type.lecon
+id: node.lecon.promote
+field_name: promote
+entity_type: node
+bundle: lecon
+label: 'Promu en page d''accueil'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: Activé
+  off_label: Désactivé
+field_type: boolean

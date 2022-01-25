@@ -1,0 +1,23 @@
+uuid: c96aa2cf-36a7-4df5-ab9c-432271683e96
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.lecon
+  module:
+    - text
+id: node.lecon.body
+field_name: body
+entity_type: node
+bundle: lecon
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+field_type: text_with_summary

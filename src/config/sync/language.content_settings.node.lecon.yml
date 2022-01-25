@@ -1,0 +1,11 @@
+uuid: b65c3304-4e4e-49a5-ae8a-c4ce59369533
+langcode: fr
+status: true
+dependencies:
+  config:
+    - node.type.lecon
+id: node.lecon
+target_entity_type_id: node
+target_bundle: lecon
+default_langcode: site_default
+language_alterable: false

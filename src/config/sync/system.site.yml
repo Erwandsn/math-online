@@ -2,7 +2,7 @@ _core:
   default_config_hash: VDJxTZtQR21qB4lvOq8zszJZLvLKrSPQpdn2E3T71Ww
 langcode: fr
 uuid: bc2c2499-538a-4854-a0d2-ee0d72e14b49
-name: 'Drush Site-Install'
+name: WaGamMaths
 mail: admin@example.com
 slogan: ''
 page:
@@ -12,3 +12,4 @@ page:
 admin_compact_mode: false
 weight_select_max: 100
 default_langcode: fr
+mail_notification: ''

@@ -1,0 +1,29 @@
+uuid: 9b0b7bc1-f9b0-481b-a041-0349fa5f262f
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.node.lecon.body
+    - node.type.lecon
+  module:
+    - text
+    - user
+id: node.lecon.default
+targetEntityType: node
+bundle: lecon
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  langcode: true

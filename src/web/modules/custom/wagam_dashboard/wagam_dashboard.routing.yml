@@ -1,0 +1,7 @@
+wagam.dashboard:
+  path: '/mon-profil'
+  defaults:
+    _controller: '\Drupal\wagam_dashboard\Controller\DashboardController::dashboardView'
+    _title: 'Mon profil'
+  requirements:
+    _permission: 'administer webform'
