@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - core.entity_form_mode.user.informations_personnelles
+    - field.field.user.user.field_classe
     - field.field.user.user.field_date_de_naissance
     - field.field.user.user.field_nom
     - field.field.user.user.field_prenom
@@ -55,6 +56,7 @@ hidden:
   account: true
   contact: true
   field_superviseurs: true
+  field_classe: true
   langcode: true
   language: true
   timezone: true

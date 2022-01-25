@@ -3,6 +3,7 @@ langcode: fr
 status: true
 dependencies:
   config:
+    - field.field.user.user.field_classe
     - field.field.user.user.field_date_de_naissance
     - field.field.user.user.field_nom
     - field.field.user.user.field_prenom
@@ -22,6 +23,7 @@ third_party_settings:
         - field_nom
         - field_prenom
         - field_date_de_naissance
+        - field_classe
       label: 'Champs personnel'
       region: content
       parent_name: group_espace_profil
@@ -113,6 +115,14 @@ content:
     weight: 2
     region: content
     settings: {  }
+    third_party_settings: {  }
+  field_classe:
+    type: string_textfield
+    weight: 6
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
   field_date_de_naissance:
     type: datetime_default
