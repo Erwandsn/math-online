@@ -1,0 +1,30 @@
+uuid: dd42bcce-b889-44bd-814b-a3e2797a718f
+langcode: fr
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.categorie_de_niveau_scolaire
+id: taxonomy_term.categorie_de_niveau_scolaire.default
+targetEntityType: taxonomy_term
+bundle: categorie_de_niveau_scolaire
+mode: default
+content:
+  name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    weight: 1
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+hidden:
+  description: true
+  langcode: true
+  path: true

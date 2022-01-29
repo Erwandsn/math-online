@@ -1,0 +1,11 @@
+uuid: 843ed925-9c14-463d-ad5f-ec14fd550f0b
+langcode: fr
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.categorie_de_niveau_scolaire
+id: taxonomy_term.categorie_de_niveau_scolaire
+target_entity_type_id: taxonomy_term
+target_bundle: categorie_de_niveau_scolaire
+default_langcode: site_default
+language_alterable: false

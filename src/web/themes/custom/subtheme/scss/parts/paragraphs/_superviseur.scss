@@ -1,0 +1,35 @@
+@import '../../base/variables';
+
+//Gestion affichage du formulaire
+
+.field--name-field-superviseurs{
+    .tabledrag-toggle-weight-wrapper{
+        display: none;
+    }
+    table{
+        --bs-table-striped-bg: none;
+    }
+    .draggable{
+        background: none;
+        border-bottom: 2px solid $light-battleship-grey;
+        td{
+            &:hover{
+                --bs-table-accent-bg: none;
+            }
+        }
+    }
+    .field-multiple-drag{
+        display: none;
+    }
+    thead{
+        display: none;
+    }
+    .paragraph-type-top{
+        .paragraph-type-title{
+            display: none;
+        }
+    }
+    .paragraphs-subform{
+        display: flex;
+    }    
+}

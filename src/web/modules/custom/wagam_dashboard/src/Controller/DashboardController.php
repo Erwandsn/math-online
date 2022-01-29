@@ -38,6 +38,8 @@ class DashBoardController extends ControllerBase{
         $user_profile_form['account']['#access'] = FALSE;
         $user_profile_form['timezone']['#access'] = FALSE;
         $user_profile_form['language']['#access'] = FALSE;
+
+        //Superviseur
         return $user_profile_form;
     }
 

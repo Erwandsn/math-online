@@ -1,0 +1,19 @@
+uuid: e17589df-0015-40e1-8d59-039a163599eb
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_nom
+    - paragraphs.paragraphs_type.superviseur
+id: paragraph.superviseur.field_nom
+field_name: field_nom
+entity_type: paragraph
+bundle: superviseur
+label: Nom
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

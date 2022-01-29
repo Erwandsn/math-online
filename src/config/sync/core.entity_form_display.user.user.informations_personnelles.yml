@@ -7,6 +7,7 @@ dependencies:
     - field.field.user.user.field_date_de_naissance
     - field.field.user.user.field_nom
     - field.field.user.user.field_prenom
+    - field.field.user.user.field_superviseurs
     - field.field.user.user.user_picture
     - image.style.thumbnail
   module:
@@ -53,6 +54,7 @@ content:
 hidden:
   account: true
   contact: true
+  field_superviseurs: true
   langcode: true
   language: true
   timezone: true

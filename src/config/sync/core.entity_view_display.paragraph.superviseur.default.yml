@@ -1,0 +1,38 @@
+uuid: e476c088-08cf-452d-85aa-13fd09c4d72e
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.superviseur.field_adresse_mail
+    - field.field.paragraph.superviseur.field_nom
+    - field.field.paragraph.superviseur.field_prenom
+    - paragraphs.paragraphs_type.superviseur
+id: paragraph.superviseur.default
+targetEntityType: paragraph
+bundle: superviseur
+mode: default
+content:
+  field_adresse_mail:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_nom:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_prenom:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
+hidden: {  }

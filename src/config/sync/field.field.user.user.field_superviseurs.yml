@@ -1,0 +1,31 @@
+uuid: 84e87758-6192-4bd5-83f4-d61832668ee8
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_superviseurs
+    - paragraphs.paragraphs_type.superviseur
+  module:
+    - entity_reference_revisions
+    - user
+id: user.user.field_superviseurs
+field_name: field_superviseurs
+entity_type: user
+bundle: user
+label: Superviseurs
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      superviseur: superviseur
+    negate: 0
+    target_bundles_drag_drop:
+      superviseur:
+        weight: 2
+        enabled: true
+field_type: entity_reference_revisions

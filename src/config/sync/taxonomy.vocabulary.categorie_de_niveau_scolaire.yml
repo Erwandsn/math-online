@@ -1,0 +1,8 @@
+uuid: 243cc2b0-cca2-4555-90c7-f830a2a6318e
+langcode: fr
+status: true
+dependencies: {  }
+name: 'Catégorie de niveau scolaire'
+vid: categorie_de_niveau_scolaire
+description: 'Exemple: enseignement élémentaire, collège, ...'
+weight: 0
