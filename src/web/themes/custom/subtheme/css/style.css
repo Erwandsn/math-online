@@ -1,4 +1,32 @@
-/**
- * @file
- * Subtheme specific CSS.
- */
+.field--name-field-superviseurs .tabledrag-toggle-weight-wrapper {
+  display: none;
+}
+
+.field--name-field-superviseurs table {
+  --bs-table-striped-bg: none;
+}
+
+.field--name-field-superviseurs .draggable {
+  background: none;
+  border-bottom: 2px solid #f1f2f3;
+}
+
+.field--name-field-superviseurs .draggable td:hover {
+  --bs-table-accent-bg: none;
+}
+
+.field--name-field-superviseurs .field-multiple-drag {
+  display: none;
+}
+
+.field--name-field-superviseurs thead {
+  display: none;
+}
+
+.field--name-field-superviseurs .paragraph-type-top .paragraph-type-title {
+  display: none;
+}
+
+.field--name-field-superviseurs .paragraphs-subform {
+  display: flex;
+}

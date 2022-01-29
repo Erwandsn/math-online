@@ -1,0 +1,19 @@
+uuid: f29799ee-5be0-4ef9-b4fa-8006557c5a19
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_adresse_mail
+    - paragraphs.paragraphs_type.superviseur
+id: paragraph.superviseur.field_adresse_mail
+field_name: field_adresse_mail
+entity_type: paragraph
+bundle: superviseur
+label: 'Adresse mail'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: email

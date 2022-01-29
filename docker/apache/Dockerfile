@@ -43,5 +43,7 @@ RUN mv composer.phar /usr/local/bin/composer
 
 #Gestion des actions au start
 COPY sh/container-up.sh /tmp
+RUN sed -i 's/\r$//' /tmp/container-up.sh  && \  
+        chmod +x /tmp/container-up.sh
 RUN chmod +x /tmp/container-up.sh
 CMD sh /tmp/container-up.sh

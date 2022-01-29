@@ -1,0 +1,19 @@
+uuid: a318d14f-3b0d-43c3-aa65-7c46448f7fab
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_prenom
+    - paragraphs.paragraphs_type.superviseur
+id: paragraph.superviseur.field_prenom
+field_name: field_prenom
+entity_type: paragraph
+bundle: superviseur
+label: Prénom
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

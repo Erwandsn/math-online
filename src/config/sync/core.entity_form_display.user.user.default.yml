@@ -6,12 +6,14 @@ dependencies:
     - field.field.user.user.field_date_de_naissance
     - field.field.user.user.field_nom
     - field.field.user.user.field_prenom
+    - field.field.user.user.field_superviseurs
     - field.field.user.user.user_picture
     - image.style.thumbnail
   module:
     - datetime
     - field_group
     - image
+    - paragraphs
     - user
 third_party_settings:
   field_group:
@@ -80,6 +82,26 @@ third_party_settings:
         effect: none
         speed: fast
         required_fields: true
+    group_mes_superviseurs:
+      children:
+        - field_superviseurs
+      label: 'Mes superviseurs'
+      region: content
+      parent_name: ''
+      weight: 1
+      format_type: html_element
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        element: div
+        show_label: true
+        label_element: h2
+        label_element_classes: ''
+        attributes: row
+        effect: none
+        speed: fast
+        required_fields: true
 _core:
   default_config_hash: FaQ9Ptcpxpg30AtiqRDtl_8zbJArHP1LPfug_s59TOA
 id: user.user.default
@@ -88,7 +110,7 @@ bundle: user
 mode: default
 content:
   account:
-    weight: 1
+    weight: 2
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -113,6 +135,18 @@ content:
     settings:
       size: 60
       placeholder: ''
+    third_party_settings: {  }
+  field_superviseurs:
+    type: entity_reference_paragraphs
+    weight: 6
+    region: content
+    settings:
+      title: Superviseur
+      title_plural: Superviseurs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: superviseur
     third_party_settings: {  }
   user_picture:
     type: image_image

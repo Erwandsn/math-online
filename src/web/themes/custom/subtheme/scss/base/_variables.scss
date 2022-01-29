@@ -1,0 +1,37 @@
+//Colors
+$white: #fff;
+$orange: #EF7B00;
+$vert: #00995D;
+$light-battleship-grey: #f1f2f3;
+$ligh-dark-grey: #dfe3e6;
+
+//Font-definition
+$font-awesome-5-free: "Font Awesome 5 Free", sans-serif;
+$font-awesome-5-brands: "Font Awesome 5 Brands", sans-serif;
+
+// Responsive
+$breakpoints: (
+  'small':  ( min-width:  767px ),
+  'medium': ( min-width:  992px ),
+  'large':  ( min-width: 1200px )
+) !default;
+
+/// Mixin to manage responsive breakpoints
+/// @author Hugo Giraudel
+/// @param {String} $breakpoint - Breakpoint name
+/// @require $breakpoints
+@mixin breakpoint($breakpoint) {
+  // If the key exists in the map
+  @if map-has-key($breakpoints, $breakpoint) {
+    // Prints a media query based on the value
+    @media #{inspect(map-get($breakpoints, $breakpoint))} {
+      @content;
+    }
+  }
+
+    // If the key doesn't exist in the map
+  @else {
+    @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+        + "Available breakpoints are: #{map-keys($breakpoints)}.";
+  }
+}
