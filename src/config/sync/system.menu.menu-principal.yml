@@ -1,0 +1,8 @@
+uuid: 76a6ad9e-4601-4200-9e70-9afda774d48c
+langcode: fr
+status: true
+dependencies: {  }
+id: menu-principal
+label: 'Menu principal'
+description: ''
+locked: false

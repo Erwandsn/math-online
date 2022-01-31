@@ -3,7 +3,6 @@ langcode: fr
 status: true
 dependencies:
   config:
-    - field.field.user.user.field_classe
     - field.field.user.user.field_date_de_naissance
     - field.field.user.user.field_nom
     - field.field.user.user.field_prenom
@@ -22,14 +21,6 @@ targetEntityType: user
 bundle: user
 mode: default
 content:
-  field_classe:
-    type: string
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 9
-    region: content
   field_date_de_naissance:
     type: datetime_default
     label: above

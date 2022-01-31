@@ -5,6 +5,8 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.lecon.body
+    - field.field.node.lecon.field_classe_cible
+    - field.field.node.lecon.field_corps
     - node.type.lecon
   module:
     - text
@@ -28,4 +30,6 @@ content:
     weight: 100
     region: content
 hidden:
+  field_classe_cible: true
+  field_corps: true
   langcode: true
