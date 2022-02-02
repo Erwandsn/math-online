@@ -1,0 +1,14 @@
+dashboard.mon-profil:
+  title: 'Mon profil'
+  description: 'Accéder à mes informations'
+  parent: dashboard---sidebard
+  menu_name: dashboard---sidebard
+  route_name: wagam.dashboard
+  weight: 1
+dashboard.password:
+  title: 'Gérer mon mot de passe'
+  description: 'Modifier mon mot de passe'
+  parent: dashboard---sidebard
+  menu_name: dashboard---sidebard
+  route_name: wagam.password_edit
+  weight: 2

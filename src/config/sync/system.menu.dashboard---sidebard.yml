@@ -1,0 +1,8 @@
+uuid: 921d41ba-82a9-4427-97c4-d2d5132c6801
+langcode: fr
+status: true
+dependencies: {  }
+id: dashboard---sidebard
+label: 'Dashboard - Sidebard'
+description: 'Sidebar présente dans le dashboard utilisateur'
+locked: false
