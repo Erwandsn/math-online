@@ -1,0 +1,31 @@
+uuid: 02c4093c-be54-47a3-9d2b-94c134a5de7e
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_corps
+    - node.type.lecon
+    - paragraphs.paragraphs_type.exercice_geometrie
+  module:
+    - entity_reference_revisions
+id: node.lecon.field_corps
+field_name: field_corps
+entity_type: node
+bundle: lecon
+label: Corps
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      exercice_geometrie: exercice_geometrie
+    negate: 0
+    target_bundles_drag_drop:
+      exercice_geometrie:
+        weight: 2
+        enabled: true
+field_type: entity_reference_revisions
