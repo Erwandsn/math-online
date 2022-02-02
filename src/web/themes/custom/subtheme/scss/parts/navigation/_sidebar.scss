@@ -1,0 +1,34 @@
+@import '../../base/variables';
+
+.nav{
+    &.flex-column{
+        .nav-item{
+            border-bottom: 1px solid $ligh-dark-grey;
+            font-size: 1.25rem;
+
+        }
+    }
+}
+
+.dashboard-sidebard{
+    .nav-item{
+        display: flex;
+        align-items: center;
+        &:before{
+            margin-left: 1rem;
+            font-family: $font-awesome-5-free;
+            color: $simple-blue;
+            font-weight: 900;
+        }
+        &:first-child{
+            &:before{
+                content: '\f2bd';
+            }
+        }
+        &:nth-child(2){
+            &:before{
+                content: '\f505';
+            }
+        }
+    }
+}
