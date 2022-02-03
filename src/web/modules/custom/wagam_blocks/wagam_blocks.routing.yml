@@ -1,0 +1,7 @@
+wagam.admin.config:
+  path: '/admin/wagam-maths/config'
+  defaults:
+    _form: '\Drupal\wagam_blocks\Form\GeneralForm'
+    _title: 'WaGamMaths - Configuration générale du site.'
+  requirements:
+    _permission: 'administer webform'

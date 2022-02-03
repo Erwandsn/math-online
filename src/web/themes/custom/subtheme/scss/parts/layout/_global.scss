@@ -1,0 +1,34 @@
+@import '../../base/variables';
+
+.wagam-header{
+    border-bottom: 1px solid $ligh-dark-grey;
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.branding-group{
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    .site-name{
+        font-size: 1.5rem;
+        margin-left: 1rem;
+    }
+}
+
+
+.branding-logo{
+    display: none;
+    width: 100px;
+    border-radius: 50%;
+}
+
+@include breakpoint('medium'){
+    .branding-logo{
+        display: inline-block;
+    }
+    .offcanvas-body{
+        align-items: center;
+    }
+}

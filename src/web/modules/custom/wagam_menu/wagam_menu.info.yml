@@ -1,0 +1,7 @@
+name: WaGamMaths Menu
+description: WaGamMaths - Gère la création des liens de menus requis.
+package: WaGamMaths
+type: module
+core_version_requirement: ^8.8.0 || ^9
+dependencies:
+  - wagam_dashboard:wagam_dashboard

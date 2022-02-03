@@ -16,7 +16,7 @@ base_field: uid
 display:
   default:
     id: default
-    display_title: 'Par défaut'
+    display_title: Default
     display_plugin: default
     position: 0
     display_options:
@@ -134,7 +134,7 @@ display:
           entity_type: user
           entity_field: status
           plugin_id: field
-          label: État
+          label: Status
           exclude: false
           alter:
             alter_text: false
@@ -466,8 +466,8 @@ display:
           total_pages: 0
           id: 0
           tags:
-            next: 'Suivant ›'
-            previous: '‹ Précédent'
+            next: 'Next ›'
+            previous: '‹ Previous'
             first: '« First'
             last: 'Last »'
           expose:
@@ -482,7 +482,7 @@ display:
       exposed_form:
         type: basic
         options:
-          submit_button: Filtrer
+          submit_button: Filter
           reset_button: true
           reset_button_label: Reset
           exposed_sorts_label: 'Sort by'
@@ -600,7 +600,7 @@ display:
               administrator: '0'
           is_grouped: true
           group_info:
-            label: État
+            label: Status
             description: ''
             identifier: status
             optional: true
