@@ -1,0 +1,44 @@
+uuid: d8b0a162-21c3-477c-be96-2018c7f5ec9a
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.trois_colonnes.field_colonne_1
+    - field.field.paragraph.trois_colonnes.field_colonne_2
+    - field.field.paragraph.trois_colonnes.field_colonne_3
+    - paragraphs.paragraphs_type.trois_colonnes
+  module:
+    - entity_reference_revisions
+id: paragraph.trois_colonnes.default
+targetEntityType: paragraph
+bundle: trois_colonnes
+mode: default
+content:
+  field_colonne_1:
+    type: entity_reference_revisions_entity_view
+    label: visually_hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_colonne_2:
+    type: entity_reference_revisions_entity_view
+    label: visually_hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_colonne_3:
+    type: entity_reference_revisions_entity_view
+    label: visually_hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 2
+    region: content
+hidden: {  }

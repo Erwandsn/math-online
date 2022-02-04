@@ -1,0 +1,22 @@
+uuid: d40633fe-2716-430f-8482-18feb65739c3
+langcode: fr
+status: false
+dependencies:
+  config:
+    - core.entity_view_mode.paragraph.preview
+    - field.field.paragraph.page_imbriquee.field_contenu_cible
+    - paragraphs.paragraphs_type.page_imbriquee
+id: paragraph.page_imbriquee.preview
+targetEntityType: paragraph
+bundle: page_imbriquee
+mode: preview
+content:
+  field_contenu_cible:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden: {  }

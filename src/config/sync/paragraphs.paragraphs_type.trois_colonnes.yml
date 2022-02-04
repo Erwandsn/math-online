@@ -1,0 +1,10 @@
+uuid: f445b93a-f32a-4d6b-a0ae-3b39d6595328
+langcode: fr
+status: true
+dependencies: {  }
+id: trois_colonnes
+label: 'Trois colonnes'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

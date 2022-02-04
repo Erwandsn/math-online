@@ -9,6 +9,32 @@ $simple-blue: #0d6efd;
 //Font-definition
 $font-awesome-5-free: "Font Awesome 5 Free", sans-serif;
 $font-awesome-5-brands: "Font Awesome 5 Brands", sans-serif;
+$font-regular: "Roboto-Slab-Regular", sans-serif;
+$font-medium: "Roboto-Slab-Medium", sans-serif;
+$font-light: "Roboto-Slab-Light", sans-serif;
+$font-bold: "Roboto-Slab-Bold", sans-serif;
+
+@font-face {
+  font-family: 'Roboto-Slab-Regular';
+  src: url('/themes/custom/subtheme/fonts/roboto-slab/RobotoSlab-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Roboto-Slab-Medium';
+  src: url('/themes/custom/subtheme/fonts/roboto-slab/RobotoSlab-Medium.ttf') format('truetype');
+
+}
+
+@font-face {
+  font-family: 'Roboto-Slab-Light';
+  src: url('/themes/custom/subtheme/fonts/roboto-slab/RobotoSlab-Light.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Roboto-Slab-Bold';
+  src: url('/themes/custom/subtheme/fonts/roboto-slab/RobotoSlab-Bold.ttf') format('truetype');
+  /* Modern Browsers */
+}
 
 // Responsive
 $breakpoints: (

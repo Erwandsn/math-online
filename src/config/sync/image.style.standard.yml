@@ -1,0 +1,17 @@
+uuid: 496a5539-ea54-434d-acf6-5c44f887844a
+langcode: fr
+status: true
+dependencies:
+  module:
+    - focal_point
+name: standard
+label: Standard
+effects:
+  e921346f-182d-4573-8d2a-b79775238571:
+    uuid: e921346f-182d-4573-8d2a-b79775238571
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 1300
+      height: 600
+      crop_type: focal_point
