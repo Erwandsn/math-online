@@ -160,4 +160,5 @@ hidden:
   contact: true
   langcode: true
   language: true
+  path: true
   timezone: true

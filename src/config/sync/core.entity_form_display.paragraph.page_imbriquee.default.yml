@@ -1,0 +1,25 @@
+uuid: fa655d9d-da52-4ab0-83fd-dacf832d408a
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.page_imbriquee.field_contenu_cible
+    - paragraphs.paragraphs_type.page_imbriquee
+id: paragraph.page_imbriquee.default
+targetEntityType: paragraph
+bundle: page_imbriquee
+mode: default
+content:
+  field_contenu_cible:
+    type: entity_reference_autocomplete
+    weight: 0
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

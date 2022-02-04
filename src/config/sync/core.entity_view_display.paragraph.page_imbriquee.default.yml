@@ -1,0 +1,22 @@
+uuid: 61b41ae6-7d6f-484f-b78f-23a3aef4d3fc
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.page_imbriquee.field_contenu_cible
+    - paragraphs.paragraphs_type.page_imbriquee
+id: paragraph.page_imbriquee.default
+targetEntityType: paragraph
+bundle: page_imbriquee
+mode: default
+content:
+  field_contenu_cible:
+    type: entity_reference_entity_view
+    label: visually_hidden
+    settings:
+      view_mode: card
+      link: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden: {  }

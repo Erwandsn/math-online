@@ -1,0 +1,22 @@
+uuid: 659337ee-767f-478e-9964-27c04c40f89a
+langcode: fr
+status: true
+dependencies:
+  module:
+    - node
+id: chemin_standard
+label: 'Chemin standard'
+type: 'canonical_entities:node'
+pattern: '/[node:title]'
+selection_criteria:
+  f8ca1d07-0c44-4ecf-a7b2-2158d7d69ab8:
+    id: node_type
+    negate: false
+    uuid: f8ca1d07-0c44-4ecf-a7b2-2158d7d69ab8
+    context_mapping:
+      node: node
+    bundles:
+      page: page
+selection_logic: and
+weight: -5
+relationships: {  }

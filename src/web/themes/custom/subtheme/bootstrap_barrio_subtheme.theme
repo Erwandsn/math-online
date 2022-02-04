@@ -6,6 +6,7 @@
  */
 
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\paragraphs\Entity\Paragraph;
 
 /**
  * Implements hook_form_system_theme_settings_alter() for settings form.
@@ -31,4 +32,43 @@ function bootstrap_barrio_subtheme_form_system_theme_settings_alter(&$form, Form
     'bg-white' => t('White'),
     'bg-transparent' => t('Transparent'),
   ];
+}
+
+//Managing paragraphs
+function bootstrap_barrio_subtheme_preprocess_paragraph(&$variables){
+  /**
+   * @var Paragraph
+   */
+  $paragraph = $variables['paragraph'];
+
+  if($paragraph->bundle() == 'deux_colonnes'){
+    $variables['attributes']['class'][] = 'row';
+    $variables['attributes']['class'][] = 'd-flex';
+    $variables['attributes']['class'][] = 'flex-column';
+    $variables['attributes']['class'][] = 'flex-md-row';
+    $variables['attributes']['class'][] = 'align-items-sm-center';
+    $variables['content']['field_colonne_1']['#attributes']['class'][] = 'col-md-6';
+    $variables['content']['field_colonne_2']['#attributes']['class'][] = 'col-md-6';
+  }
+
+  if($paragraph->bundle() == 'trois_colonnes'){
+    $variables['attributes']['class'][] = 'row';
+    $variables['attributes']['class'][] = 'd-flex';
+    $variables['attributes']['class'][] = 'flex-column';
+    $variables['attributes']['class'][] = 'flex-md-row';
+    $variables['content']['field_colonne_1']['#attributes']['class'][] = 'col-md-4';
+    $variables['content']['field_colonne_2']['#attributes']['class'][] = 'col-md-4';
+    $variables['content']['field_colonne_3']['#attributes']['class'][] = 'col-md-4';
+  }
+}
+
+/**
+ * Gestion générale des nodes
+ */
+function bootstrap_barrio_subtheme_preprocess_node(&$variables){
+
+  if($variables['view_mode'] === 'card'){
+    $variables['label']['#attributes']['class'][] = 'card-title';
+    $variables['content']['field_image_d_illustration']['#attributes']['class'][] = 'card-img-top';
+  }
 }

@@ -27,8 +27,10 @@
         "drupal/devel": "^4.1",
         "drupal/easy_breadcrumb": "^2.0",
         "drupal/field_group": "^3.2",
+        "drupal/focal_point": "^1.5",
         "drupal/media_library_form_element": "^2.0",
         "drupal/paragraphs": "^1.12",
+        "drupal/pathauto": "^1.8",
         "drupal/twig_tweak": "^3.1",
         "drupal/webform": "^6.1",
         "drush/drush": "^11.0"

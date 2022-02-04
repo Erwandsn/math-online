@@ -1,0 +1,43 @@
+uuid: 1a3ed17f-be2f-46e1-a7b5-73386a35a060
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_colonne_2
+    - paragraphs.paragraphs_type.deux_colonnes
+    - paragraphs.paragraphs_type.superviseur
+  module:
+    - entity_reference_revisions
+id: paragraph.deux_colonnes.field_colonne_2
+field_name: field_colonne_2
+entity_type: paragraph
+bundle: deux_colonnes
+label: 'Colonne 2'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      superviseur: superviseur
+    negate: 1
+    target_bundles_drag_drop:
+      deux_colonnes:
+        weight: 3
+        enabled: false
+      page_imbriquee:
+        weight: 7
+        enabled: false
+      superviseur:
+        weight: 4
+        enabled: true
+      texte_riche:
+        weight: 9
+        enabled: false
+      trois_colonnes:
+        weight: 10
+        enabled: false
+field_type: entity_reference_revisions

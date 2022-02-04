@@ -1,0 +1,10 @@
+uuid: c49baba2-9b5c-434b-a0d2-f8295d52ab6b
+langcode: fr
+status: true
+dependencies: {  }
+id: page_imbriquee
+label: 'Page imbriquée'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

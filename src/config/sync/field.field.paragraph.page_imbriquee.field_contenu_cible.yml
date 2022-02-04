@@ -1,0 +1,31 @@
+uuid: a13fbc03-829a-4a10-b7b4-30a23f380ddb
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_contenu_cible
+    - node.type.lecon
+    - node.type.page
+    - paragraphs.paragraphs_type.page_imbriquee
+id: paragraph.page_imbriquee.field_contenu_cible
+field_name: field_contenu_cible
+entity_type: paragraph
+bundle: page_imbriquee
+label: 'Contenu cible'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      lecon: lecon
+      page: page
+    sort:
+      field: title
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: lecon
+field_type: entity_reference

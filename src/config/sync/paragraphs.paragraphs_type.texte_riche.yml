@@ -1,0 +1,10 @@
+uuid: 73e76d79-322e-444a-8c3b-709bf76d4fed
+langcode: fr
+status: true
+dependencies: {  }
+id: texte_riche
+label: 'Texte riche'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

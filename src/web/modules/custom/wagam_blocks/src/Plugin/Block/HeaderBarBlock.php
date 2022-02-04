@@ -85,8 +85,7 @@ class HeaderBarBlock extends BlockBase implements ContainerFactoryPluginInterfac
             '#attributes' => [
                 'class' => [
                     'branding-group',
-                    'col-xs-3',
-                    'col-md-4',
+                    'col-9',
                 ],
             ],
         ];
@@ -177,7 +176,9 @@ class HeaderBarBlock extends BlockBase implements ContainerFactoryPluginInterfac
             '#type' => 'container',
             '#attributes' => [
                 'class' => [
-                    'col-sm-1',
+                    'col-3',
+                    'd-flex',
+                    'justify-content-end'
                 ],
             ],
         ];
