@@ -1,0 +1,20 @@
+uuid: 07caf702-84ad-437b-b349-53d5273526a1
+langcode: fr
+status: true
+dependencies:
+  module:
+    - wagam_blocks
+  theme:
+    - bootstrap_barrio_subtheme
+id: wagammaths_header
+theme: bootstrap_barrio_subtheme
+region: header
+weight: 0
+provider: null
+plugin: wagam_header_block
+settings:
+  id: null
+  label: 'WaGamMaths - Header'
+  label_display: '0'
+  provider: wagam_blocks
+visibility: {  }

@@ -1,0 +1,17 @@
+menu.my_account:
+  title: 'Mon Compte'
+  description: 'Voir mon profil'
+  parent: account
+  menu_name: account
+  route_name: wagam.dashboard
+  weight: -1
+wagam.admin:
+  title: 'WaGamMaths'
+  description: 'Gérer la plateforme WaGamMaths'
+  parent: system.admin
+  route_name: wagam.admin.config
+wagam.admin.general.form:
+  title: 'Configuration générale'
+  description: 'Gérer les paramètre principaux de la plateforme'
+  parent: wagam.admin
+  route_name: wagam.admin.config

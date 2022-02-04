@@ -1,0 +1,7 @@
+name: WaGamMaths Blocks
+description: WaGamMaths - Met a disposisition les différents blocks du site.
+package: WaGamMaths
+type: module
+core_version_requirement: ^8.8.0 || ^9
+dependencies:
+  - wagam_dashboard:wagam_dashboard

@@ -20,11 +20,11 @@ base_field: nid
 display:
   default:
     id: default
-    display_title: 'Par défaut'
+    display_title: Default
     display_plugin: default
     position: 0
     display_options:
-      title: 'Développez et testez vos connaissances sur WaGam Maths !'
+      title: ''
       fields: {  }
       pager:
         type: full
@@ -34,8 +34,8 @@ display:
           total_pages: 0
           id: 0
           tags:
-            next: 'Suivant ›'
-            previous: '‹ Précédent'
+            next: 'Next ›'
+            previous: '‹ Previous'
             first: '« First'
             last: 'Last »'
           expose:

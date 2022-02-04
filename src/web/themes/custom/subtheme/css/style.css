@@ -1,3 +1,36 @@
+.wagam-header {
+  border-bottom: 1px solid #dfe3e6;
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.branding-group {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+}
+
+.branding-group .site-name {
+  font-size: 1.5rem;
+  margin-left: 1rem;
+}
+
+.branding-logo {
+  display: none;
+  width: 100px;
+  border-radius: 50%;
+}
+
+@media (min-width: 992px) {
+  .branding-logo {
+    display: inline-block;
+  }
+  .offcanvas-body {
+    align-items: center;
+  }
+}
+
 .field--name-field-superviseurs .tabledrag-toggle-weight-wrapper {
   display: none;
 }

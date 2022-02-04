@@ -4,11 +4,11 @@ wagam.dashboard:
     _controller: '\Drupal\wagam_dashboard\Controller\DashboardController::dashboardView'
     _title: 'Mon profil'
   requirements:
-    _permission: 'administer webform'
+    _permission: 'change own username'
 wagam.password_edit:
   path: '/mon-mot-de-passe'
   defaults:
     _controller: '\Drupal\wagam_dashboard\Controller\DashboardController::passwordEditView'
     _title: 'Modifier mon mot de passe'
   requirements:
-    _permission: 'administer webform'
+    _permission: 'change own username'
