@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "8623a6569110fca93e8b06917e5caa8e",
+    "content-hash": "12f10143dd13df89a39aad371fac3be3",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -3847,6 +3847,56 @@
                 "issues": "https://www.drupal.org/project/issues/webform?version=8.x",
                 "docs": "https://www.drupal.org/docs/8/modules/webform",
                 "forum": "https://drupal.stackexchange.com/questions/tagged/webform"
+            }
+        },
+        {
+            "name": "drupal/webform_entity_view",
+            "version": "1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/webform_entity_view.git",
+                "reference": "1.0.1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/webform_entity_view-1.0.1.zip",
+                "reference": "1.0.1",
+                "shasum": "a902bf5b54a85011b7388e68b4e5298a3b075921"
+            },
+            "require": {
+                "drupal/core": "^8.8 || ^9",
+                "drupal/webform": "^5.6 || ^6"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "1.0.1",
+                    "datestamp": "1603535230",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Project has not opted into security advisory coverage!"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Manuel Egío",
+                    "homepage": "https://www.drupal.org/u/facine"
+                },
+                {
+                    "name": "Pedro Cambra",
+                    "homepage": "https://www.drupal.org/u/pcambra"
+                }
+            ],
+            "description": "Displays an entity selected in a webform element.",
+            "homepage": "http://drupal.org/project/webform_entity_view",
+            "support": {
+                "source": "https://cgit.drupalcode.org/webform_entity_view",
+                "issues": "https://www.drupal.org/project/issues/webform_entity_view"
             }
         },
         {
