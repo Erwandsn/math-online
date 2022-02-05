@@ -54,8 +54,8 @@ content:
 hidden:
   account: true
   contact: true
-  field_superviseurs: true
   field_classe: true
+  field_superviseurs: true
   langcode: true
   language: true
   timezone: true

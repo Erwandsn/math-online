@@ -1,0 +1,19 @@
+uuid: 5ed53d0f-d0b1-43ad-94d3-76b524b4033e
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_te
+    - paragraphs.paragraphs_type.exercice_geometrie
+id: paragraph.exercice_geometrie.field_te
+field_name: field_te
+entity_type: paragraph
+bundle: exercice_geometrie
+label: texte-geo1
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

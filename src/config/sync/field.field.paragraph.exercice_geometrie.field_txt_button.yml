@@ -1,0 +1,19 @@
+uuid: 10105c44-4b50-42e2-878e-fa475084a4ad
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_txt_button
+    - paragraphs.paragraphs_type.exercice_geometrie
+id: paragraph.exercice_geometrie.field_txt_button
+field_name: field_txt_button
+entity_type: paragraph
+bundle: exercice_geometrie
+label: txt-button
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
