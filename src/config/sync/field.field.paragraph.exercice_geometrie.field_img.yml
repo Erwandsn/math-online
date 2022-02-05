@@ -1,0 +1,38 @@
+uuid: 1d597768-cbf6-4239-bfd7-46b83ccd27d5
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_img
+    - paragraphs.paragraphs_type.exercice_geometrie
+  module:
+    - image
+id: paragraph.exercice_geometrie.field_img
+field_name: field_img
+entity_type: paragraph
+bundle: exercice_geometrie
+label: img
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:file'
+  handler_settings: {  }
+  file_directory: '[date:custom:Y]-[date:custom:m]'
+  file_extensions: 'png gif jpg jpeg'
+  max_filesize: ''
+  max_resolution: ''
+  min_resolution: ''
+  alt_field: false
+  alt_field_required: true
+  title_field: false
+  title_field_required: false
+  default_image:
+    uuid: ''
+    alt: ''
+    title: ''
+    width: null
+    height: null
+field_type: image

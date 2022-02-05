@@ -1,0 +1,270 @@
+uuid: cddced72-69a9-4140-a086-9a637475b9a4
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.exercice_geometrie.field_img
+    - field.field.paragraph.exercice_geometrie.field_img1
+    - field.field.paragraph.exercice_geometrie.field_te
+    - field.field.paragraph.exercice_geometrie.field_texte_geo
+    - field.field.paragraph.exercice_geometrie.field_txt_button
+    - field.field.paragraph.exercice_geometrie.field_txt_button1
+    - paragraphs.paragraphs_type.exercice_geometrie
+  module:
+    - field_group
+    - image
+third_party_settings:
+  field_group:
+    group_chap_1:
+      children:
+        - group_partie_1
+        - group_partie_2
+      label: 'Chap 1'
+      parent_name: ''
+      region: content
+      weight: 0
+      format_type: accordion
+      format_settings:
+        classes: 'accordion row'
+        show_empty_fields: false
+        id: ''
+        effect: none
+        formatter: closed
+        description: ''
+    group_partie_1:
+      children:
+        - group_h2
+        - group_paragraphe_1
+      label: 'Partie 1'
+      parent_name: group_chap_1
+      region: content
+      weight: 21
+      format_type: accordion_item
+      format_settings:
+        classes: 'accordion-item row'
+        show_empty_fields: false
+        id: ''
+        formatter: closed
+        description: ''
+    group_paragraphe_1:
+      children:
+        - group_divbody
+      label: 'Paragraphe 1'
+      parent_name: group_partie_1
+      region: content
+      weight: 23
+      format_type: html_element
+      format_settings:
+        classes: 'accordion-collapse collapse'
+        show_empty_fields: false
+        id: ''
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+    group_paragraphe_2:
+      children:
+        - group_divbody1
+      label: 'Paragraphe 2'
+      parent_name: group_partie_2
+      region: content
+      weight: 22
+      format_type: html_element
+      format_settings:
+        classes: 'accordion-collapse collapse'
+        show_empty_fields: false
+        id: ''
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+    group_partie_2:
+      children:
+        - group_h2bis
+        - group_paragraphe_2
+      label: 'Partie 2'
+      parent_name: group_chap_1
+      region: content
+      weight: 22
+      format_type: accordion_item
+      format_settings:
+        classes: 'accordion-item row'
+        show_empty_fields: false
+        id: ''
+        formatter: closed
+    group_button:
+      children:
+        - field_txt_button
+      label: button
+      parent_name: group_h2
+      region: content
+      weight: 23
+      format_type: html_element
+      format_settings:
+        classes: 'accordion-button collapsed'
+        show_empty_fields: false
+        id: ''
+        element: button
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: collapsible
+        speed: fast
+    group_button1:
+      children:
+        - field_txt_button1
+      label: button1
+      parent_name: group_h2bis
+      region: content
+      weight: 21
+      format_type: html_element
+      format_settings:
+        classes: accordion-button
+        show_empty_fields: false
+        id: ''
+        element: button
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+    group_h2:
+      children:
+        - group_button
+      label: h2
+      parent_name: group_partie_1
+      region: content
+      weight: 22
+      format_type: html_element
+      format_settings:
+        classes: accordion-header
+        show_empty_fields: false
+        id: ''
+        element: h2
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: collapsible
+        speed: fast
+    group_divbody:
+      children:
+        - field_texte_geo
+        - field_img
+      label: divbody
+      parent_name: group_paragraphe_1
+      region: content
+      weight: 20
+      format_type: html_element
+      format_settings:
+        classes: accordion-body
+        show_empty_fields: false
+        id: ''
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+    group_h2bis:
+      children:
+        - group_button1
+      label: h2
+      parent_name: group_partie_2
+      region: content
+      weight: 20
+      format_type: html_element
+      format_settings:
+        classes: accordion-header
+        show_empty_fields: false
+        id: ''
+        element: h2
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+    group_divbody1:
+      children:
+        - field_img1
+        - field_te
+      label: divbody1
+      parent_name: group_paragraphe_2
+      region: content
+      weight: 20
+      format_type: html_element
+      format_settings:
+        classes: accordion-body
+        show_empty_fields: false
+        id: ''
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+id: paragraph.exercice_geometrie.default
+targetEntityType: paragraph
+bundle: exercice_geometrie
+mode: default
+content:
+  field_img:
+    type: image
+    label: above
+    settings:
+      image_link: ''
+      image_style: ''
+    third_party_settings: {  }
+    weight: 22
+    region: content
+  field_img1:
+    type: image
+    label: above
+    settings:
+      image_link: ''
+      image_style: ''
+    third_party_settings: {  }
+    weight: 21
+    region: content
+  field_te:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 22
+    region: content
+  field_texte_geo:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 21
+    region: content
+  field_txt_button:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 26
+    region: content
+  field_txt_button1:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 27
+    region: content
+hidden: {  }
