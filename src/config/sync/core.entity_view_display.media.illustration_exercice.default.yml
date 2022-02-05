@@ -1,0 +1,30 @@
+uuid: 5d3bacc0-ee1b-47c2-a8c7-48363891567e
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.media.illustration_exercice.field_media_image
+    - image.style.standard
+    - media.type.illustration_exercice
+  module:
+    - image
+id: media.illustration_exercice.default
+targetEntityType: media
+bundle: illustration_exercice
+mode: default
+content:
+  field_media_image:
+    type: image
+    label: visually_hidden
+    settings:
+      image_link: ''
+      image_style: standard
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  created: true
+  langcode: true
+  name: true
+  thumbnail: true
+  uid: true

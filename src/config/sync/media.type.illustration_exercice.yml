@@ -1,0 +1,13 @@
+uuid: d947690b-b7ec-4108-a6f1-9ffb0f64af97
+langcode: fr
+status: true
+dependencies: {  }
+id: illustration_exercice
+label: 'Illustration exercice'
+description: ''
+source: image
+queue_thumbnail_downloads: false
+new_revision: false
+source_configuration:
+  source_field: field_media_image
+field_map: {  }

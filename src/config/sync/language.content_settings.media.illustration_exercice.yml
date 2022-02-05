@@ -1,0 +1,11 @@
+uuid: 428cc30a-fd9a-4b0a-a434-1eef9f42758f
+langcode: fr
+status: true
+dependencies:
+  config:
+    - media.type.illustration_exercice
+id: media.illustration_exercice
+target_entity_type_id: media
+target_bundle: illustration_exercice
+default_langcode: site_default
+language_alterable: false
