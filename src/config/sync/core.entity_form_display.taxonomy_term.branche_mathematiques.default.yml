@@ -1,0 +1,39 @@
+uuid: 94e721fd-9ae4-4c7c-847b-d187ab562bb1
+langcode: fr
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.branche_mathematiques
+  module:
+    - text
+id: taxonomy_term.branche_mathematiques.default
+targetEntityType: taxonomy_term
+bundle: branche_mathematiques
+mode: default
+content:
+  description:
+    type: text_textarea
+    weight: 2
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    weight: 1
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+hidden:
+  langcode: true
+  path: true

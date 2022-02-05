@@ -2,9 +2,15 @@ uuid: 8814a613-88d9-4aa6-a35e-b5565115dbf5
 langcode: fr
 status: open
 dependencies:
+  module:
+    - wagam_webform
   enforced:
     module:
       - webform
+third_party_settings:
+  wagam_webform:
+    niveau_cible: '9'
+    branche: '1'
 _core:
   default_config_hash: CJr5U2B4if_Ff1SZfnNp_csPKwXIynmbUlBC-SmSOAE
 weight: 0
@@ -16,7 +22,7 @@ archive: false
 id: contact
 title: Contact
 description: 'Basic email contact webform.'
-category: ''
+category: null
 elements: |
   name:
     '#title': 'Your Name'
