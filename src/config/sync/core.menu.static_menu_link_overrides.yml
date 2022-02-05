@@ -3,8 +3,8 @@ _core:
 langcode: fr
 definitions:
   user__page:
-    enabled: false
     menu_name: account
     parent: ''
-    expanded: false
     weight: -10
+    expanded: false
+    enabled: false
