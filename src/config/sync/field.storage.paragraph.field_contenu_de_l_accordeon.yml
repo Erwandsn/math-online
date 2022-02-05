@@ -1,0 +1,20 @@
+uuid: 128f07c3-8d73-4d5a-9c63-f5d189cfef9c
+langcode: fr
+status: true
+dependencies:
+  module:
+    - entity_reference_revisions
+    - paragraphs
+id: paragraph.field_contenu_de_l_accordeon
+field_name: field_contenu_de_l_accordeon
+entity_type: paragraph
+type: entity_reference_revisions
+settings:
+  target_type: paragraph
+module: entity_reference_revisions
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
