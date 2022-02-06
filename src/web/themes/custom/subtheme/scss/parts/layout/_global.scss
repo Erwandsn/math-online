@@ -49,6 +49,10 @@ body{
     }
 }
 
+h1{
+  font-family: $font-bold;
+}
+
 @include breakpoint('medium'){
     .branding-logo{
         display: inline-block;

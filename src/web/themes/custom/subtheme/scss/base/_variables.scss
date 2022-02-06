@@ -9,10 +9,10 @@ $simple-blue: #0d6efd;
 //Font-definition
 $font-awesome-5-free: "Font Awesome 5 Free", sans-serif;
 $font-awesome-5-brands: "Font Awesome 5 Brands", sans-serif;
-$font-regular: "Roboto-Slab-Regular", sans-serif;
-$font-medium: "Roboto-Slab-Medium", sans-serif;
-$font-light: "Roboto-Slab-Light", sans-serif;
-$font-bold: "Roboto-Slab-Bold", sans-serif;
+$font-regular: "Montserrat-Regular", sans-serif;
+$font-medium: "Montserrat-Medium", sans-serif;
+$font-light: "Montserrat-Light", sans-serif;
+$font-bold: "Montserrat-Bold", sans-serif;
 
 @font-face {
   font-family: 'Roboto-Slab-Regular';
@@ -35,6 +35,28 @@ $font-bold: "Roboto-Slab-Bold", sans-serif;
   src: url('/themes/custom/subtheme/fonts/roboto-slab/RobotoSlab-Bold.ttf') format('truetype');
   /* Modern Browsers */
 }
+
+@font-face {
+  font-family: 'Montserrat-Regular';
+  src: url('/themes/custom/subtheme/fonts/montserrat/Montserrat-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Montserrat-Medium';
+  src: url('/themes/custom/subtheme/fonts/montserrat/Montserrat-Medium.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Montserrat-Light';
+  src: url('/themes/custom/subtheme/fonts/montserrat/Montserrat-Light.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Montserrat-Bold';
+  src: url('/themes/custom/subtheme/fonts/montserrat/Montserrat-Bold.ttf') format('truetype');
+  /* Modern Browsers */
+}
+
 
 // Responsive
 $breakpoints: (

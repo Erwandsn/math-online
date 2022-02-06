@@ -1,0 +1,33 @@
+@import "../../base/variables";
+
+.login-form{
+  padding: 2rem 2rem;
+  border: 1px solid $ligh-dark-grey;
+  border-radius: 1.5rem;
+  box-shadow: 0 14px 28px rgba(0,0,0,0.08),
+  0 10px 10px rgba(0,0,0,0.05);
+
+  h1{
+    padding: 3rem 0;
+  }
+  .form-actions{
+    display: flex;
+    justify-content: center;
+    padding: 3rem 0;
+  }
+  .create-acc-link{
+    margin-left: 0.25rem;
+  }
+}
+
+.page-user-password,
+.page-user-login{
+  .main-content{
+    .content{
+      padding: 2rem 0;
+      display: flex;
+      align-items: center;
+      min-height: calc(100vh - 250px);
+    }
+  }
+}

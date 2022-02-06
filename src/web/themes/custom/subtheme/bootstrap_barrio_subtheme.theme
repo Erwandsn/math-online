@@ -6,6 +6,7 @@
  */
 
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Url;
 use Drupal\paragraphs\Entity\Paragraph;
 
 /**
@@ -72,3 +73,81 @@ function bootstrap_barrio_subtheme_preprocess_node(&$variables){
     $variables['content']['field_image_d_illustration']['#attributes']['class'][] = 'card-img-top';
   }
 }
+
+
+function bootstrap_barrio_subtheme_preprocess_form(&$variables){
+  //Tweaking login form
+  $user_form_ids = ['user-login-form', 'user-pass'];
+  if(in_array($variables['element']['#id'], $user_form_ids)){
+    $variables['attributes']['class'] = [
+      'col-12',
+      'col-md-8',
+      'col-xl-6',
+      'offset-md-2',
+      'offset-xl-3',
+      'login-form',
+    ];
+  }
+}
+
+function bootstrap_barrio_subtheme_form_alter(&$form, FormStateInterface $form_state)
+{
+  if($form['#id'] == 'user-login-form'){
+    $form['title'] = [
+      '#markup' => '<h1 class="text-center">Se connecter</h1>',
+      '#weight' => -2,
+    ];
+
+    $form['create_account'] = [
+      '#type' => 'container',
+      '#attributes' => [
+        'class' => [
+          'create-account-wrapper',
+        ],
+      ],
+      '#weight' => -1,
+    ];
+
+    $form['create_account']['link'] = [
+      '#prefix' => t('Pas encore inscrit ? Se'),
+      '#title' => t('créer un compte'),
+      '#type' => 'link',
+      '#url' => Url::fromRoute('user.register'),
+      '#attributes' => [
+        'class' => [
+          'create-acc-link',
+        ],
+      ],
+    ];
+
+
+    $render = \Drupal::service('renderer');
+    $pass_forgot_ra['wrapper'] = [
+      '#type' => 'container',
+      '#attributes' => [
+        'class' => [
+          'text-end'
+        ]
+      ],
+    ];
+    $pass_forgot_ra['wrapper']['link'] = [
+      '#title' => t('Mot de passe oublié ?'),
+      '#type' => 'link',
+      '#url' => Url::fromRoute('user.pass'),
+      '#attributes' => [
+        'class' => [
+          'create-acc-link',
+        ],
+      ],
+    ];
+    $form['pass']['#suffix'] = $render->render($pass_forgot_ra)->__toString();
+  }
+
+  if($form['#id'] == 'user-pass'){
+    $form['title'] = [
+      '#markup' => '<h1 class="text-center">Réinitialiser mon mot de passe</h1>',
+      '#weight' => -2,
+    ];
+  }
+}
+

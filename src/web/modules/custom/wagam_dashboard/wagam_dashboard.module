@@ -3,7 +3,7 @@
 function wagam_dashboard_preprocess_form_element(&$variables){
 
   ///Gestion du champs image du profil.
-  if($variables['name'] == 'user_picture[0]'){
+  if(isset($variables['name']) && $variables['name'] == 'user_picture[0]'){
     $variables['label_display'] = false;
     $variables['description_display'] = 'before';
     if(empty($variables['element']['#value']['fids'])){

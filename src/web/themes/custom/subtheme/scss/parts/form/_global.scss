@@ -30,3 +30,30 @@
     max-width: 250px;
   }
 }
+a,
+input,
+button{
+  &.btn{
+    border-radius: 20px;
+    border: 2px solid $orange;
+    color: $orange;
+    background-color: $white;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 12px 45px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: transform 80ms ease-in;
+    &.btn-primary{
+      background-color: $orange;
+      color: $white;
+      &:hover{
+        color: $orange;
+        background-color: $white;
+        border: 2px solid $orange;
+      }
+    }
+  }
+}
+
+
