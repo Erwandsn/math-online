@@ -42,6 +42,22 @@ class GeneralForm extends ConfigFormBase
             '#description' => $this->t('Sélectionner le logo du site'),
         ];
 
+        $user_config = $config->get('user');
+
+        $form['user'] = [
+          '#type' => 'fieldset',
+          '#title' => 'user',
+          '#tree' => TRUE,
+        ];
+
+        $form['user']['default_user_picture'] = [
+          '#type' => 'media_library',
+          '#allowed_bundles' => ['image'],
+          '#title' => $this->t('Image par défault utilisateur'),
+          '#default_value' => isset($user_config['default_user_picture']) ? $user_config['default_user_picture'] : NULL,
+          '#description' => $this->t('Sélectionner une image qui fera office d\'image par defaut si l\'utilisateur n\'en configure pas'),
+        ];
+
         return parent::buildForm($form, $form_state);
     }
 
@@ -49,8 +65,13 @@ class GeneralForm extends ConfigFormBase
     {
         $config = $this->configFactory()->getEditable(self::CONFIG);
         $header_values = $form_state->getValue('header');
+        $user_values = $form_state->getValue('user');
         if(!empty($header_values)){
             $config->set('header', $header_values);
+        }
+
+        if(!empty($user_values)){
+          $config->set('user', $user_values);
         }
         $config->save();
 

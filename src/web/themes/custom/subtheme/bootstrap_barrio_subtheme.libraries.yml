@@ -7,6 +7,7 @@ global-styling:
       css/style.css: {}
       css/colors.css: {}
       node_modules/@fortawesome/fontawesome-free/css/all.css: {}
+      node_modules/animate.css/animate.css: {}
 bootstrap:
   js:
     /libraries/popper.js/dist/umd/popper.min.js: { weight: -49 }

@@ -1,0 +1,3 @@
+wagam_dasboard.image-preview-widget:
+  js:
+    js/image-widget.js: {}

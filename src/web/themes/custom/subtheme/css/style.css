@@ -258,6 +258,62 @@ body {
   /* Modern Browsers */
 }
 
+.form-type-managed-file .image-widget {
+  width: 100%;
+}
+
+.form-type-managed-file .image-widget-data {
+  float: none;
+}
+
+.form-type-managed-file .image-preview {
+  width: 100%;
+  padding: 0;
+}
+
+.form-type-managed-file .image-preview img {
+  max-width: 250px;
+  width: 100% !important;
+  height: auto !important;
+}
+
+.form-type-managed-file .input-group-append {
+  width: 100%;
+}
+
+.form-type-managed-file .input-group-text {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  width: 100%;
+}
+
+.form-type-managed-file .btn {
+  width: 100%;
+  max-width: 250px;
+}
+
+@font-face {
+  font-family: 'Roboto-Slab-Regular';
+  src: url("/themes/custom/subtheme/fonts/roboto-slab/RobotoSlab-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'Roboto-Slab-Medium';
+  src: url("/themes/custom/subtheme/fonts/roboto-slab/RobotoSlab-Medium.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'Roboto-Slab-Light';
+  src: url("/themes/custom/subtheme/fonts/roboto-slab/RobotoSlab-Light.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'Roboto-Slab-Bold';
+  src: url("/themes/custom/subtheme/fonts/roboto-slab/RobotoSlab-Bold.ttf") format("truetype");
+  /* Modern Browsers */
+}
+
 .card-list .card {
   margin: 0.5rem 0;
 }

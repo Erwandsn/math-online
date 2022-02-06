@@ -1,0 +1,32 @@
+@import '../../base/variables';
+
+.form-type-managed-file{
+  .image-widget{
+    width: 100%;
+  }
+  .image-widget-data{
+    float: none;
+  }
+  .image-preview{
+    width: 100%;
+    padding: 0;
+    img{
+      max-width: 250px;
+      width: 100% !important;
+      height: auto !important;
+    }
+  }
+  .input-group-append{
+    width: 100%;
+  }
+  .input-group-text{
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    width: 100%;
+  }
+  .btn{
+    width: 100%;
+    max-width: 250px;
+  }
+}
