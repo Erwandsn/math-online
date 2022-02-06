@@ -20,6 +20,7 @@
         "drupal/adminimal_admin_toolbar": "^1.11",
         "drupal/adminimal_theme": "^1.6",
         "drupal/bootstrap_barrio": "^5.5",
+        "drupal/config_split": "^1.7",
         "drupal/console": "^1.9",
         "drupal/core-composer-scaffold": "^9.3",
         "drupal/core-project-message": "^9.3",

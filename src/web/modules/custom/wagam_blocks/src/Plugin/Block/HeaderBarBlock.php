@@ -91,35 +91,37 @@ class HeaderBarBlock extends BlockBase implements ContainerFactoryPluginInterfac
         ];
 
         //Adding logo
-        $media_logo = $this->entityManager->getStorage('media')->load($header_config['logo']);
-        $imageStyle = $this->entityManager->getStorage('image_style')->load('thumbnail');
-        if(!empty($media_logo)){
+        if(!empty($header_config) && isset($header_config['logo'])){
+          $media_logo = $this->entityManager->getStorage('media')->load($header_config['logo']);
+          $imageStyle = $this->entityManager->getStorage('image_style')->load('thumbnail');
+          if(!empty($media_logo)){
             $logo_path = $media_logo->get('field_media_image')->entity->uri->getString();
             $build['content']['logo_wrapper']['logo'] = [
-                '#type' => 'html_tag',
-                '#tag' => 'img',
-                '#attributes' =>  [
-                    'src' => $imageStyle->buildUrl($logo_path) ,
-                    'class' => [
-                        'branding-logo',
-                    ],
-                    'alt' => $this->t('Logo WaGamMaths'),
+              '#type' => 'html_tag',
+              '#tag' => 'img',
+              '#attributes' =>  [
+                'src' => $imageStyle->buildUrl($logo_path) ,
+                'class' => [
+                  'branding-logo',
                 ],
+                'alt' => $this->t('Logo WaGamMaths'),
+              ],
             ];
-            $build['content']['logo_wrapper']['site_name'] = [
-                '#type' => 'html_tag',
-                '#tag' => 'h1',
-                '#value' => 'WaGamMaths',
-                '#attributes' =>  [
-                    'class' => [
-                        'site-name',
-                    ],
-                ],
-            ];
+          }
         }
 
+        $build['content']['logo_wrapper']['site_name'] = [
+          '#type' => 'html_tag',
+          '#tag' => 'h1',
+          '#value' => 'WaGamMaths',
+          '#attributes' =>  [
+            'class' => [
+              'site-name',
+            ],
+          ],
+        ];
+
         //Preparing Menu wrapper
-        $build['content']['menu_wrapper'] = [];
         $build['content']['menu_wrapper'] = $this->prepareMainMenuWrapper()['menu_wrapper'];
 
         //Adding menu to bloc content

@@ -14,13 +14,14 @@ module:
   color: 0
   comment: 0
   config: 0
+  config_filter: 0
+  config_split: 0
   contact: 0
   contextual: 0
   crop: 0
   ctools: 0
   datetime: 0
   dblog: 0
-  devel: 0
   dynamic_page_cache: 0
   easy_breadcrumb: 0
   editor: 0
@@ -57,7 +58,6 @@ module:
   token: 0
   toolbar: 0
   tour: 0
-  twig_tweak: 0
   update: 0
   user: 0
   views_ui: 0

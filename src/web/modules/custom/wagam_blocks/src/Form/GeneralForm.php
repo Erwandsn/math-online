@@ -42,7 +42,7 @@ class GeneralForm extends ConfigFormBase
             '#description' => $this->t('Sélectionner le logo du site'),
         ];
 
-        return parent::buildForm($form, $form_state);;
+        return parent::buildForm($form, $form_state);
     }
 
     public function submitForm(array &$form, FormStateInterface $form_state)
