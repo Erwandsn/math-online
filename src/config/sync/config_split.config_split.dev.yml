@@ -1,0 +1,18 @@
+uuid: 86060cad-d9c6-4131-804a-fb864a7a6abb
+langcode: fr
+status: false
+dependencies: {  }
+id: dev
+label: dev
+description: ''
+weight: 0
+folder: ../config/dev
+module:
+  devel: 0
+  twig_tweak: 0
+theme: {  }
+blacklist:
+  - 'wagam.*'
+graylist: {  }
+graylist_dependents: true
+graylist_skip_equal: true

@@ -13,4 +13,11 @@
   .account-image{
     width: 50px !important;
   }
+  .card-body{
+    .btn{
+      &:not(:first-child){
+        margin-top: 0.25rem;
+      }
+    }
+  }
 }

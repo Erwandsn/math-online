@@ -34,6 +34,12 @@ body {
   margin-bottom: 2rem;
 }
 
+.btn .fab,
+.btn .far,
+.btn .fas {
+  margin-right: 0.5rem;
+}
+
 .branding-group {
   display: flex;
   align-items: center;
@@ -125,6 +131,10 @@ body {
 
 .wagam-current-user-block .account-image {
   width: 50px !important;
+}
+
+.wagam-current-user-block .card-body .btn:not(:first-child) {
+  margin-top: 0.25rem;
 }
 
 @font-face {
@@ -225,4 +235,38 @@ body {
 
 .dashboard-sidebard .nav-item:nth-child(2):before {
   content: '\f505';
+}
+
+@font-face {
+  font-family: 'Roboto-Slab-Regular';
+  src: url("/themes/custom/subtheme/fonts/roboto-slab/RobotoSlab-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'Roboto-Slab-Medium';
+  src: url("/themes/custom/subtheme/fonts/roboto-slab/RobotoSlab-Medium.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'Roboto-Slab-Light';
+  src: url("/themes/custom/subtheme/fonts/roboto-slab/RobotoSlab-Light.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'Roboto-Slab-Bold';
+  src: url("/themes/custom/subtheme/fonts/roboto-slab/RobotoSlab-Bold.ttf") format("truetype");
+  /* Modern Browsers */
+}
+
+.card-list .card {
+  margin: 0.5rem 0;
+}
+
+@media (min-width: 767px) {
+  .card-list .card:nth-child(n) {
+    margin: 0 0.5rem 0.5rem 0;
+  }
+  .card-list .card:nth-child(3n) {
+    margin: 0 0 0.5rem 0.5rem;
+  }
 }

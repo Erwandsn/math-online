@@ -17,6 +17,14 @@ body{
     margin-bottom: 2rem;
 }
 
+.btn{
+  .fab,
+  .far,
+  .fas{
+    margin-right: 0.5rem;
+  }
+}
+
 .branding-group{
     display: flex;
     align-items: center;

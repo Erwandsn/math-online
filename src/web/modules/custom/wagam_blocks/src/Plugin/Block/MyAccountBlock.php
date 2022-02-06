@@ -116,16 +116,29 @@ class MyAccountBlock extends BlockBase implements ContainerFactoryPluginInterfac
 
       $build['card']['card_header']['account_name']['#markup'] = '<p class="username">'.$this->currentUser->getDisplayName().'</p>';
 
-      $build['card']['card_body']['start_link'] = [
+      $build['card']['card_body']['exercice_link'] = [
         '#title' => $this
-          ->t('Commencer a apprendre'),
+          ->t('S\'éxercer'),
         '#type' => 'link',
-        '#prefix' => '<div class="row">',
-        '#suffix' => '</div>',
         '#attributes' => [
           'class' => [
             'btn',
             'btn-primary',
+            'col-12',
+          ],
+        ],
+        '#url' => Url::fromRoute('wagam.exercie.list'),
+      ];
+
+      $build['card']['card_body']['start_link'] = [
+        '#title' => $this
+          ->t('Commencer à apprendre'),
+        '#type' => 'link',
+        '#attributes' => [
+          'class' => [
+            'btn',
+            'btn-primary',
+            'col-12',
           ],
         ],
         '#url' => Url::fromRoute('wagam.dashboard'),

@@ -1,0 +1,16 @@
+uuid: 99629aaa-558b-484b-bd41-f246232eaad0
+langcode: fr
+status: false
+dependencies: {  }
+id: prod
+label: prod
+description: ''
+weight: 0
+folder: ../config/prod
+module: {  }
+theme: {  }
+blacklist:
+  - 'wagam.*'
+graylist: {  }
+graylist_dependents: true
+graylist_skip_equal: true

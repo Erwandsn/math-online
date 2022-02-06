@@ -1,0 +1,7 @@
+wagam.exercie.list:
+  path: '/exercices'
+  defaults:
+    _controller: '\Drupal\wagam_webform\Controller\WagamExerciceList::exerciceListView'
+    _title: 'Nos exercices'
+  requirements:
+    _permission: 'change own username'
