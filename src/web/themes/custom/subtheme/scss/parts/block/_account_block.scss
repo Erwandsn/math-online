@@ -1,0 +1,16 @@
+@import '../../base/variables';
+
+.wagam-current-user-block{
+  .card-header{
+    display: flex;
+    align-items: center;
+  }
+  .username{
+    margin: 0;
+    padding: 1rem;
+    font-family: $font-bold;
+  }
+  .account-image{
+    width: 50px !important;
+  }
+}
