@@ -112,6 +112,42 @@ body {
   /* Modern Browsers */
 }
 
+.wagam-current-user-block .card-header {
+  display: flex;
+  align-items: center;
+}
+
+.wagam-current-user-block .username {
+  margin: 0;
+  padding: 1rem;
+  font-family: "Roboto-Slab-Bold", sans-serif;
+}
+
+.wagam-current-user-block .account-image {
+  width: 50px !important;
+}
+
+@font-face {
+  font-family: 'Roboto-Slab-Regular';
+  src: url("/themes/custom/subtheme/fonts/roboto-slab/RobotoSlab-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'Roboto-Slab-Medium';
+  src: url("/themes/custom/subtheme/fonts/roboto-slab/RobotoSlab-Medium.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'Roboto-Slab-Light';
+  src: url("/themes/custom/subtheme/fonts/roboto-slab/RobotoSlab-Light.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'Roboto-Slab-Bold';
+  src: url("/themes/custom/subtheme/fonts/roboto-slab/RobotoSlab-Bold.ttf") format("truetype");
+  /* Modern Browsers */
+}
+
 .field--name-field-superviseurs .tabledrag-toggle-weight-wrapper {
   display: none;
 }
