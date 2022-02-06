@@ -1,0 +1,8 @@
+uuid: 4713aab4-58ab-44b2-975d-b28d0be08b6b
+langcode: fr
+status: true
+dependencies: {  }
+name: 'Branche mathématiques'
+vid: branche_mathematiques
+description: 'Géométrie, Alèbre, Statistiques, etc...'
+weight: 0

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "8623a6569110fca93e8b06917e5caa8e",
+    "content-hash": "4aa8e0f3f1ff0e21e50f26ee67c98fa9",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -3394,6 +3394,61 @@
             }
         },
         {
+            "name": "drupal/fraction",
+            "version": "2.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/fraction.git",
+                "reference": "2.1.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/fraction-2.1.0.zip",
+                "reference": "2.1.0",
+                "shasum": "23d44116a9c9e0620610f20397d6ca3c14387fc8"
+            },
+            "require": {
+                "drupal/core": "^8.8 || ^9"
+            },
+            "require-dev": {
+                "drupal/feeds": "^3.0"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "2.1.0",
+                    "datestamp": "1638483550",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "m.stenta",
+                    "homepage": "https://www.drupal.org/user/581414"
+                },
+                {
+                    "name": "pcambra",
+                    "homepage": "https://www.drupal.org/user/122101"
+                }
+            ],
+            "description": "Provides a field for storing decimals as fractions, for maximum precision.",
+            "homepage": "https://www.drupal.org/project/fraction",
+            "keywords": [
+                "Drupal"
+            ],
+            "support": {
+                "source": "http://cgit.drupalcode.org/fraction",
+                "issues": "http://drupal.org/project/issues/fraction"
+            }
+        },
+        {
             "name": "drupal/media_library_form_element",
             "version": "2.0.3",
             "source": {
@@ -3847,6 +3902,129 @@
                 "issues": "https://www.drupal.org/project/issues/webform?version=8.x",
                 "docs": "https://www.drupal.org/docs/8/modules/webform",
                 "forum": "https://drupal.stackexchange.com/questions/tagged/webform"
+            }
+        },
+        {
+            "name": "drupal/webform_entity_view",
+            "version": "1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/webform_entity_view.git",
+                "reference": "1.0.1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/webform_entity_view-1.0.1.zip",
+                "reference": "1.0.1",
+                "shasum": "a902bf5b54a85011b7388e68b4e5298a3b075921"
+            },
+            "require": {
+                "drupal/core": "^8.8 || ^9",
+                "drupal/webform": "^5.6 || ^6"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "1.0.1",
+                    "datestamp": "1603535230",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Project has not opted into security advisory coverage!"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Manuel Egío",
+                    "homepage": "https://www.drupal.org/u/facine"
+                },
+                {
+                    "name": "Pedro Cambra",
+                    "homepage": "https://www.drupal.org/u/pcambra"
+                }
+            ],
+            "description": "Displays an entity selected in a webform element.",
+            "homepage": "http://drupal.org/project/webform_entity_view",
+            "support": {
+                "source": "https://cgit.drupalcode.org/webform_entity_view",
+                "issues": "https://www.drupal.org/project/issues/webform_entity_view"
+            }
+        },
+        {
+            "name": "drupal/webform_score",
+            "version": "2.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/webform_score.git",
+                "reference": "8.x-2.1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/webform_score-8.x-2.1.zip",
+                "reference": "8.x-2.1",
+                "shasum": "f689a853edeb02695cdd8f22e34ad8f6f8144333"
+            },
+            "require": {
+                "drupal/core": "^8.8 || ^9",
+                "drupal/fraction": "^2",
+                "drupal/webform": "^6.0"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-2.1",
+                    "datestamp": "1638844663",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Mike Miles (mikemiles86)",
+                    "homepage": "https://www.drupal.org/u/mikemiles86",
+                    "role": "Maintainer"
+                },
+                {
+                    "name": "Rob Powell (robpowell)",
+                    "homepage": "https://www.drupal.org/u/robpowell",
+                    "role": "Maintainer"
+                },
+                {
+                    "name": "Kay VanValkenburgh (key_v)",
+                    "homepage": "https://www.drupal.org/u/kay_v",
+                    "role": "Maintainer"
+                },
+                {
+                    "name": "krlucas",
+                    "homepage": "https://www.drupal.org/user/271780"
+                },
+                {
+                    "name": "mikemiles86",
+                    "homepage": "https://www.drupal.org/user/471470"
+                },
+                {
+                    "name": "robpowell",
+                    "homepage": "https://www.drupal.org/user/3417529"
+                }
+            ],
+            "description": "This module provides scoring functionality to webform elements.",
+            "homepage": "https://www.drupal.org/project/webform_score",
+            "keywords": [
+                "Drupal"
+            ],
+            "support": {
+                "source": "http://cgit.drupalcode.org/webform_score",
+                "issues": "https://www.drupal.org/project/issues/webform_score"
             }
         },
         {

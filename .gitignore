@@ -53,3 +53,5 @@
 /src/web/web.config
 
 /src/**/node_modules
+
+/.idea

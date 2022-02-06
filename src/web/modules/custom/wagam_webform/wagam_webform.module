@@ -1,0 +1,101 @@
+<?php
+
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\taxonomy\Entity\Term;
+use Drupal\webform\Entity\Webform;
+use Drupal\webform\EntitySettings\WebformEntitySettingsGeneralForm;
+
+function wagam_webform_form_alter(&$form, FormStateInterface $form_state)
+{
+    if($form['#id'] === 'webform-settings-form'){
+        /** @var WebformEntitySettingsGeneralForm */
+        $formObject = $form_state->getFormObject();
+        /** @var Webform */
+        $entity = $formObject->getEntity();
+        $additional_fields = _wagam_webform_get_additional_form($entity);
+
+        $form['general_settings']['branche'] = $additional_fields['branche'];
+        $form['general_settings']['niveau_cible'] = $additional_fields['niveau_cible'];
+
+        $form['general_settings']['category']['#access'] = FALSE;
+        $form['general_settings']['title']['#weight'] = 0;
+        $form['general_settings']['branche']['#weight'] = 1;
+        $form['general_settings']['niveau_cible']['#weight'] = 2;
+        $form['general_settings']['description']['#weight'] = 3;
+        $form['general_settings']['results_disabled']['#weight'] = 4;
+        $form['general_settings']['archive']['#weight'] = 5;
+
+        $form['actions']['submit']['#submit'][] = '_wagam_webform_additional_general_settings';
+    }elseif(preg_match('/^webform-add-form--.*/', $form['#id'])){
+        /** @var WebformEntitySettingsGeneralForm */
+        $formObject = $form_state->getFormObject();
+        /** @var Webform */
+        $entity = $formObject->getEntity();
+        $additional_fields = _wagam_webform_get_additional_form($entity);
+
+        $form['branche'] = $additional_fields['branche'];
+        $form['niveau_cible'] = $additional_fields['niveau_cible'];
+
+        $form['actions']['submit']['#submit'][] = '_wagam_webform_additional_general_settings';
+    }
+}
+
+function _wagam_webform_get_additional_form($entity)
+{
+    $terms = _wagam_webform_load_terms_of('branche_mathematiques');
+    $branche_options = [];
+    /** @var Term $term */
+    foreach($terms as $term){
+        $branche_options[$term->id()] = $term->getName();
+    }
+
+    $form['branche'] = [
+        '#type' => 'select',
+        '#title' => 'Branche mathématiques',
+        '#default_value' => $entity->getThirdPartySetting('wagam_webform', 'branche'),
+        '#options' => $branche_options,
+        '#empty_option' => '-- Choisir une branche --',
+        '#required' => TRUE,
+    ];
+
+    $terms = _wagam_webform_load_terms_of('niveau_scolaire');
+    $niveau_options = [];
+    /** @var Term $term */
+    foreach($terms as $term){
+        $niveau_options[$term->id()] = $term->getName();
+    }
+
+    $form['niveau_cible'] = [
+        '#type' => 'select',
+        '#title' => 'Niveau du questionnaire.',
+        '#default_value' => $entity->getThirdPartySetting('wagam_webform', 'niveau_cible'),
+        '#options' => $niveau_options,
+        '#empty_option' => '-- Choisir un niveau --',
+        '#required' => TRUE,
+    ];
+
+    return $form;
+}
+
+function _wagam_webform_load_terms_of($taxonomie)
+{
+    $entity_manager = \Drupal::service('entity_type.manager');
+    $term_storage = $entity_manager->getStorage('taxonomy_term');
+
+    return $term_storage->loadByProperties([
+        'vid' => $taxonomie,
+    ]);
+}
+
+function _wagam_webform_additional_general_settings(&$form, FormStateInterface $form_state)
+{
+    /** @var WebformEntitySettingsGeneralForm */
+    $formObject = $form_state->getFormObject();
+    if ($formObject->getEntity()) {
+        /** @var Webform */
+        $entity = $formObject->getEntity();
+        $entity->setThirdPartySetting('wagam_webform', 'branche', $form_state->getValue('branche'));
+        $entity->setThirdPartySetting('wagam_webform', 'niveau_cible', $form_state->getValue('niveau_cible'));
+        $entity->save();
+    }
+}

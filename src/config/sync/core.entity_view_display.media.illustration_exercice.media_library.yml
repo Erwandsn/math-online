@@ -1,0 +1,31 @@
+uuid: 80cf18b7-201e-48fc-a99b-b684c2627976
+langcode: fr
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.media_library
+    - field.field.media.illustration_exercice.field_media_image
+    - image.style.medium
+    - media.type.illustration_exercice
+  module:
+    - image
+id: media.illustration_exercice.media_library
+targetEntityType: media
+bundle: illustration_exercice
+mode: media_library
+content:
+  thumbnail:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: medium
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  created: true
+  field_media_image: true
+  langcode: true
+  name: true
+  uid: true

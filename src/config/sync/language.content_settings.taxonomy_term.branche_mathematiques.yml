@@ -1,0 +1,11 @@
+uuid: 1ed3871d-c5c1-40ad-9df3-fe4713468a0c
+langcode: fr
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.branche_mathematiques
+id: taxonomy_term.branche_mathematiques
+target_entity_type_id: taxonomy_term
+target_bundle: branche_mathematiques
+default_langcode: site_default
+language_alterable: false

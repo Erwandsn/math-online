@@ -1,66 +1,105 @@
-uuid: 8814a613-88d9-4aa6-a35e-b5565115dbf5
+uuid: bc78b9b9-da49-43bf-bd2a-1af02fa7599e
 langcode: fr
 status: open
 dependencies:
   module:
     - wagam_webform
-  enforced:
-    module:
-      - webform
 third_party_settings:
   wagam_webform:
-    niveau_cible: '9'
-    branche: '1'
-_core:
-  default_config_hash: CJr5U2B4if_Ff1SZfnNp_csPKwXIynmbUlBC-SmSOAE
+    branche: '2'
+    niveau_cible: '11'
 weight: 0
 open: null
 close: null
-uid: null
+uid: 1
 template: false
 archive: false
-id: contact
-title: Contact
-description: 'Basic email contact webform.'
+id: thales_agrand_reduction_pt_un
+title: 'Thalès - Agrandissement / Réduction partie 1'
+description: ''
 category: null
 elements: |-
-  name:
-    '#title': 'Your Name'
-    '#type': textfield
-    '#required': true
-    '#default_value': '[current-user:display-name]'
-  email:
-    '#title': 'Your Email'
-    '#type': email
-    '#required': true
-    '#default_value': '[current-user:mail]'
-  subject:
-    '#title': Subject
-    '#type': textfield
-    '#required': true
-    '#test': 'Testing contact webform from [site:name]'
-  message:
-    '#title': Message
-    '#type': textarea
-    '#required': true
-    '#test': 'Please ignore this email.'
-  actions:
-    '#type': webform_actions
-    '#title': 'Submit button(s)'
-    '#submit__label': 'Send message'
+  question_1:
+    '#type': webform_wizard_page
+    '#title': 'Question 1'
+    '#open': true
+    '#prev_button_label': 'Annuler le questionnaire'
+    '#next_button_label': 'Question suivante'
+    q1_container:
+      '#type': webform_flexbox
+      '#format': container
+      '#align_items': center
+      thales_illustration:
+        '#type': webform_entity_view
+        '#title': 'Thales illustration'
+        '#display_on': both
+        '#target_type': media
+        '#target_bundle': illustration_exercice
+        '#selected_entity': '4'
+        '#view_mode': default
+      q1_ennonce:
+        '#type': processed_text
+        '#display_on': both
+        '#text': |
+          <p>Sur la figure ci contre, on a :</p>
+
+          <ul>
+          	<li>(BC)//(DE)</li>
+          	<li>AB = 6</li>
+          	<li>BD = 3</li>
+          	<li>DE = 12</li>
+          	<li>AC = 5</li>
+          </ul>
+        '#format': basic_html
+    propositions_de_reponse_quizz:
+      '#type': webform_score_radios
+      '#title': 'Propositions de réponse'
+      '#title_display': before
+      '#options':
+        'AE=7,5': 'on a : AE=7,5'
+        AE=7: 'on a : AE = 7'
+        BC=9: 'on a : BC = 9'
+      '#options_display': three_columns
+      '#webform_score_plugin': equals
+      '#webform_score_plugin_configuration':
+        max_score: '1'
+        expected: AE=7
+        case_sensitive: false
+      '#required': true
+  question_2:
+    '#type': webform_wizard_page
+    '#title': 'Question 2'
+    '#open': true
+    '#prev_button_label': 'Voir la question précédente'
+    '#next_button_label': 'Question suivante'
+    si_dans_un_triangle_abc_les_points_i_et_j_sont_les_milieu_respe:
+      '#type': webform_score_radios
+      '#title': 'Si dans un triangle ABC, les points I et J sont les milieux respectifs des côtés [AB] et [AC], alors…'
+      '#title_display': before
+      '#options':
+        ij_bc_secante: '(IJ) et (BC) sont sécantes'
+        rien: 'On ne peut rien affirmer'
+        ij_bc_parallele: '(IJ) et (BC) sont parallèles'
+      '#options_display': three_columns
+      '#webform_score_plugin': equals
+      '#webform_score_plugin_configuration':
+        max_score: '1'
+        expected: ij_bc_parallele
+        case_sensitive: false
+      '#required': true
 css: ''
 javascript: ''
 settings:
-  ajax: false
+  ajax: true
   ajax_scroll_top: form
-  ajax_progress_type: ''
-  ajax_effect: ''
+  ajax_progress_type: throbber
+  ajax_effect: fade
   ajax_speed: null
   page: true
   page_submit_path: ''
   page_confirm_path: ''
   page_theme_name: ''
-  form_title: source_entity_webform
+  form_title: both
   form_submit_once: false
   form_open_message: ''
   form_close_message: ''
@@ -150,10 +189,10 @@ settings:
   draft_loaded_message: ''
   draft_pending_single_message: ''
   draft_pending_multiple_message: ''
-  confirmation_type: url_message
-  confirmation_url: '<front>'
+  confirmation_type: page
+  confirmation_url: ''
   confirmation_title: ''
-  confirmation_message: 'Your message has been sent.'
+  confirmation_message: ''
   confirmation_attributes: {  }
   confirmation_back: true
   confirmation_back_label: ''
@@ -229,79 +268,5 @@ access:
     roles: {  }
     users: {  }
     permissions: {  }
-handlers:
-  email_confirmation:
-    id: email
-    handler_id: email_confirmation
-    label: 'Courriel de confirmation'
-    notes: ''
-    status: true
-    conditions: {  }
-    weight: 1
-    settings:
-      states:
-        - completed
-      to_mail: '[current-user:mail]'
-      to_options: {  }
-      bcc_mail: ''
-      bcc_options: {  }
-      cc_mail: ''
-      cc_options: {  }
-      from_mail: _default
-      from_options: {  }
-      from_name: _default
-      reply_to: ''
-      return_path: ''
-      sender_mail: ''
-      sender_name: ''
-      subject: '[webform_submission:values:subject:raw]'
-      body: '[webform_submission:values:message:value]'
-      excluded_elements: {  }
-      ignore_access: false
-      exclude_empty: true
-      exclude_empty_checkbox: false
-      exclude_attachments: false
-      html: true
-      attachments: false
-      twig: false
-      theme_name: ''
-      parameters: {  }
-      debug: false
-  email_notification:
-    id: email
-    handler_id: email_notification
-    label: 'Notification par courriel'
-    notes: ''
-    status: true
-    conditions: {  }
-    weight: 2
-    settings:
-      states:
-        - completed
-      to_mail: _default
-      to_options: {  }
-      bcc_mail: ''
-      bcc_options: {  }
-      cc_mail: ''
-      cc_options: {  }
-      from_mail: '[webform_submission:values:email:raw]'
-      from_options: {  }
-      from_name: '[webform_submission:values:name:raw]'
-      reply_to: ''
-      return_path: ''
-      sender_mail: ''
-      sender_name: ''
-      subject: '[webform_submission:values:subject:raw]'
-      body: '[webform_submission:values:message:value]'
-      excluded_elements: {  }
-      ignore_access: false
-      exclude_empty: true
-      exclude_empty_checkbox: false
-      exclude_attachments: false
-      html: true
-      attachments: false
-      twig: false
-      theme_name: ''
-      parameters: {  }
-      debug: false
+handlers: {  }
 variants: {  }
