@@ -1,0 +1,10 @@
+uuid: 53d99537-1b96-4b7f-9bac-c6a0958a885f
+langcode: fr
+status: true
+dependencies: {  }
+id: theoreme
+label: Théorème
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

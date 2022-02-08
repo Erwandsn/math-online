@@ -1,0 +1,21 @@
+uuid: 54523e08-f273-4649-b587-8fe7b55e2455
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_titre_theoreme
+    - paragraphs.paragraphs_type.theoreme
+id: paragraph.theoreme.field_titre_theoreme
+field_name: field_titre_theoreme
+entity_type: paragraph
+bundle: theoreme
+label: Titre_theoreme
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: Théorème
+default_value_callback: ''
+settings: {  }
+field_type: string

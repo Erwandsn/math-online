@@ -1,0 +1,50 @@
+uuid: 18fc1c42-b3db-41c9-8813-e4e3cfea6003
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_paragraphs
+    - node.type.lecon
+  module:
+    - entity_reference_revisions
+id: node.lecon.field_paragraphs
+field_name: field_paragraphs
+entity_type: node
+bundle: lecon
+label: 'Corps de la page'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles: null
+    negate: 1
+    target_bundles_drag_drop:
+      accordeon:
+        weight: 9
+        enabled: false
+      deux_colonnes:
+        weight: 10
+        enabled: false
+      image:
+        weight: 11
+        enabled: false
+      page_imbriquee:
+        weight: 12
+        enabled: false
+      superviseur:
+        weight: 13
+        enabled: false
+      texte_riche:
+        weight: 14
+        enabled: false
+      theoreme:
+        weight: 15
+        enabled: false
+      trois_colonnes:
+        weight: 16
+        enabled: false
+field_type: entity_reference_revisions

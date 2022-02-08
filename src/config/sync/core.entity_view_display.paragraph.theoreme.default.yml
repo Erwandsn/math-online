@@ -1,0 +1,72 @@
+uuid: 57a750da-15da-4e10-aa54-2527db826493
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.theoreme.field_content_theoreme
+    - field.field.paragraph.theoreme.field_titre_theoreme
+    - paragraphs.paragraphs_type.theoreme
+  module:
+    - field_group
+    - text
+third_party_settings:
+  field_group:
+    group_theoreme_container:
+      children:
+        - field_content_theoreme
+      label: theoreme_container
+      parent_name: ''
+      region: content
+      weight: 2
+      format_type: html_element
+      format_settings:
+        classes: theoreme-content
+        show_empty_fields: false
+        id: theoreme-content
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+    group_t_title_container:
+      children:
+        - field_titre_theoreme
+      label: titre_theoreme
+      parent_name: ''
+      region: content
+      weight: 0
+      format_type: html_element
+      format_settings:
+        classes: theoreme-title
+        show_empty_fields: false
+        id: ''
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+id: paragraph.theoreme.default
+targetEntityType: paragraph
+bundle: theoreme
+mode: default
+content:
+  field_content_theoreme:
+    type: text_default
+    label: visually_hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_titre_theoreme:
+    type: string
+    label: visually_hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden: {  }

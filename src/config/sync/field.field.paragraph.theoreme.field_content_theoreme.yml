@@ -1,0 +1,21 @@
+uuid: 0a0c2141-19c6-444b-8934-617958250a94
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_content_theoreme
+    - paragraphs.paragraphs_type.theoreme
+  module:
+    - text
+id: paragraph.theoreme.field_content_theoreme
+field_name: field_content_theoreme
+entity_type: paragraph
+bundle: theoreme
+label: Content_theoreme
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long
