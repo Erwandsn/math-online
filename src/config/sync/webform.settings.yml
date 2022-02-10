@@ -62,7 +62,7 @@ settings:
       - entity.node.webform.results_submissions
       - entity.node.webform.user.drafts
       - entity.node.webform.user.submissions
-  default_results_customize: true
+  default_results_customize: false
   default_submission_access_denied_message: 'Veuillez vous connecter pour acc&eacute;der &agrave; cette soumission.'
   default_submission_exception_message: 'Unable to process this submission. Please contact the site administrator.'
   default_submission_locked_message: 'Cette soumission a &eacute;t&eacute; verrouill&eacute;e.'

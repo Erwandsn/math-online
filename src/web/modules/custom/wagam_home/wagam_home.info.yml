@@ -1,0 +1,7 @@
+name: WaGamMaths Home
+description: WaGamMaths - Ajoute la page d'accueil du site ainsi que sa configuration
+package: WaGamMaths
+type: module
+core_version_requirement: ^8.8.0 || ^9
+dependencies:
+  - wagam_menu:wagam_menu

@@ -1,0 +1,23 @@
+@import '../../base/variables';
+
+.menu--main{
+  margin-top: 2rem;
+
+  .nav-item{
+    font-family: $font-light;
+    text-transform: uppercase;
+    font-weight: 800;
+    .nav-link{
+      padding-left:1rem;
+      border-radius: 0.5rem;
+      color: $dark-grey;
+      &:hover{
+        background-color: lighten($orange, 25%);
+      }
+    }
+    .is-active{
+      color: $white;
+      background-color: $orange;
+    }
+  }
+}

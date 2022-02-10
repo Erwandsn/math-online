@@ -4,6 +4,12 @@ body{
     font-family: $font-regular;
 }
 
+.with-section{
+  border-top: 1px solid $ligh-dark-grey;
+  margin-top: 0.5rem;
+  padding-top: 0.5rem;
+}
+
 .block-page-title-block{
     .title{
         text-transform: uppercase;

@@ -1,6 +1,6 @@
 uuid: 8814a613-88d9-4aa6-a35e-b5565115dbf5
 langcode: fr
-status: open
+status: closed
 dependencies:
   module:
     - wagam_webform

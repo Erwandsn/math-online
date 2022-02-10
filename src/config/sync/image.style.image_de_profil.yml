@@ -1,0 +1,15 @@
+uuid: 208f7631-f445-4796-8ae2-79f172d11ca0
+langcode: fr
+status: true
+dependencies: {  }
+name: image_de_profil
+label: 'Image de profil'
+effects:
+  212b49f7-ddcb-4664-b411-d273a7b435cb:
+    uuid: 212b49f7-ddcb-4664-b411-d273a7b435cb
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 300
+      height: 300
+      anchor: center-center

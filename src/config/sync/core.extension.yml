@@ -63,6 +63,7 @@ module:
   views_ui: 0
   wagam_blocks: 0
   wagam_dashboard: 0
+  wagam_home: 0
   wagam_menu: 0
   wagam_webform: 0
   webform: 0

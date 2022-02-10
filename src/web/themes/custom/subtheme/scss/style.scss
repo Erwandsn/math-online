@@ -6,12 +6,14 @@
 
 //Blocks
 @import 'parts/block/account_block';
+@import 'parts/block/home_main';
 
 //Import des paragraphs
 @import 'parts/paragraphs/superviseur';
 
 //Elements de navigation
 @import 'parts/navigation/sidebar.scss';
+@import 'parts/navigation/main.scss';
 
 //Formulaire
 @import 'parts/form/global.scss';

@@ -54,7 +54,8 @@ class MyAccountBlock extends BlockBase implements ContainerFactoryPluginInterfac
       '#attributes' => [
         'class' => [
           'card',
-          'wagam-current-user-block'
+          'wagam-current-user-block',
+          'user-profil-card',
         ],
       ],
     ];
@@ -98,7 +99,7 @@ class MyAccountBlock extends BlockBase implements ContainerFactoryPluginInterfac
         '#weight' => 0,
       ];
 
-      $imageStyle = $this->entityManager->getStorage('image_style')->load('thumbnail');
+      $imageStyle = $this->entityManager->getStorage('image_style')->load('image_de_profil');
       if(!$user->get('user_picture')->isEmpty()){
         $img_url = $user->get('user_picture')->first()->entity->uri->getString();
         $build['card']['card_header']['account_image'] = [
@@ -108,7 +109,6 @@ class MyAccountBlock extends BlockBase implements ContainerFactoryPluginInterfac
             'src' => $imageStyle->buildUrl($img_url),
             'class' => [
               'account-image',
-              'rounded'
             ],
           ],
         ];
@@ -144,22 +144,41 @@ class MyAccountBlock extends BlockBase implements ContainerFactoryPluginInterfac
         '#url' => Url::fromRoute('wagam.dashboard'),
       ];
 
-      $build['card']['card_body']['my_account_link'] = [
+      $build['card']['card_body']['account_action_wrapper'] = [
+        '#type' => 'container',
+        '#attributes' => [
+          'class' =>  [
+            'd-flex',
+            'with-section',
+            'justify-content-between'
+          ]
+        ],
+      ];
+
+      $build['card']['card_body']['account_action_wrapper']['my_account_link'] = [
         '#title' => $this
           ->t('Mon compte'),
-        '#prefix' => '<div class="row">',
-        '#suffix' => '</div>',
         '#type' => 'link',
+        '#attributes' => [
+          'class' => [
+            'btn',
+            'btn-secondary',
+            'col-6',
+          ],
+        ],
         '#url' => Url::fromRoute('wagam.dashboard'),
       ];
 
-      $build['card']['card_body']['logout_link'] = [
+      $build['card']['card_body']['account_action_wrapper']['logout_link'] = [
         '#title' => $this
           ->t('Se déconnecter'),
         '#type' => 'link',
-        '#prefix' => '<div class="row">',
-        '#suffix' => '</div>',
         '#attributes' => [
+          'class' => [
+            'btn',
+            'btn-secondary',
+            'col-6',
+          ],
         ],
         '#url' => Url::fromRoute('user.logout'),
       ];

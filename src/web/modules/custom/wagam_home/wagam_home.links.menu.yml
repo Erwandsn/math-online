@@ -1,0 +1,5 @@
+wagam.admin.home.form:
+  title: 'Accueil'
+  description: 'Configurer la page d accueil'
+  parent: wagam.admin
+  route_name: wagam.home.config

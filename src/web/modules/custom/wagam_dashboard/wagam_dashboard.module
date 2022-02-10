@@ -28,53 +28,63 @@ function wagam_dashboard_preprocess_form_element(&$variables){
 }
 
 function wagam_dashboard_preprocess_image_widget(&$variables){
-  $image_style_storage = \Drupal::entityTypeManager()->getStorage('image_style');
-  $media_storage = \Drupal::entityTypeManager()->getStorage('media');
-  $image_style_large = $image_style_storage->load('large');
+  $routes = ['user.register', 'wagam.dashboard'];
+  if(in_array(\Drupal::routeMatch()->getRouteName(), $routes)){
+    $image_style_storage = \Drupal::entityTypeManager()->getStorage('image_style');
+    $media_storage = \Drupal::entityTypeManager()->getStorage('media');
+    $image_style_large = $image_style_storage->load('large');
 
-  if(!empty($variables['data']['fids']['#value'])){
-    unset($variables['data']['file_'.$variables['data']['fids']['#value'][0]]);
-  }else{
-    $config = \Drupal::config('wagam.general.config');
-    $user_config = $config->get('user');
-    if(!empty($user_config) && isset($user_config['default_user_picture'])){
-      $media = $media_storage->load($user_config['default_user_picture']);
+    if(!empty($variables['data']['fids']['#value'])){
+      unset($variables['data']['file_'.$variables['data']['fids']['#value'][0]]);
+    }else{
+      $config = \Drupal::config('wagam.general.config');
+      $user_config = $config->get('user');
+      if(!empty($user_config) && isset($user_config['default_user_picture'])){
+        $media = $media_storage->load($user_config['default_user_picture']);
 
-      $variables['data']['default_image_wrapper'] = [
-        '#type' => 'container',
-        '#attributes' => [
-          'class' => [
-            'image-preview'
+        $variables['data']['default_image_wrapper'] = [
+          '#type' => 'container',
+          '#attributes' => [
+            'class' => [
+              'image-preview'
+            ]
           ]
-        ]
-      ];
-      $variables['data']['default_image_wrapper']['default_image'] = [
+        ];
+        $variables['data']['default_image_wrapper']['default_image'] = [
+          '#type' => 'html_tag',
+          '#tag' => 'img',
+          '#attributes' => [
+            'class' => [
+              'rounded',
+              'default-img',
+            ],
+            'src' => $image_style_large->buildUrl($media->get('field_media_image')->entity->uri->getString()),
+          ]
+        ];
+
+        $variables['data']['upload']['#attributes']['class'][] = 'd-none';
+
+        $variables['#attached']['library'][] = 'wagam_dashboard/wagam_dasboard.image-preview-widget';
+      }
+    }
+
+    $variables['data']['remove_button']['#value'] = t('Modifier mon image');
+    if(isset($variables['data']['preview'])){
+      $variables['data']['preview'] = [
         '#type' => 'html_tag',
         '#tag' => 'img',
         '#attributes' => [
-          'class' => [
-            'rounded',
-            'default-img',
-          ],
-          'src' => $image_style_large->buildUrl($media->get('field_media_image')->entity->uri->getString()),
-        ]
+          'src' => $image_style_large->buildUrl($variables['data']['preview']['#uri']),
+          'class' => 'rounded',
+        ],
       ];
-
-      $variables['data']['upload']['#attributes']['class'][] = 'd-none';
-
-      $variables['#attached']['library'][] = 'wagam_dashboard/wagam_dasboard.image-preview-widget';
     }
   }
+}
 
-  $variables['data']['remove_button']['#value'] = t('Modifier mon image');
-  if(isset($variables['data']['preview'])){
-    $variables['data']['preview'] = [
-      '#type' => 'html_tag',
-      '#tag' => 'img',
-      '#attributes' => [
-        'src' => $image_style_large->buildUrl($variables['data']['preview']['#uri']),
-        'class' => 'rounded',
-      ],
-    ];
+function wagam_dashboard_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state)
+{
+  if($form['#id'] == 'user-register-form'){
+    $form['field_superviseurs']['#access'] = false;
   }
 }

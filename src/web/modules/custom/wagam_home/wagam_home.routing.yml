@@ -1,0 +1,14 @@
+wagam.home:
+  path: '/accueil'
+  defaults:
+    _controller: '\Drupal\wagam_home\Controller\HomeController::homeView'
+    _title: 'Accueil'
+  requirements:
+    _access: 'TRUE'
+wagam.home.config:
+  path: '/admin/wagam-maths/acceuil-config'
+  defaults:
+    _form: '\Drupal\wagam_home\Form\WagamHomeConfigurationForm'
+    _title: 'WaGamMaths - Configuration de la page d accueil'
+  requirements:
+    _permission: 'wagam manage home'

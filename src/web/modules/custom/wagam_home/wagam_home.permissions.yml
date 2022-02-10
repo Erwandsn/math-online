@@ -1,0 +1,3 @@
+wagam manage home:
+  title: 'Gérer la configuration de la page d accueil'
+  restrict_access: true

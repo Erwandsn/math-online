@@ -1,9 +1,14 @@
 @import '../../base/variables';
 
 .wagam-current-user-block{
+  border-radius: 0;
   .card-header{
     display: flex;
+
+    justify-content: center;
     align-items: center;
+    border-bottom: none;
+
   }
   .username{
     margin: 0;
@@ -12,12 +17,48 @@
   }
   .account-image{
     width: 50px !important;
+    border-radius: 50%;
   }
   .card-body{
     .btn{
-      &:not(:first-child){
-        margin-top: 0.25rem;
+      &.btn-primary{
+        &:not(:first-child){
+          margin-top: 0.25rem;
+        }
       }
     }
+  }
+}
+
+.wagam-home-wrapper{
+  .wagam-current-user-block{
+    .account-image{
+      width: 80px !important;
+      height: auto !important;
+    }
+    .card-header{
+      background: url("/themes/custom/subtheme/assets/profil_heading.svg");
+      background-repeat: no-repeat;
+      background-color: transparent;
+      border-radius: 0;
+      padding-top: 1.5rem;
+      flex-direction: column;
+    }
+  }
+}
+
+@include breakpoint('medium'){
+  .wagam-home-wrapper{
+    .wagam-current-user-block{
+      .account-image{
+        width: 100px !important;
+      }
+    }
+  }
+  .home-user-profile-wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 500px;
   }
 }

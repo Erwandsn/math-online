@@ -1,0 +1,15 @@
+@import "../../base/variables";
+
+.home-main-bloc{
+  width: 100%;
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  .title{
+    max-height: 50%;
+  }
+  .bloc--content{
+    padding-bottom: 5rem;
+  }
+}

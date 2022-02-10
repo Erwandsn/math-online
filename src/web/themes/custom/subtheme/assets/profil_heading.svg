@@ -1,0 +1,10 @@
+<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 646 173" width="646" height="173">
+	<defs>
+		<image  width="646" height="173" id="img1" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAoYAAACtAQMAAAAXsCzmAAAAAXNSR0IB2cksfwAAAANQTFRFAAAAp3o92gAAAAF0Uk5TAEDm2GYAAAAkSURBVHic7cEBAQAAAIIg/69uSEABAAAAAAAAAAAAAAAAwLMBN2oAAQNeygMAAAAASUVORK5CYII="/>
+	</defs>
+	<style>
+		.s0 { fill: #ef7b00 }
+	</style>
+	<use id="Background" href="#img1" x="0" y="0" />
+	<path id="Shape 1" class="s0" d="m-36-130l825 61l-124.2 246.3l-700.8-136.2z" />
+</svg>
