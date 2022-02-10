@@ -1,0 +1,55 @@
+uuid: b786105e-618a-4ad1-80e7-789693bc4515
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_paragraphe_1
+    - paragraphs.paragraphs_type.exercice
+    - paragraphs.paragraphs_type.superviseur
+  module:
+    - entity_reference_revisions
+id: paragraph.exercice.field_paragraphe_1
+field_name: field_paragraphe_1
+entity_type: paragraph
+bundle: exercice
+label: 'Paragraphe 1'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      superviseur: superviseur
+    negate: 1
+    target_bundles_drag_drop:
+      accordeon:
+        weight: 10
+        enabled: false
+      deux_colonnes:
+        weight: 11
+        enabled: false
+      exercice:
+        weight: 12
+        enabled: false
+      image:
+        weight: 13
+        enabled: false
+      page_imbriquee:
+        weight: 14
+        enabled: false
+      superviseur:
+        weight: 15
+        enabled: true
+      texte_riche:
+        weight: 16
+        enabled: false
+      theoreme:
+        weight: 17
+        enabled: false
+      trois_colonnes:
+        weight: 18
+        enabled: false
+field_type: entity_reference_revisions

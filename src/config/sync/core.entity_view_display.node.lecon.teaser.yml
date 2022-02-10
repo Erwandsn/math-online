@@ -5,6 +5,8 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.lecon.body
+    - field.field.node.lecon.field_p1
+    - field.field.node.lecon.field_paragraphs
     - node.type.lecon
   module:
     - text
@@ -28,4 +30,6 @@ content:
     weight: 100
     region: content
 hidden:
+  field_p1: true
+  field_paragraphs: true
   langcode: true

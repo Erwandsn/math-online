@@ -1,0 +1,55 @@
+uuid: d4a3f04b-3dcb-4f3b-b500-44fa5808eb72
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.exercice.field_ex_title
+    - field.field.paragraph.exercice.field_paragraphe_1
+    - paragraphs.paragraphs_type.exercice
+  module:
+    - entity_reference_revisions
+    - field_group
+third_party_settings:
+  field_group:
+    group_ex_title:
+      children:
+        - field_ex_title
+      label: Ex-title
+      parent_name: ''
+      region: content
+      weight: 0
+      format_type: html_element
+      format_settings:
+        classes: ex-title
+        show_empty_fields: false
+        id: ''
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+id: paragraph.exercice.default
+targetEntityType: paragraph
+bundle: exercice
+mode: default
+content:
+  field_ex_title:
+    type: string
+    label: visually_hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_paragraphe_1:
+    type: entity_reference_revisions_entity_view
+    label: visually_hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden: {  }

@@ -1,0 +1,10 @@
+uuid: 3ac553c5-7701-4bb3-a065-da59b306048a
+langcode: fr
+status: true
+dependencies:
+  module:
+    - media
+id: media.image_carree
+label: 'Image carrée'
+targetEntityType: media
+cache: true

@@ -9,13 +9,14 @@ label: 'Chemin standard'
 type: 'canonical_entities:node'
 pattern: '/[node:title]'
 selection_criteria:
-  f8ca1d07-0c44-4ecf-a7b2-2158d7d69ab8:
+  f2636264-1938-4655-8737-f16a8bb9ebc6:
     id: node_type
     negate: false
-    uuid: f8ca1d07-0c44-4ecf-a7b2-2158d7d69ab8
+    uuid: f2636264-1938-4655-8737-f16a8bb9ebc6
     context_mapping:
       node: node
     bundles:
+      lecon: lecon
       page: page
 selection_logic: and
 weight: -5
