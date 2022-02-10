@@ -1,0 +1,38 @@
+uuid: f65c292a-1948-4d63-b5c2-2512b3afba5e
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.exercice.field_ex_title
+    - field.field.paragraph.exercice.field_paragraphe_1
+    - paragraphs.paragraphs_type.exercice
+  module:
+    - paragraphs
+id: paragraph.exercice.default
+targetEntityType: paragraph
+bundle: exercice
+mode: default
+content:
+  field_ex_title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_paragraphe_1:
+    type: entity_reference_paragraphs
+    weight: 3
+    region: content
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

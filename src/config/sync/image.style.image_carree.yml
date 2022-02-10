@@ -1,0 +1,17 @@
+uuid: f8a261c1-086f-4e61-8a64-fa30ee6cd348
+langcode: fr
+status: true
+dependencies:
+  module:
+    - focal_point
+name: image_carree
+label: 'Image carrée'
+effects:
+  af7cf87a-4c8c-411a-aad9-8cb6bd375c34:
+    uuid: af7cf87a-4c8c-411a-aad9-8cb6bd375c34
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 767
+      height: 767
+      crop_type: focal_point

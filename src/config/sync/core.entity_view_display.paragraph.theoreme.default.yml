@@ -39,7 +39,7 @@ third_party_settings:
       weight: 0
       format_type: html_element
       format_settings:
-        classes: theoreme-title
+        classes: 'theoreme-title '
         show_empty_fields: false
         id: ''
         element: div
