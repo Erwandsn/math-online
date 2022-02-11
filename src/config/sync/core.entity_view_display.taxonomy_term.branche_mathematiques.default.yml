@@ -1,4 +1,4 @@
-uuid: 94e721fd-9ae4-4c7c-847b-d187ab562bb1
+uuid: d7ee2e03-9a13-4cf1-be7f-d59eba8fd0e7
 langcode: fr
 status: true
 dependencies:
@@ -6,35 +6,27 @@ dependencies:
     - field.field.taxonomy_term.branche_mathematiques.field_illustration_de_la_branche
     - taxonomy.vocabulary.branche_mathematiques
   module:
-    - media_library
+    - text
 id: taxonomy_term.branche_mathematiques.default
 targetEntityType: taxonomy_term
 bundle: branche_mathematiques
 mode: default
 content:
-  field_illustration_de_la_branche:
-    type: media_library_widget
-    weight: 1
-    region: content
-    settings:
-      media_types: {  }
+  description:
+    type: text_default
+    label: hidden
+    settings: {  }
     third_party_settings: {  }
-  name:
-    type: string_textfield
     weight: 0
     region: content
+  field_illustration_de_la_branche:
+    type: entity_reference_entity_view
+    label: above
     settings:
-      size: 60
-      placeholder: ''
+      view_mode: default
+      link: false
     third_party_settings: {  }
-  status:
-    type: boolean_checkbox
-    weight: 2
+    weight: 1
     region: content
-    settings:
-      display_label: true
-    third_party_settings: {  }
 hidden:
-  description: true
   langcode: true
-  path: true

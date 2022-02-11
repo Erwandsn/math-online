@@ -1,0 +1,10 @@
+uuid: bff35ae8-be84-4e5e-b6fe-c2ee61f5af47
+langcode: fr
+status: true
+dependencies:
+  module:
+    - media
+id: media.bandeau_full
+label: 'Bandeau full'
+targetEntityType: media
+cache: true

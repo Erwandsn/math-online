@@ -1,19 +1,19 @@
-uuid: fe6145c6-058d-4272-a2b2-757885c9b1ac
+uuid: e4f114a8-81b5-4570-ba13-ee7999151f57
 langcode: fr
 status: true
 dependencies:
   config:
-    - field.storage.node.field_p1
-    - node.type.lecon
+    - field.storage.paragraph.field_boutons
+    - paragraphs.paragraphs_type.groupe_de_boutons
   module:
     - entity_reference_revisions
-id: node.lecon.field_p1
-field_name: field_p1
-entity_type: node
-bundle: lecon
-label: p1
+id: paragraph.groupe_de_boutons.field_boutons
+field_name: field_boutons
+entity_type: paragraph
+bundle: groupe_de_boutons
+label: Boutons
 description: ''
-required: false
+required: true
 translatable: false
 default_value: {  }
 default_value_callback: ''
@@ -21,30 +21,36 @@ settings:
   handler: 'default:paragraph'
   handler_settings:
     target_bundles: null
-    negate: 1
+    negate: 0
     target_bundles_drag_drop:
       accordeon:
-        weight: 9
-        enabled: false
-      deux_colonnes:
-        weight: 10
-        enabled: false
-      image:
         weight: 11
         enabled: false
-      page_imbriquee:
+      deux_colonnes:
         weight: 12
         enabled: false
-      superviseur:
+      exercice:
         weight: 13
         enabled: false
-      texte_riche:
+      groupe_de_boutons:
         weight: 14
         enabled: false
-      theoreme:
+      image:
         weight: 15
         enabled: false
-      trois_colonnes:
+      page_imbriquee:
         weight: 16
+        enabled: false
+      superviseur:
+        weight: 17
+        enabled: false
+      texte_riche:
+        weight: 18
+        enabled: false
+      theoreme:
+        weight: 19
+        enabled: false
+      trois_colonnes:
+        weight: 20
         enabled: false
 field_type: entity_reference_revisions

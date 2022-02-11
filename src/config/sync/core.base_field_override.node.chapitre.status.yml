@@ -1,0 +1,22 @@
+uuid: 8b97a25e-01cf-4619-87cd-dea98303773d
+langcode: fr
+status: true
+dependencies:
+  config:
+    - node.type.chapitre
+id: node.chapitre.status
+field_name: status
+entity_type: node
+bundle: chapitre
+label: Published
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

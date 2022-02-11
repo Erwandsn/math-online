@@ -1,0 +1,29 @@
+uuid: 73f0515a-659c-4e70-b45c-91c8adaaf270
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_lecons_du_chapitre
+    - node.type.chapitre
+    - node.type.lecon
+id: node.chapitre.field_lecons_du_chapitre
+field_name: field_lecons_du_chapitre
+entity_type: node
+bundle: chapitre
+label: 'Leçons du chapitre'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      lecon: lecon
+    sort:
+      field: title
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: chapitre
+field_type: entity_reference

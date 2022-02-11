@@ -63,6 +63,8 @@ button{
       color: $white;
       border-color: $vert;
       &:hover{
+        border-color: $vert;
+        color: $white;
         background-color: lighten($vert, 5%);
       }
     }

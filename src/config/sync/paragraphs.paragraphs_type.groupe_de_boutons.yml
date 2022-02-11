@@ -1,0 +1,10 @@
+uuid: 38495696-d26e-4ef2-ad43-f93f9e5ddf82
+langcode: fr
+status: true
+dependencies: {  }
+id: groupe_de_boutons
+label: 'Groupe de boutons'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

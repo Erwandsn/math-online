@@ -1,0 +1,29 @@
+uuid: dcb9c975-c98c-4692-8163-5abc10381d45
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_branche_cible
+    - node.type.chapitre
+    - taxonomy.vocabulary.branche_mathematiques
+id: node.chapitre.field_branche_cible
+field_name: field_branche_cible
+entity_type: node
+bundle: chapitre
+label: 'Branche cible'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      branche_mathematiques: branche_mathematiques
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -11,8 +11,8 @@ use Drupal\Core\Form\FormStateInterface;
 class GeneralForm extends ConfigFormBase
 {
 
-    const CONFIG = 'wagam.general.config';
-    const FORM_ID = 'wagame.general.config.form';
+    const CONFIG = 'wagam_blocks.general.config';
+    const FORM_ID = 'wagam.general.config.form';
 
     public function getEditableConfigNames(){
         return [self::CONFIG];

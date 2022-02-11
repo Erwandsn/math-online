@@ -1,0 +1,17 @@
+uuid: e2be2a03-2db4-4470-a6c8-90f8cc92f94e
+langcode: fr
+status: true
+dependencies:
+  module:
+    - focal_point
+name: bandeau_desktop
+label: 'Bandeau desktop'
+effects:
+  62984e6c-49f8-40ba-8310-90f83a61b1b3:
+    uuid: 62984e6c-49f8-40ba-8310-90f83a61b1b3
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 1320
+      height: 300
+      crop_type: focal_point

@@ -1,0 +1,104 @@
+uuid: 27e3f996-f474-44e7-a160-c70736703b16
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.node.chapitre.field_branche_cible
+    - field.field.node.chapitre.field_description
+    - field.field.node.chapitre.field_illustration
+    - field.field.node.chapitre.field_lecons_du_chapitre
+    - field.field.node.chapitre.field_niveau_cible
+    - node.type.chapitre
+  module:
+    - field_group
+    - user
+third_party_settings:
+  field_group:
+    group_group_sub_content:
+      children:
+        - field_lecons_du_chapitre
+      label: 'Group Sub content'
+      parent_name: ''
+      region: content
+      weight: 5
+      format_type: html_element
+      format_settings:
+        classes: 'row row-cols-md-2 row-cols-lg-3'
+        show_empty_fields: false
+        id: ''
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+    group_node_header:
+      children:
+        - field_branche_cible
+        - field_niveau_cible
+      label: 'node header'
+      parent_name: ''
+      region: content
+      weight: 1
+      format_type: html_element
+      format_settings:
+        classes: 'row row-cols-2 node-header'
+        show_empty_fields: false
+        id: ''
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+id: node.chapitre.default
+targetEntityType: node
+bundle: chapitre
+mode: default
+content:
+  field_branche_cible:
+    type: entity_reference_label
+    label: visually_hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_description:
+    type: basic_string
+    label: visually_hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_illustration:
+    type: entity_reference_entity_view
+    label: visually_hidden
+    settings:
+      view_mode: bandeau_full
+      link: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_lecons_du_chapitre:
+    type: entity_reference_entity_view
+    label: visually_hidden
+    settings:
+      view_mode: card
+      link: false
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  field_niveau_cible:
+    type: entity_reference_label
+    label: visually_hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 3
+    region: content
+hidden:
+  langcode: true
+  links: true

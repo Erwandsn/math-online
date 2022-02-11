@@ -9,7 +9,7 @@ class WagamHomeConfigurationForm extends ConfigFormBase
 {
   const FORM_ID = 'wagam.home.form';
 
-  const CONFIG = 'wagam.home.settings';
+  const CONFIG = 'wagam_home.home.settings';
 
   protected function getEditableConfigNames()
   {

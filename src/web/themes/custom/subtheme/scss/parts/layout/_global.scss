@@ -59,6 +59,12 @@ h1{
   font-family: $font-bold;
 }
 
+.field{
+  i{
+    margin-right: 0.5rem;
+  }
+}
+
 @include breakpoint('medium'){
     .branding-logo{
         display: inline-block;

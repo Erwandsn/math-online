@@ -3,19 +3,25 @@ langcode: fr
 status: true
 dependencies:
   config:
-    - node.type.article
+    - media.type.image
     - node.type.page
+    - taxonomy.vocabulary.branche_mathematiques
+    - taxonomy.vocabulary.categorie_de_niveau_scolaire
+    - taxonomy.vocabulary.niveau_scolaire
     - taxonomy.vocabulary.tags
   module:
     - comment
     - contextual
     - file
+    - media
     - node
     - path
     - system
     - taxonomy
     - toolbar
     - tour
+    - wagam_home
+    - webform_score
 _core:
   default_config_hash: Wur9kcEOwY1Jal81NssKnz3RhVJxAvBwyWQBGcA_1Go
 id: content_editor
@@ -27,22 +33,41 @@ permissions:
   - 'access content overview'
   - 'access contextual links'
   - 'access files overview'
+  - 'access media overview'
+  - 'access taxonomy overview'
   - 'access toolbar'
   - 'access tour'
+  - 'access user profiles'
   - 'administer url aliases'
-  - 'create article content'
+  - 'administer users'
+  - 'create image media'
   - 'create page content'
+  - 'create terms in branche_mathematiques'
+  - 'create terms in categorie_de_niveau_scolaire'
+  - 'create terms in niveau_scolaire'
   - 'create terms in tags'
   - 'create url aliases'
-  - 'delete article revisions'
-  - 'delete own article content'
+  - 'delete any image media'
+  - 'delete own image media'
   - 'delete own page content'
   - 'delete page revisions'
-  - 'edit own article content'
+  - 'delete terms in branche_mathematiques'
+  - 'delete terms in categorie_de_niveau_scolaire'
+  - 'delete terms in niveau_scolaire'
+  - 'delete terms in tags'
+  - 'edit any image media'
   - 'edit own comments'
+  - 'edit own image media'
   - 'edit own page content'
+  - 'edit terms in branche_mathematiques'
+  - 'edit terms in categorie_de_niveau_scolaire'
+  - 'edit terms in niveau_scolaire'
   - 'edit terms in tags'
   - 'revert all revisions'
   - 'view all revisions'
+  - 'view any submission score'
   - 'view own unpublished content'
+  - 'view own unpublished media'
   - 'view the administration theme'
+  - 'view user email addresses'
+  - 'wagam manage home'

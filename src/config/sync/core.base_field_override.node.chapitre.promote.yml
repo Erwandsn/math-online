@@ -1,0 +1,22 @@
+uuid: be6acf5d-e295-4b34-94bd-07c55e67fd49
+langcode: fr
+status: true
+dependencies:
+  config:
+    - node.type.chapitre
+id: node.chapitre.promote
+field_name: promote
+entity_type: node
+bundle: chapitre
+label: 'Promoted to front page'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

@@ -1,0 +1,31 @@
+uuid: bf069857-e050-4b1c-a800-c2915f5295bc
+langcode: fr
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.chapitre.field_branche_cible
+    - field.field.node.chapitre.field_description
+    - field.field.node.chapitre.field_illustration
+    - field.field.node.chapitre.field_lecons_du_chapitre
+    - field.field.node.chapitre.field_niveau_cible
+    - node.type.chapitre
+  module:
+    - user
+id: node.chapitre.teaser
+targetEntityType: node
+bundle: chapitre
+mode: teaser
+content:
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_branche_cible: true
+  field_description: true
+  field_illustration: true
+  field_lecons_du_chapitre: true
+  field_niveau_cible: true
+  langcode: true

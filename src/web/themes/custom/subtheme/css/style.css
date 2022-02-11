@@ -97,6 +97,10 @@ h1 {
   font-family: "Montserrat-Bold", sans-serif;
 }
 
+.field i {
+  margin-right: 0.5rem;
+}
+
 @media (min-width: 992px) {
   .branding-logo {
     display: inline-block;
@@ -147,6 +151,45 @@ h1 {
   font-family: 'Montserrat-Bold';
   src: url("/themes/custom/subtheme/fonts/montserrat/Montserrat-Bold.ttf") format("truetype");
   /* Modern Browsers */
+}
+
+.node--view-mode-full .breadcrumb {
+  padding: 1rem 0;
+}
+
+.node--view-mode-full .node__content {
+  margin-top: 0;
+}
+
+.node--view-mode-full .field--name-field-illustration {
+  display: flex;
+}
+
+.node--view-mode-full .field--name-field-illustration img {
+  width: 100% !important;
+  height: auto !important;
+}
+
+.node--view-mode-full .field--type-entity-reference {
+  margin: 0;
+}
+
+.node--view-mode-full .field--name-field-description {
+  margin: 1rem 0;
+  font-family: "Montserrat-Light", sans-serif;
+  font-weight: 700;
+}
+
+.node--view-mode-full .node-header {
+  padding-top: 0.5rem;
+}
+
+.node--view-mode-full .node-header .field {
+  padding: 1rem 0;
+}
+
+.node--view-mode-full .node-header .field:nth-child(2n) {
+  border-left: 1px solid #E9E31F;
 }
 
 @font-face {
@@ -632,6 +675,8 @@ button.btn.btn-green {
 a.btn.btn-green:hover,
 input.btn.btn-green:hover,
 button.btn.btn-green:hover {
+  border-color: #00995D;
+  color: #fff;
   background-color: #00b36d;
 }
 

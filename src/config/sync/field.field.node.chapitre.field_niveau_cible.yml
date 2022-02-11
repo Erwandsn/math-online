@@ -1,0 +1,29 @@
+uuid: 8a52c44f-6076-4e08-b774-19f6634acbd4
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_niveau_cible
+    - node.type.chapitre
+    - taxonomy.vocabulary.niveau_scolaire
+id: node.chapitre.field_niveau_cible
+field_name: field_niveau_cible
+entity_type: node
+bundle: chapitre
+label: 'Niveau cible'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      niveau_scolaire: niveau_scolaire
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

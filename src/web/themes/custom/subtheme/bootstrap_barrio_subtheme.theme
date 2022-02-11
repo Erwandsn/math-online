@@ -7,6 +7,7 @@
 
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Url;
+use Drupal\node\NodeInterface;
 use Drupal\paragraphs\Entity\Paragraph;
 
 /**
@@ -68,10 +69,35 @@ function bootstrap_barrio_subtheme_preprocess_paragraph(&$variables){
  */
 function bootstrap_barrio_subtheme_preprocess_node(&$variables){
 
+  $block_manager = \Drupal::service('plugin.manager.block');
+  $entity_manager = \Drupal::entityTypeManager();
+//  $image_style_storage = $entity_manager->getStorage('image_style');
+
+  $breadcrumb_block = $block_manager->createInstance('system_breadcrumb_block', [])->build();
+  $variables['breadcrumb'] = $breadcrumb_block;
+  $variables['content']['label'] = $variables['label'];
+
+  /** @var  NodeInterface $node */
+  $node = $variables['node'];
   if($variables['view_mode'] === 'card'){
     $variables['label']['#attributes']['class'][] = 'card-title';
     $variables['content']['field_image_d_illustration']['#attributes']['class'][] = 'card-img-top';
   }
+
+  if($node->bundle() == 'lecon')
+  {
+    if($variables['view_mode'] == "card"){
+      $variables['url_label'] = t('Commencer');
+    }
+  }
+
+  if($variables['view_mode'] === 'full'){
+    if($node->bundle() == 'chapitre'){
+      $variables['content']['field_branche_cible']['#attributes']['class'][] = 'text-center';
+      $variables['content']['field_niveau_cible']['#attributes']['class'][] = 'text-center';
+    }
+  }
+
 }
 
 
@@ -87,6 +113,13 @@ function bootstrap_barrio_subtheme_preprocess_form(&$variables){
       'offset-xl-3',
       'login-form',
     ];
+  }
+}
+
+function bootstrap_barrio_subtheme_preprocess_field(&$variables)
+{
+  if($variables['field_name'] == 'field_niveau_cible'){
+    $variables['items'][0]['content']['#prefix'] = '<i class="fas fa-user-graduate"></i>';
   }
 }
 

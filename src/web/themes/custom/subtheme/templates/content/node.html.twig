@@ -63,28 +63,28 @@
 
 {%
   set classes = [
-    'node',
-    'node--type-' ~ node.bundle|clean_class,
-    node.isPromoted() ? 'node--promoted',
-    node.isSticky() ? 'node--sticky',
-    not node.isPublished() ? 'node--unpublished',
-    view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
-    'clearfix',
-    'card'
-  ]
+  'node',
+  'node--type-' ~ node.bundle|clean_class,
+  node.isPromoted() ? 'node--promoted',
+  node.isSticky() ? 'node--sticky',
+  not node.isPublished() ? 'node--unpublished',
+  view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
+  'clearfix',
+]
 %}
-<article{{ attributes.addClass(classes) }}>
-    {{ content.field_image_d_illustration }}
-    <div{{ content_attributes.addClass('card-body', 'clearfix', 'd-flex', 'flex-column') }}>
-        <h5 class='card-title'>{{ label }}</h5>
-        {{ content|without('field_image_d_illustration', 'label') }}
-        <a href='{{ url }}' class='btn btn-primary'>
-            <i class="far fa-eye"></i>
-            {% if url_label is defined %}
-                {{ url_label }}
-            {% else %}
-              {{ 'Voir plus'|t }}
-            {% endif %}
-        </a>
-    </div>
-</article>
+<div {{ attributes.addClass(classes) }}>
+  {{ title_prefix }}
+  {% if content.field_illustration is defined %}
+    {{ content.field_illustration }}
+  {% endif %}
+  <div{{ content_attributes.addClass('node__content', 'clearfix') }}>
+    {% if content.field_illustration is defined %}
+      {{ breadcrumb }}
+      {{ content|without('field_illustration') }}
+    {% else %}
+      {{ breadcrumb }}
+      {{ content }}
+    {% endif %}
+  </div>
+  {{ title_suffix }}
+</div>

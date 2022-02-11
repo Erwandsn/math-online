@@ -13,7 +13,7 @@ entity_type: node
 bundle: lecon
 label: 'Corps de la page'
 description: ''
-required: false
+required: true
 translatable: true
 default_value: {  }
 default_value_callback: ''
@@ -26,8 +26,17 @@ settings:
       accordeon:
         weight: 9
         enabled: false
+      bouton:
+        weight: 13
+        enabled: false
       deux_colonnes:
         weight: 10
+        enabled: false
+      exercice:
+        weight: 15
+        enabled: false
+      groupe_de_boutons:
+        weight: 16
         enabled: false
       image:
         weight: 11

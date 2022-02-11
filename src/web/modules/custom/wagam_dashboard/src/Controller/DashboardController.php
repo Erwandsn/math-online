@@ -84,6 +84,7 @@ class DashBoardController extends ControllerBase{
         $user_profile_form['timezone']['#access'] = FALSE;
         $user_profile_form['language']['#access'] = FALSE;
         $user_profile_form['#attributes']['class'][] = 'col-md-9';
+        $user_profile_form['actions']['submit']['#attributes']['class'][] = 'btn-green';
 
         $build['container']['user_form'] = $user_profile_form;
         //Superviseur

@@ -1,0 +1,11 @@
+uuid: e9fea340-dda2-451e-b99d-41334dfa9f26
+langcode: fr
+status: true
+dependencies:
+  config:
+    - node.type.chapitre
+id: node.chapitre
+target_entity_type_id: node
+target_bundle: chapitre
+default_langcode: site_default
+language_alterable: false

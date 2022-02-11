@@ -1,22 +1,22 @@
-uuid: 659337ee-767f-478e-9964-27c04c40f89a
+uuid: 8b90a83b-627a-427a-9c17-4b1fb5946cc0
 langcode: fr
 status: true
 dependencies:
   module:
     - node
-id: chemin_standard
+id: chemin_classique
 label: 'Chemin standard'
 type: 'canonical_entities:node'
 pattern: '/[node:title]'
 selection_criteria:
-  f2636264-1938-4655-8737-f16a8bb9ebc6:
+  cf238f21-43a5-46a1-88cb-1dba2e31d190:
     id: node_type
     negate: false
-    uuid: f2636264-1938-4655-8737-f16a8bb9ebc6
+    uuid: cf238f21-43a5-46a1-88cb-1dba2e31d190
     context_mapping:
       node: node
     bundles:
-      lecon: lecon
+      chapitre: chapitre
       page: page
 selection_logic: and
 weight: -5

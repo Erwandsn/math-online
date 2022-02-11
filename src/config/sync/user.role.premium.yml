@@ -4,9 +4,11 @@ status: true
 dependencies:
   module:
     - webform
+    - webform_score
 id: premium
 label: Premium
 weight: -8
 is_admin: null
 permissions:
+  - 'view own submission score'
   - 'view own webform submission'

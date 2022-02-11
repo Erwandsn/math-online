@@ -1,0 +1,29 @@
+uuid: c2194519-6642-4de7-9567-84ac4282aec8
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_illustration_de_la_branche
+    - media.type.image
+    - taxonomy.vocabulary.branche_mathematiques
+id: taxonomy_term.branche_mathematiques.field_illustration_de_la_branche
+field_name: field_illustration_de_la_branche
+entity_type: taxonomy_term
+bundle: branche_mathematiques
+label: 'Illustration de la branche'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: name
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

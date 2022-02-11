@@ -57,7 +57,7 @@ class HomeMainBlock extends BlockBase implements ContainerFactoryPluginInterface
    */
   public function build()
   {
-    $config = $this->configFactory->get('wagam.home.settings');
+    $config = $this->configFactory->get('wagam_home.home.settings');
     $main_config = $config->get('bloc_principal');
 
     $build = [

@@ -1,12 +1,12 @@
-uuid: 9b0b7bc1-f9b0-481b-a041-0349fa5f262f
+uuid: 21eaaab7-be49-4d5c-977c-84c1cdddfddc
 langcode: fr
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.node.card
     - field.field.node.lecon.field_paragraphs
     - node.type.lecon
   module:
-    - entity_reference_revisions
     - field_group
     - user
 third_party_settings:
@@ -29,20 +29,12 @@ third_party_settings:
         attributes: ''
         effect: none
         speed: fast
-id: node.lecon.default
+id: node.lecon.card
 targetEntityType: node
 bundle: lecon
-mode: default
-content:
-  field_paragraphs:
-    type: entity_reference_revisions_entity_view
-    label: hidden
-    settings:
-      view_mode: default
-      link: ''
-    third_party_settings: {  }
-    weight: 3
-    region: content
+mode: card
+content: {  }
 hidden:
+  field_paragraphs: true
   langcode: true
   links: true
