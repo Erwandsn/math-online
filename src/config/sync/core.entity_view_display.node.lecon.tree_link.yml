@@ -1,0 +1,49 @@
+uuid: f5283207-433b-4868-9a77-736b19a2d7cd
+langcode: fr
+status: false
+dependencies:
+  config:
+    - core.entity_view_mode.node.tree_link
+    - field.field.node.lecon.field_paragraphs
+    - node.type.lecon
+  module:
+    - entity_reference_revisions
+    - field_group
+    - user
+third_party_settings:
+  field_group:
+    group_node_header:
+      children: {  }
+      label: 'Node header'
+      parent_name: ''
+      region: content
+      weight: 0
+      format_type: html_element
+      format_settings:
+        classes: 'node-header row row-cols-2'
+        show_empty_fields: false
+        id: ''
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+id: node.lecon.tree_link
+targetEntityType: node
+bundle: lecon
+mode: tree_link
+content:
+  field_paragraphs:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 3
+    region: content
+hidden:
+  langcode: true
+  links: true

@@ -1,0 +1,10 @@
+uuid: ad31792d-393f-4f7b-b902-e75fc4e9ea4f
+langcode: fr
+status: true
+dependencies:
+  module:
+    - node
+id: node.tree_link
+label: 'Tree link'
+targetEntityType: node
+cache: true

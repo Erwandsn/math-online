@@ -1,0 +1,10 @@
+uuid: 01e7164e-cee3-4562-a5b2-aec49187fc40
+langcode: fr
+status: true
+dependencies:
+  module:
+    - media
+id: media.card_header
+label: 'Card header'
+targetEntityType: media
+cache: true

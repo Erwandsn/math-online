@@ -1,0 +1,17 @@
+uuid: 33256bc9-cdbb-4ea2-9f5b-7b0b7e3b486f
+langcode: fr
+status: true
+dependencies:
+  module:
+    - focal_point
+name: card_header
+label: 'Card header'
+effects:
+  c947278f-b243-429a-8a4a-abce62ff4add:
+    uuid: c947278f-b243-429a-8a4a-abce62ff4add
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 767
+      height: 400
+      crop_type: focal_point

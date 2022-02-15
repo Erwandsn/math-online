@@ -1,0 +1,53 @@
+@import '../../base/variables';
+
+.node--view-mode-tree-link{
+  .tree-title{
+    a{
+      color: $dark-grey;
+      text-decoration: none;
+      font-weight: 800;
+    }
+  }
+  ol{
+    border-top: 2px solid $vert;
+    padding: 1rem;
+    color: $orange;
+    li{
+      font-size: 1.1rem;
+      padding: 0.5rem 0;
+      &:before{
+        color: orange;
+      }
+    }
+    a{
+      color: $dark-grey;
+    }
+    .current{
+      a{
+        color: $orange;
+      }
+      &:before{
+        content: '\f0a4';
+        font-family: $font-awesome-5-free;
+      }
+    }
+  }
+}
+
+.node--view-mode-card{
+  .node--view-mode-tree-link{
+    .tree-item{
+      a{
+        font-size: 0.9rem;
+      }
+    }
+  }
+}
+
+.node{
+  &.with-chapter{
+    .mobile-toggler-wrapper{
+      padding: 1rem 0.5rem;
+    }
+  }
+}

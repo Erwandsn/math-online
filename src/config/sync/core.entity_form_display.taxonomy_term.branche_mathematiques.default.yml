@@ -3,22 +3,12 @@ langcode: fr
 status: true
 dependencies:
   config:
-    - field.field.taxonomy_term.branche_mathematiques.field_illustration_de_la_branche
     - taxonomy.vocabulary.branche_mathematiques
-  module:
-    - media_library
 id: taxonomy_term.branche_mathematiques.default
 targetEntityType: taxonomy_term
 bundle: branche_mathematiques
 mode: default
 content:
-  field_illustration_de_la_branche:
-    type: media_library_widget
-    weight: 1
-    region: content
-    settings:
-      media_types: {  }
-    third_party_settings: {  }
   name:
     type: string_textfield
     weight: 0

@@ -3,7 +3,6 @@ langcode: fr
 status: true
 dependencies:
   config:
-    - field.field.taxonomy_term.branche_mathematiques.field_illustration_de_la_branche
     - taxonomy.vocabulary.branche_mathematiques
   module:
     - text
@@ -18,15 +17,6 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 0
-    region: content
-  field_illustration_de_la_branche:
-    type: entity_reference_entity_view
-    label: above
-    settings:
-      view_mode: default
-      link: false
-    third_party_settings: {  }
-    weight: 1
     region: content
 hidden:
   langcode: true

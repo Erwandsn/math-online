@@ -1,0 +1,31 @@
+@import '../../base/variables';
+
+.view{
+  .view-content{
+    padding: 0 0 3rem 0;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-column-gap: 0.5rem;
+    grid-row-gap: 0.5rem;
+  }
+}
+
+@include breakpoint('small'){
+  .view{
+    .view-content{
+      grid-template-columns: repeat(3, 1fr);
+      grid-auto-rows: 1fr;
+      .node{
+        height: 100%;
+      }
+    }
+  }
+}
+
+@include breakpoint('large'){
+  .view{
+    .view-content{
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+}

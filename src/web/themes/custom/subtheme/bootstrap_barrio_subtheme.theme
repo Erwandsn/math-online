@@ -7,6 +7,7 @@
 
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Url;
+use Drupal\image\Entity\ImageStyle;
 use Drupal\node\NodeInterface;
 use Drupal\paragraphs\Entity\Paragraph;
 
@@ -71,11 +72,13 @@ function bootstrap_barrio_subtheme_preprocess_node(&$variables){
 
   $block_manager = \Drupal::service('plugin.manager.block');
   $entity_manager = \Drupal::entityTypeManager();
-//  $image_style_storage = $entity_manager->getStorage('image_style');
+  $image_style_storage = $entity_manager->getStorage('image_style');
 
-  $breadcrumb_block = $block_manager->createInstance('system_breadcrumb_block', [])->build();
-  $variables['breadcrumb'] = $breadcrumb_block;
-  $variables['content']['label'] = $variables['label'];
+  if($variables['view_mode'] == 'full'){
+    $breadcrumb_block = $block_manager->createInstance('system_breadcrumb_block', [])->build();
+    $variables['title_prefix']['bredcrumb'] = $breadcrumb_block;
+    $variables['content']['label'] = $variables['label'];
+  }
 
   /** @var  NodeInterface $node */
   $node = $variables['node'];
@@ -89,12 +92,81 @@ function bootstrap_barrio_subtheme_preprocess_node(&$variables){
     if($variables['view_mode'] == "card"){
       $variables['url_label'] = t('Commencer');
     }
+
+    if($variables['view_mode'] == 'full') {
+      $chapter = $variables['chapter_block']['wrapper']['#attributes']['data-nid'];
+      if (!empty($chapter) && !$chapter->get('field_illustration')->isEmpty()) {
+        /** @var ImageStyle $img_style_carre_tablette */
+        $img_style_carre_tablette = $image_style_storage->load('image_carre_tablette');
+        $img_style_bandeau = $image_style_storage->load('bandeau_desktop');
+        $chapter_img_uri = $chapter->get('field_illustration')->first()->entity->get('field_media_image')->entity->uri->value;
+        $parent_illustration = [
+          '#type' => 'html_tag',
+          '#tag' => 'picture',
+          '#attributes' => [
+            'class' => [
+              'field--name-field-media-image',
+            ],
+          ],
+          'mobile' => [
+            '#type' => 'html_tag',
+            '#tag' => 'source',
+            '#attributes' => [
+              'media' =>  '(max-width: 992px)',
+              'srcset' => $img_style_carre_tablette->buildUrl($chapter_img_uri),
+            ],
+          ],
+          'desktop' => [
+            '#type' => 'html_tag',
+            '#tag' => 'source',
+            '#attributes' => [
+              'media' =>  '(min-width: 993px)',
+              'srcset' => $img_style_bandeau->buildUrl($chapter_img_uri),
+            ],
+          ],
+          'default' => [
+            '#type' => 'html_tag',
+            '#tag' => 'img',
+            '#attributes' => [
+              'src' => $img_style_carre_tablette->buildUrl($chapter_img_uri),
+            ]
+          ]
+        ];
+        $variables['content']['field_illustration'] = $parent_illustration;
+      }
+    }
   }
 
   if($variables['view_mode'] === 'full'){
     if($node->bundle() == 'chapitre'){
       $variables['content']['field_branche_cible']['#attributes']['class'][] = 'text-center';
       $variables['content']['field_niveau_cible']['#attributes']['class'][] = 'text-center';
+    }
+    if(isset($variables['chapter_block']['wrapper']['#attributes']['data-nid'])){
+      unset($variables['chapter_block']['wrapper']['#attributes']['data-nid']);
+    }
+  }
+
+  if($variables['view_mode'] == 'tree_item')
+  {
+    $title_markup = new \Drupal\Component\Render\FormattableMarkup('<a href="@url"> @lecon_title </a>', ['@url' => $node->toUrl()->toString(), '@lecon_title' => $node->getTitle()]);
+    $variables['content'] = [
+      'item' => [
+        '#type' => 'html_tag',
+        '#tag' => 'li',
+        '#attributes' => [
+          'class' => [
+            'tree-item',
+          ],
+        ],
+        'content' => [
+          '#markup' => $title_markup->__toString(),
+        ]
+      ],
+    ];
+    $current_displayed_node = \Drupal::routeMatch()->getParameter('node');
+    if(\Drupal::routeMatch()->getRouteName() == 'entity.node.canonical' && $current_displayed_node->id() == $node->id()){
+      $variables['content']['item']['#attributes']['class'][] = 'current';
     }
   }
 

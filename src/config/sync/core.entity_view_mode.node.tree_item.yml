@@ -1,0 +1,10 @@
+uuid: 9d4e15ee-685c-46bf-8b21-ac05a6a34dd3
+langcode: fr
+status: true
+dependencies:
+  module:
+    - node
+id: node.tree_item
+label: 'Tree item'
+targetEntityType: node
+cache: true

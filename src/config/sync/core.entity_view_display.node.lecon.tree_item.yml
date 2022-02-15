@@ -1,0 +1,40 @@
+uuid: 079f5744-34ae-467f-9110-0629d2c721c7
+langcode: fr
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.tree_item
+    - field.field.node.lecon.field_paragraphs
+    - node.type.lecon
+  module:
+    - field_group
+    - user
+third_party_settings:
+  field_group:
+    group_node_header:
+      children: {  }
+      label: 'Node header'
+      parent_name: ''
+      region: hidden
+      weight: 1
+      format_type: html_element
+      format_settings:
+        classes: 'node-header row row-cols-2'
+        show_empty_fields: false
+        id: ''
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+id: node.lecon.tree_item
+targetEntityType: node
+bundle: lecon
+mode: tree_item
+content: {  }
+hidden:
+  field_paragraphs: true
+  langcode: true
+  links: true

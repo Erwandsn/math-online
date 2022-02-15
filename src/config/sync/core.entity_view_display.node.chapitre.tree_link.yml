@@ -1,0 +1,77 @@
+uuid: e6227a8e-d061-472b-80b9-957b679e1256
+langcode: fr
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.tree_link
+    - field.field.node.chapitre.field_branche_cible
+    - field.field.node.chapitre.field_description
+    - field.field.node.chapitre.field_illustration
+    - field.field.node.chapitre.field_lecons_du_chapitre
+    - field.field.node.chapitre.field_niveau_cible
+    - node.type.chapitre
+  module:
+    - field_group
+    - user
+third_party_settings:
+  field_group:
+    group_group_sub_content:
+      children:
+        - field_description
+      label: 'Group Sub content'
+      parent_name: ''
+      region: hidden
+      weight: 4
+      format_type: html_element
+      format_settings:
+        classes: 'row row-cols-md-2 row-cols-lg-3'
+        show_empty_fields: false
+        id: ''
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+    group_node_header:
+      children:
+        - field_branche_cible
+        - field_niveau_cible
+      label: 'node header'
+      parent_name: ''
+      region: hidden
+      weight: 5
+      format_type: html_element
+      format_settings:
+        classes: 'row row-cols-2 node-header'
+        show_empty_fields: false
+        id: ''
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+id: node.chapitre.tree_link
+targetEntityType: node
+bundle: chapitre
+mode: tree_link
+content:
+  field_lecons_du_chapitre:
+    type: entity_reference_entity_view
+    label: visually_hidden
+    settings:
+      view_mode: tree_item
+      link: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  field_branche_cible: true
+  field_description: true
+  field_illustration: true
+  field_niveau_cible: true
+  langcode: true
+  links: true

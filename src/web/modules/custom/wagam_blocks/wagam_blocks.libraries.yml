@@ -1,0 +1,5 @@
+chapter:
+  js:
+    js/chapter.js: {}
+  dependencies:
+    - core/jquery

@@ -69,28 +69,16 @@
   node.isSticky() ? 'node--sticky',
   not node.isPublished() ? 'node--unpublished',
   view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
-  chapter_block is defined ? 'with-chapter',
   'clearfix',
 ]
 %}
 <div {{ attributes.addClass(classes) }}>
-  {{ title_prefix }}
-  {% if content.field_illustration is defined %}
-    {{ content.field_illustration }}
-  {% endif %}
-  {% if chapter_block is defined %}
-    <div class="row multi-col-wrapper">
-      {{ chapter_block }}
-  {% endif %}
-  <div {{ content_attributes.addClass('node__content', 'clearfix') }}>
-    {% if content.field_illustration is defined %}
-      {{ content|without('field_illustration') }}
-    {% else %}
-      {{ content }}
-    {% endif %}
-  </div>
-  {% if chapter_block is defined %}
-    </div>
-  {% endif %}
-  {{ title_suffix }}
+  <h3 class="tree-title">
+    <a href="{{ url }}">
+      {{ label }}
+    </a>
+  </h3>
+  <ol {{ content_attributes }}>
+    {{ content }}
+  </ol>
 </div>

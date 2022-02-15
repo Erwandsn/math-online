@@ -31,4 +31,58 @@
       }
     }
   }
+  &.with-chapter{
+    .field--name-field-media-image{
+      img{
+        border-top-left-radius: 25px;
+        border-top-right-radius: 25px;
+      }
+    }
+    .multi-col-wrapper{
+      padding: 1rem;
+      border-radius: 45px;
+      position: relative;
+      top: -25px;
+      background-color: $white;
+    }
+  }
+}
+
+.node--view-mode-card{
+  &.card{
+    border: none;
+  }
+  .field--name-field-illustration{
+    margin: 0;
+    img{
+      border-radius: 25px 25px 0 0;
+    }
+  }
+  &.with-image{
+    .card-body{
+      position: relative;
+      top: -30px;
+    }
+  }
+  .card-body{
+    border-radius: 25px;
+    background-color: $white;
+    border: 1px solid $light-battleship-grey;
+  }
+  .field--type-entity-reference{
+    margin-bottom: 0.5rem;
+  }
+}
+
+@include breakpoint('small'){
+  .node--view-mode-full{
+    &.with-chapter{
+      .multi-col-wrapper{
+        padding: 2rem;
+        border-top-left-radius: 45px;
+        border-top-right-radius: 45px;
+        top: -65px;
+      }
+    }
+  }
 }

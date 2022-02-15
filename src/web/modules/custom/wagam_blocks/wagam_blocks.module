@@ -15,3 +15,25 @@ function wagam_blocks_preprocess_menu(&$variables)
     $variables['items']['menu.my_account']['account_block'] = $render;
   }
 }
+
+function wagam_blocks_preprocess_node(&$variables)
+{
+  $node = $variables['node'];
+  if(($node->bundle() == 'lecon' || $node->bundle() == 'chapitre') && $variables['view_mode'] == 'full')
+  {
+    $block_manager = \Drupal::service('plugin.manager.block');
+    $plugin_block = $block_manager->createInstance('wagam_chapter_tree', ['node' => $node]);
+    // Some blocks might implement access check.
+    // Return empty render array if user doesn't have access.
+    $render = $plugin_block->build();
+
+    $variables['chapter_block'] = $render;
+    $variables['content_attributes']['class'] = [
+      'col-12',
+      'col-md-8',
+      'col-lg-9',
+    ];
+
+    $variables['#attached']['library'][] = 'wagam_blocks/chapter';
+  }
+}

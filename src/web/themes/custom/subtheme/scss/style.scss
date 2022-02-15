@@ -7,6 +7,7 @@
 //Blocks
 @import 'parts/block/account_block';
 @import 'parts/block/home_main';
+@import 'parts/block/chapter_tree';
 
 //Import des paragraphs
 @import 'parts/paragraphs/superviseur';
@@ -20,4 +21,7 @@
 @import 'parts/form/login.scss';
 
 //Style des listes
-@import 'parts/list/_card_list.scss';
+@import 'parts/list/card_list.scss';
+
+//Style views
+@import 'parts/views/views_cards';

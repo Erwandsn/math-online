@@ -1,0 +1,17 @@
+uuid: db8d15ec-8a0c-47f3-a28d-b0c2f334e904
+langcode: fr
+status: true
+dependencies:
+  module:
+    - focal_point
+name: image_carre_tablette
+label: 'Image carré tablette'
+effects:
+  67e38785-7b3a-48c4-8033-04c98c81d821:
+    uuid: 67e38785-7b3a-48c4-8033-04c98c81d821
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 992
+      height: 300
+      crop_type: focal_point
