@@ -78,20 +78,27 @@
   {{ content.field_illustration }}
   <div{{ content_attributes.addClass('card-body', 'clearfix', 'd-flex', 'flex-column', 'justify-content-between') }}>
     <div class="data">
-      <h5 class='card-title'>{{ label }}</h5>
+      <h4 class='card-title'>{{ label }}</h4>
       {{ content|without('field_illustration', 'label', 'field_lecons_du_chapitre') }}
-      <ol>
-        {{ content.field_lecons_du_chapitre }}
-      </ol>
+      <div class="accordion-item">
+        <h5 class="accordion-header" id="heading-chap-{{ node.id() }}">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#lecons-chap-{{ node.id() }}" aria-expanded="true" aria-controls="lecons-chap-{{ node.id() }}">
+            Les notions du chapitres :
+          </button>
+        </h5>
+        <div id="lecons-chap-{{ node.id() }}" class="accordion-collapse collapse" aria-labelledby="heading-chap-{{ node.id() }}">
+          <div class="accordion-body">
+            <ol>
+              {{ content.field_lecons_du_chapitre }}
+            </ol>
+          </div>
+        </div>
+      </div>
     </div>
     <div class="actions">
       <a href='{{ url }}' class='btn btn-primary'>
         <i class="far fa-eye"></i>
-        {% if url_label is defined %}
-          {{ url_label }}
-        {% else %}
-          {{ 'Voir plus'|t }}
-        {% endif %}
+        {{ 'Commencer'|t }}
       </a>
     </div>
   </div>

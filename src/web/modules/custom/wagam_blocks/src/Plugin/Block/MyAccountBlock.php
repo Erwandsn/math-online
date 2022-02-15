@@ -141,7 +141,7 @@ class MyAccountBlock extends BlockBase implements ContainerFactoryPluginInterfac
             'col-12',
           ],
         ],
-        '#url' => Url::fromRoute('wagam.dashboard'),
+        '#url' => Url::fromRoute('view.chapitres.page_1'),
       ];
 
       $build['card']['card_body']['account_action_wrapper'] = [

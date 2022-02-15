@@ -205,6 +205,22 @@ h1 {
   background-color: #fff;
 }
 
+.node--view-mode-full .lecon-pager-wrapper {
+  padding: 2rem 0 0 0;
+}
+
+.node--view-mode-full .lecon-pager-wrapper .pager-previous:before {
+  content: '\f060';
+  margin-right: 0.5rem;
+  font-family: "Font Awesome 5 Free", sans-serif;
+}
+
+.node--view-mode-full .lecon-pager-wrapper .pager-next:after {
+  content: '\f061';
+  font-family: "Font Awesome 5 Free", sans-serif;
+  margin-left: 0.5rem;
+}
+
 .node--view-mode-card.card {
   border: none;
 }
@@ -230,6 +246,23 @@ h1 {
 
 .node--view-mode-card .field--type-entity-reference {
   margin-bottom: 0.5rem;
+}
+
+.node--view-mode-card .accordion-item {
+  margin: 0.5rem 0;
+}
+
+.node--view-mode-card .accordion-item ol {
+  font-size: 0.85rem;
+  padding: 0.25rem 0 0 0;
+}
+
+.node--view-mode-card .accordion-item .accordion-body {
+  padding: 0.5rem 1.25rem;
+}
+
+.node--view-mode-card .accordion-item .accordion-button {
+  padding: 0.5rem;
 }
 
 @media (min-width: 767px) {

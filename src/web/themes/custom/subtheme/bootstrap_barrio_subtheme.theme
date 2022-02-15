@@ -134,6 +134,10 @@ function bootstrap_barrio_subtheme_preprocess_node(&$variables){
         ];
         $variables['content']['field_illustration'] = $parent_illustration;
       }
+
+      //Gestion du pager
+      $pager_block = $block_manager->createInstance('wagam_lecon_auto_pager', ['current_chapter' => $chapter, 'current_lecon' => $node])->build();
+      $variables['title_suffix'][] = $pager_block;
     }
   }
 

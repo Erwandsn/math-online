@@ -46,6 +46,23 @@
       background-color: $white;
     }
   }
+  .lecon-pager-wrapper{
+    padding: 2rem 0 0 0;
+    .pager-previous{
+      &:before{
+        content: '\f060';
+        margin-right: 0.5rem;
+        font-family: $font-awesome-5-free;
+      }
+    }
+    .pager-next{
+      &:after{
+        content: '\f061';
+        font-family: $font-awesome-5-free;
+        margin-left: 0.5rem;
+      }
+    }
+  }
 }
 
 .node--view-mode-card{
@@ -71,6 +88,19 @@
   }
   .field--type-entity-reference{
     margin-bottom: 0.5rem;
+  }
+  .accordion-item{
+    margin: 0.5rem 0;
+    ol{
+      font-size: 0.85rem;
+      padding: 0.25rem 0 0 0;
+    }
+    .accordion-body{
+      padding: 0.5rem 1.25rem;
+    }
+    .accordion-button{
+      padding: 0.5rem;
+    }
   }
 }
 
