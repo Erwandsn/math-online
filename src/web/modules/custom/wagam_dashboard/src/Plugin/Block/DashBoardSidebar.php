@@ -3,6 +3,7 @@
 namespace Drupal\wagam_dashboard\Plugin\Block;
 
 use Drupal\Core\Block\BlockBase;
+use Drupal\Core\Cache\Cache;
 use Drupal\Core\Menu\MenuLinkTree;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
@@ -38,7 +39,15 @@ class DashBoardSideBar extends BlockBase implements ContainerFactoryPluginInterf
         );
     }
 
-    /**
+  /**
+   * @inheritDoc
+   */
+    public function getCacheContexts()
+    {
+      return Cache::mergeContexts(parent::getCacheContexts(), ['user']);
+    }
+
+  /**
      * @inheritDoc
      */
     public function build(){

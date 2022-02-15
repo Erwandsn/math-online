@@ -3,6 +3,7 @@
 namespace Drupal\wagam_blocks\Plugin\Block;
 
 use Drupal\Core\Block\BlockBase;
+use Drupal\Core\Cache\Cache;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Drupal\Core\Url;
@@ -54,6 +55,15 @@ class LeconPagerBlock extends BlockBase implements ContainerFactoryPluginInterfa
       $container->get('entity_type.manager'),
     );
   }
+
+  /**
+   * @inheritDoc
+   */
+  public function getCacheContexts()
+  {
+    return Cache::mergeContexts(parent::getCacheContexts(), ['url']);
+  }
+
 
   /**
    * Building the block.

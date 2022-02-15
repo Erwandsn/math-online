@@ -4,6 +4,7 @@ namespace Drupal\wagam_blocks\Plugin\Block;
 
 use Drupal\Component\Render\FormattableMarkup;
 use Drupal\Core\Block\BlockBase;
+use Drupal\Core\Cache\Cache;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Drupal\Core\Session\AccountProxyInterface;
@@ -43,6 +44,11 @@ class MyAccountBlock extends BlockBase implements ContainerFactoryPluginInterfac
       $container->get('current_user'),
       $container->get('entity_type.manager'),
     );
+  }
+
+  public function getCacheContexts()
+  {
+    return Cache::mergeContexts(parent::getCacheContexts(), ['user']);
   }
 
   public function build()

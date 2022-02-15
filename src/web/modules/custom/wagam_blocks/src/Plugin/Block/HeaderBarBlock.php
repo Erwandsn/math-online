@@ -3,6 +3,7 @@
 namespace Drupal\wagam_blocks\Plugin\Block;
 
 use Drupal\Core\Block\BlockBase;
+use Drupal\Core\Cache\Cache;
 use Drupal\Core\Cache\CacheableMetadata;
 use Drupal\Core\Config\ConfigFactoryInterface;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
@@ -57,11 +58,25 @@ class HeaderBarBlock extends BlockBase implements ContainerFactoryPluginInterfac
         );
     }
 
+    /**
+    * @inheritDoc
+    */
     public function defaultConfiguration()
     {
         return [];
     }
 
+    /**
+    * @inheritDoc
+    */
+    public function getCacheContexts()
+    {
+      return Cache::mergeContexts(parent::getCacheContexts(), ['user.roles']);
+    }
+
+  /**
+   * @inheritDoc
+   */
     public function build()
     {
         //Get configuration
