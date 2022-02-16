@@ -4,6 +4,12 @@ body{
     font-family: $font-regular;
 }
 
+.main-content{
+  .alert-wrapper{
+    position: initial;
+  }
+}
+
 .with-section{
   border-top: 1px solid $ligh-dark-grey;
   margin-top: 0.5rem;

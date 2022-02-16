@@ -44,7 +44,10 @@ button{
     color: $orange;
     background-color: $white;
     font-size: 12px;
-    font-weight: bold;
+    font-weight: 500;
+    &:after{
+      font-weight: 800;
+    }
 
     letter-spacing: 1px;
     text-transform: uppercase;

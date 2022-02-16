@@ -67,6 +67,7 @@ module:
   wagam_menu: 0
   wagam_webform: 0
   webform: 0
+  webform_access: 0
   webform_entity_view: 0
   webform_node: 0
   webform_score: 0

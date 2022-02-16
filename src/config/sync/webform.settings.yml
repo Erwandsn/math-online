@@ -3,14 +3,14 @@ _core:
 langcode: fr
 settings:
   default_status: open
-  default_page_base_path: /form
+  default_page_base_path: /questionnaire
   default_ajax: true
   default_ajax_progress_type: throbber
   default_ajax_effect: slide
   default_ajax_speed: 500
-  default_submit_button_label: Submit
-  default_reset_button_label: Reset
-  default_delete_button_label: Delete
+  default_submit_button_label: 'Valider mes réponses'
+  default_reset_button_label: Réinitialiser
+  default_delete_button_label: Supprimer
   default_form_submit_once: true
   default_form_open_message: 'Ce formulaire n&#39;est actuellement pas ouvert aux soumissions.'
   default_form_close_message: 'D&eacute;sol&eacute;... Ce formulaire est clos aux nouvelles soumissions.'
@@ -33,9 +33,9 @@ settings:
   default_wizard_confirmation_label: Terminé
   default_wizard_toggle_show_label: 'Tout afficher'
   default_wizard_toggle_hide_label: 'Tout cacher'
-  default_preview_next_button_label: Preview
+  default_preview_next_button_label: Prévisualisation
   default_preview_prev_button_label: '< Précédent'
-  default_preview_label: Preview
+  default_preview_label: Prévisualisation
   default_preview_title: '[webform:title] : Prévisualisation'
   default_preview_message: 'Please review your submission. Your submission is not complete until you press the &quot;Submit&quot; button!'
   default_draft_button_label: 'Enregistrer le brouillon'
@@ -112,28 +112,9 @@ element:
   machine_name_pattern: a-z0-9_
   empty_message: '{Vide}'
   allowed_tags: admin
-  wrapper_classes: |
-    container-inline clearfix
-    form--inline clearfix
-    messages messages--error
-    messages messages--warning
-    messages messages--status
-  classes: |
-    container-inline clearfix
-    form--inline clearfix
-    messages messages--error
-    messages messages--warning
-    messages messages--status
-  horizontal_rule_classes: |
-    webform-horizontal-rule--solid
-    webform-horizontal-rule--dashed
-    webform-horizontal-rule--dotted
-    webform-horizontal-rule--gradient
-    webform-horizontal-rule--thin
-    webform-horizontal-rule--medium
-    webform-horizontal-rule--thick
-    webform-horizontal-rule--flaired
-    webform-horizontal-rule--glyph
+  wrapper_classes: "container-inline clearfix\r\nform--inline clearfix\r\nmessages messages--error\r\nmessages messages--warning\r\nmessages messages--status\r\n"
+  classes: "container-inline clearfix\r\nform--inline clearfix\r\nmessages messages--error\r\nmessages messages--warning\r\nmessages messages--status\r\n"
+  horizontal_rule_classes: "webform-horizontal-rule--solid\r\nwebform-horizontal-rule--dashed\r\nwebform-horizontal-rule--dotted\r\nwebform-horizontal-rule--gradient\r\nwebform-horizontal-rule--thin\r\nwebform-horizontal-rule--medium\r\nwebform-horizontal-rule--thick\r\nwebform-horizontal-rule--flaired\r\nwebform-horizontal-rule--glyph\r\n"
   default_description_display: ''
   default_more_title: More
   default_section_title_tag: h2
@@ -143,8 +124,81 @@ element:
   default_algolia_places_app_id: ''
   default_algolia_places_api_key: ''
   excluded_elements:
+    checkbox: checkbox
+    checkboxes: checkboxes
+    color: color
+    container: container
+    date: date
+    datelist: datelist
+    datetime: datetime
+    details: details
+    email: email
+    entity_autocomplete: entity_autocomplete
+    hidden: hidden
+    item: item
+    label: label
+    language_select: language_select
+    machine_name: machine_name
+    managed_file: managed_file
+    number: number
     password: password
     password_confirm: password_confirm
+    radios: radios
+    range: range
+    search: search
+    select: select
+    table: table
+    tableselect: tableselect
+    tel: tel
+    textarea: textarea
+    textfield: textfield
+    url: url
+    value: value
+    vertical_tabs: vertical_tabs
+    view: view
+    webform_actions: webform_actions
+    webform_address: webform_address
+    webform_audio_file: webform_audio_file
+    webform_autocomplete: webform_autocomplete
+    webform_checkboxes_other: webform_checkboxes_other
+    webform_codemirror: webform_codemirror
+    webform_computed_token: webform_computed_token
+    webform_computed_twig: webform_computed_twig
+    webform_contact: webform_contact
+    webform_custom_composite: webform_custom_composite
+    webform_document_file: webform_document_file
+    webform_email_confirm: webform_email_confirm
+    webform_email_multiple: webform_email_multiple
+    webform_entity_checkboxes: webform_entity_checkboxes
+    webform_entity_radios: webform_entity_radios
+    webform_entity_select: webform_entity_select
+    webform_height: webform_height
+    webform_horizontal_rule: webform_horizontal_rule
+    webform_image_file: webform_image_file
+    webform_likert: webform_likert
+    webform_link: webform_link
+    webform_location_places: webform_location_places
+    webform_mapping: webform_mapping
+    webform_more: webform_more
+    webform_name: webform_name
+    webform_radios_other: webform_radios_other
+    webform_rating: webform_rating
+    webform_same: webform_same
+    webform_scale: webform_scale
+    webform_section: webform_section
+    webform_select_other: webform_select_other
+    webform_signature: webform_signature
+    webform_table: webform_table
+    webform_table_row: webform_table_row
+    webform_table_sort: webform_table_sort
+    webform_tableselect_sort: webform_tableselect_sort
+    webform_telephone: webform_telephone
+    webform_term_checkboxes: webform_term_checkboxes
+    webform_term_select: webform_term_select
+    webform_terms_of_service: webform_terms_of_service
+    webform_time: webform_time
+    webform_variant: webform_variant
+    webform_video_file: webform_video_file
 html_editor:
   disabled: false
   element_format: ''
@@ -154,7 +208,7 @@ html_editor:
 file:
   file_public: false
   file_private_redirect: true
-  file_private_redirect_message: 'Veuillez vous connecter accéder au fichier transféré.'
+  file_private_redirect_message: 'Veuillez vous connecter acc&eacute;der au fichier transf&eacute;r&eacute;.'
   default_max_filesize: ''
   default_managed_file_extensions: 'gif jpg jpeg png bmp eps tif pict psd txt rtf html odf pdf doc docx ppt pptx xls xlsx xml avi mov mp3 mp4 ogg wav bz2 dmg gz jar rar sit svg tar zip'
   default_image_file_extensions: 'gif jpg jpeg png'

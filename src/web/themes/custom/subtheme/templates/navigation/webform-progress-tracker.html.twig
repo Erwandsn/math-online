@@ -1,0 +1,27 @@
+{#
+/**
+ * @file
+ * Default theme implementation for webform wizard progress tracker.
+ *
+ * Available variables:
+ * - webform: A webform.
+ * - pages: Associative array of wizard pages.
+ * - progress: Array of wizard progress containing page titles.
+ * - current_page: Current wizard page key.
+ * - current_index: The current wizard page index.
+ * - max_pages: Maximum number of pages that progress text should be displayed on.
+ *
+ * @see template_preprocess_webform_progress_tracker()
+ * @see https://www.w3.org/WAI/tutorials/forms/multi-page/
+ *
+ * @ingroup themeable
+ */
+#}
+{{ attach_library('webform/webform.progress.tracker') }}
+
+<div class="progress-wrapper">
+  <h2 class="form-title">{{ webform.get('title') }}</h2>
+  <div class="progress">
+    <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="{{ current_index+1 }}" aria-valuemin="0" aria-valuemax="{{ progress|length }}" style="width: {{ ((current_index + 1) / progress|length) * 100 }}%">{{ current_index + 1 }} / {{ progress|length }}</div>
+  </div>
+</div>

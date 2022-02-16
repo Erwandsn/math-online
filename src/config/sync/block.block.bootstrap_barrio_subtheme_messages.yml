@@ -10,7 +10,7 @@ _core:
   default_config_hash: KC12e0aosUnBBs5bd374JVcQjJaFNOSIHzu0dUGf22o
 id: bootstrap_barrio_subtheme_messages
 theme: bootstrap_barrio_subtheme
-region: highlighted
+region: content
 weight: 0
 provider: null
 plugin: system_messages_block

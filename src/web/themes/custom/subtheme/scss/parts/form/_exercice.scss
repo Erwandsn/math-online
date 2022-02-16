@@ -1,3 +1,103 @@
 @import '../../base/variables';
 
+.webform-submission-form{
+  .form-actions{
+    max-width: 600px;
+    width: 100%;
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+    padding: 1.5rem 0;
+  }
+  .webform-button--next{
+    &:after{
+      content: '\f061';
+      font-family: $font-awesome-5-free;
+      margin-left: 0.5rem;
+      font-weight: 800;
+    }
+  }
+  .webform-button--previous{
+    &:before{
+      content: '\f060';
+      font-family: $font-awesome-5-free;
+      margin-right: 0.5rem;
+      font-weight: 800;
+    }
+  }
 
+  .webform-button--submit{
+    &:before{
+      content: '\f00c';
+      font-family: $font-awesome-5-free;
+      margin-right: 0.5rem;
+      font-weight: 800;
+    }
+  }
+
+  .radios--wrapper{
+    //display: flex;
+    //flex-direction: column;
+    //border-left: 2px solid $vert;
+    border: 2px solid $vert;
+    //padding-top: 5px;
+    border-radius: 15px;
+    position: relative;
+    .fieldset-legend{
+      background-color: $vert;
+      color: $white;
+      padding: 0.45rem 1rem;
+      border-top-left-radius: 10px;
+      border-bottom-right-radius: 10px;
+      font-family: $font-light;
+      font-size: 1rem;
+      position: absolute;
+    }
+    .fieldset-wrapper{
+      padding: 2.5rem 1rem 1rem 1rem;
+    }
+  }
+
+  fieldset{
+    max-width: 800px;
+    width: 100%;
+    margin: auto;
+    &.js-form-type-webform-markup{
+      padding: 2rem 1rem;
+      font-weight: 600;
+    }
+  }
+
+  .progress-wrapper{
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 0.5rem;
+  }
+
+  .progress{
+    max-width: 500px;
+    width: 100%;
+    margin: auto;
+  }
+
+}
+
+@include breakpoint('small'){
+  .webform-submission-form{
+    .progress-wrapper{
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      padding: 2rem 0;
+    }
+    .form-title{
+      padding-right: 1rem;
+    }
+
+    .progress{
+      max-width: 500px;
+      width: 100%;
+      margin: 0;
+    }
+  }
+}

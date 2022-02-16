@@ -72,21 +72,24 @@ elements: |-
     '#open': true
     '#prev_button_label': 'Voir la question précédente'
     '#next_button_label': 'Question suivante'
+    markup:
+      '#type': webform_markup
+      '#markup': 'Si dans un triangle ABC, les points I et J sont les milieux respectifs des c&ocirc;t&eacute;s [AB] et [AC], alors&hellip;'
     si_dans_un_triangle_abc_les_points_i_et_j_sont_les_milieu_respe:
       '#type': webform_score_radios
-      '#title': 'Si dans un triangle ABC, les points I et J sont les milieux respectifs des côtés [AB] et [AC], alors…'
+      '#title': 'Propositions de réponse'
       '#title_display': before
       '#options':
         ij_bc_secante: '(IJ) et (BC) sont sécantes'
         rien: 'On ne peut rien affirmer'
         ij_bc_parallele: '(IJ) et (BC) sont parallèles'
       '#options_display': three_columns
+      '#required': true
       '#webform_score_plugin': equals
       '#webform_score_plugin_configuration':
         max_score: '1'
-        expected: ij_bc_parallele
+        expected: ij_bc_secante
         case_sensitive: false
-      '#required': true
 css: ''
 javascript: ''
 settings:
