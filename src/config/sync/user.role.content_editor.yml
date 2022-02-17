@@ -3,7 +3,11 @@ langcode: fr
 status: true
 dependencies:
   config:
+    - media.type.illustration_exercice
     - media.type.image
+    - media.type.video
+    - node.type.chapitre
+    - node.type.lecon
     - node.type.page
     - taxonomy.vocabulary.branche_mathematiques
     - taxonomy.vocabulary.categorie_de_niveau_scolaire
@@ -13,6 +17,7 @@ dependencies:
     - comment
     - contextual
     - file
+    - locale
     - media
     - node
     - path
@@ -21,6 +26,7 @@ dependencies:
     - toolbar
     - tour
     - wagam_home
+    - webform
     - webform_score
 _core:
   default_config_hash: Wur9kcEOwY1Jal81NssKnz3RhVJxAvBwyWQBGcA_1Go
@@ -30,44 +36,82 @@ weight: -7
 is_admin: false
 permissions:
   - 'access administration pages'
+  - 'access any webform configuration'
+  - 'access content'
   - 'access content overview'
   - 'access contextual links'
   - 'access files overview'
   - 'access media overview'
+  - 'access own webform configuration'
+  - 'access site in maintenance mode'
+  - 'access site reports'
   - 'access taxonomy overview'
   - 'access toolbar'
   - 'access tour'
   - 'access user profiles'
+  - 'access webform help'
+  - 'access webform overview'
+  - 'access webform submission user'
+  - 'administer nodes'
+  - 'administer site configuration'
   - 'administer url aliases'
   - 'administer users'
+  - 'administer webform element access'
+  - 'create chapitre content'
+  - 'create illustration_exercice media'
   - 'create image media'
+  - 'create lecon content'
   - 'create page content'
   - 'create terms in branche_mathematiques'
   - 'create terms in categorie_de_niveau_scolaire'
   - 'create terms in niveau_scolaire'
   - 'create terms in tags'
   - 'create url aliases'
+  - 'create webform'
+  - 'delete any chapitre content'
+  - 'delete any illustration_exercice media'
   - 'delete any image media'
+  - 'delete any lecon content'
+  - 'delete any page content'
+  - 'delete any webform'
+  - 'delete own chapitre content'
+  - 'delete own illustration_exercice media'
   - 'delete own image media'
+  - 'delete own lecon content'
   - 'delete own page content'
-  - 'delete page revisions'
+  - 'delete own webform'
   - 'delete terms in branche_mathematiques'
   - 'delete terms in categorie_de_niveau_scolaire'
   - 'delete terms in niveau_scolaire'
   - 'delete terms in tags'
+  - 'edit any chapitre content'
+  - 'edit any illustration_exercice media'
   - 'edit any image media'
+  - 'edit any lecon content'
+  - 'edit any page content'
+  - 'edit any webform'
+  - 'edit own chapitre content'
   - 'edit own comments'
+  - 'edit own illustration_exercice media'
   - 'edit own image media'
+  - 'edit own lecon content'
   - 'edit own page content'
+  - 'edit own video media'
+  - 'edit own webform'
   - 'edit terms in branche_mathematiques'
   - 'edit terms in categorie_de_niveau_scolaire'
   - 'edit terms in niveau_scolaire'
   - 'edit terms in tags'
   - 'revert all revisions'
+  - 'translate interface'
+  - 'update media'
   - 'view all revisions'
   - 'view any submission score'
+  - 'view any webform submission'
+  - 'view own submission score'
   - 'view own unpublished content'
   - 'view own unpublished media'
+  - 'view own webform submission'
   - 'view the administration theme'
   - 'view user email addresses'
   - 'wagam manage home'
