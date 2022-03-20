@@ -556,6 +556,164 @@ h1 {
   /* Modern Browsers */
 }
 
+.submission-item-teaser {
+  border: none;
+  border-bottom: 1px solid #f1f2f3;
+  padding: 0.5rem 0;
+}
+
+.submission-item-teaser .score-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #dfe3e6;
+  border-radius: 50%;
+  width: 106px;
+  height: 106px;
+}
+
+.submission-item-teaser .score-wrapper::before {
+  content: '';
+  background: url("/themes/custom/subtheme/assets/trophy.png") no-repeat;
+  width: 50px;
+  height: 50px;
+  background-size: contain;
+  display: block;
+}
+
+.submission-item-teaser .score-area {
+  margin: 0;
+}
+
+@font-face {
+  font-family: 'Roboto-Slab-Regular';
+  src: url("/themes/custom/subtheme/fonts/roboto-slab/RobotoSlab-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'Roboto-Slab-Medium';
+  src: url("/themes/custom/subtheme/fonts/roboto-slab/RobotoSlab-Medium.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'Roboto-Slab-Light';
+  src: url("/themes/custom/subtheme/fonts/roboto-slab/RobotoSlab-Light.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'Roboto-Slab-Bold';
+  src: url("/themes/custom/subtheme/fonts/roboto-slab/RobotoSlab-Bold.ttf") format("truetype");
+  /* Modern Browsers */
+}
+
+@font-face {
+  font-family: 'Montserrat-Regular';
+  src: url("/themes/custom/subtheme/fonts/montserrat/Montserrat-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'Montserrat-Medium';
+  src: url("/themes/custom/subtheme/fonts/montserrat/Montserrat-Medium.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'Montserrat-Light';
+  src: url("/themes/custom/subtheme/fonts/montserrat/Montserrat-Light.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'Montserrat-Bold';
+  src: url("/themes/custom/subtheme/fonts/montserrat/Montserrat-Bold.ttf") format("truetype");
+  /* Modern Browsers */
+}
+
+.webform-detail-wrapper .form_title {
+  font-weight: 200;
+  font-size: 1.5rem;
+  background-color: #EF7B00;
+  color: #fff;
+  margin: 0;
+  padding: 0.75rem 0.75rem;
+}
+
+.webform-detail-wrapper .form-props {
+  padding: 1.5rem 1rem;
+  border: 2px solid #EF7B00;
+  margin: 0;
+}
+
+.webform-detail-wrapper .form-props li {
+  list-style: none;
+  padding: 0.25rem 0.25rem;
+}
+
+.webform-detail-wrapper .btn i {
+  font-weight: 500;
+  color: #fff;
+}
+
+.webform-detail-wrapper li i {
+  margin-right: 0.5rem;
+}
+
+.webform-detail-wrapper .related-title {
+  padding: 1.5rem 0;
+}
+
+@media (min-width: 992px) {
+  .webform-detail-wrapper {
+    padding-right: 2rem;
+  }
+  .webform-detail-wrapper .lesson-wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 1fr;
+  }
+}
+
+@font-face {
+  font-family: 'Roboto-Slab-Regular';
+  src: url("/themes/custom/subtheme/fonts/roboto-slab/RobotoSlab-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'Roboto-Slab-Medium';
+  src: url("/themes/custom/subtheme/fonts/roboto-slab/RobotoSlab-Medium.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'Roboto-Slab-Light';
+  src: url("/themes/custom/subtheme/fonts/roboto-slab/RobotoSlab-Light.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'Roboto-Slab-Bold';
+  src: url("/themes/custom/subtheme/fonts/roboto-slab/RobotoSlab-Bold.ttf") format("truetype");
+  /* Modern Browsers */
+}
+
+@font-face {
+  font-family: 'Montserrat-Regular';
+  src: url("/themes/custom/subtheme/fonts/montserrat/Montserrat-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'Montserrat-Medium';
+  src: url("/themes/custom/subtheme/fonts/montserrat/Montserrat-Medium.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'Montserrat-Light';
+  src: url("/themes/custom/subtheme/fonts/montserrat/Montserrat-Light.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'Montserrat-Bold';
+  src: url("/themes/custom/subtheme/fonts/montserrat/Montserrat-Bold.ttf") format("truetype");
+  /* Modern Browsers */
+}
+
 .field--name-field-superviseurs .tabledrag-toggle-weight-wrapper {
   display: none;
 }

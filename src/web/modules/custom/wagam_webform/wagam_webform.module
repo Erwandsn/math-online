@@ -1,6 +1,8 @@
 <?php
 
+use Drupal\Core\Entity\Element\EntityAutocomplete;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\node\Entity\Node;
 use Drupal\taxonomy\Entity\Term;
 use Drupal\webform\Entity\Webform;
 use Drupal\webform\EntitySettings\WebformEntitySettingsGeneralForm;
@@ -16,6 +18,9 @@ function wagam_webform_form_alter(&$form, FormStateInterface $form_state)
 
         $form['general_settings']['branche'] = $additional_fields['branche'];
         $form['general_settings']['niveau_cible'] = $additional_fields['niveau_cible'];
+        $form['general_settings']['temps_estime'] = $additional_fields['temps_estime'];
+        $form['general_settings']['related_lesson'] = $additional_fields['related_lesson'];
+
 
         $form['general_settings']['category']['#access'] = FALSE;
         $form['general_settings']['title']['#weight'] = 0;
@@ -35,8 +40,11 @@ function wagam_webform_form_alter(&$form, FormStateInterface $form_state)
 
         $form['branche'] = $additional_fields['branche'];
         $form['niveau_cible'] = $additional_fields['niveau_cible'];
+        $form['temps_estime'] = $additional_fields['temps_estime'];
+        $form['related_lesson'] = $additional_fields['related_lesson'];
 
-        $form['actions']['submit']['#submit'][] = '_wagam_webform_additional_general_settings';
+
+      $form['actions']['submit']['#submit'][] = '_wagam_webform_additional_general_settings';
     }
 }
 
@@ -74,6 +82,24 @@ function _wagam_webform_get_additional_form($entity)
         '#required' => TRUE,
     ];
 
+    $form['temps_estime'] = [
+      '#type' => 'number',
+      '#title' => t('Temps estimé (en minutes)'),
+      '#default_value' => $entity->getThirdPartySetting('wagam_webform', 'temps_estime'),
+      '#required' => TRUE,
+    ];
+
+    $lesson = $entity->getThirdPartySetting('wagam_webform', 'related_lesson');
+    $node_lesson = Node::load($lesson);
+    $form['related_lesson'] = [
+        '#type' => 'entity_autocomplete',
+        '#target_type' => 'node',
+        '#default_value' => $node_lesson,
+        '#title' => t('Chapitre ou Leçon associée'),
+        '#description' => t('Associer un chapitre ou une leçon à cet exercice afin de la guider l\'utisateur.'),
+        '#required' => TRUE,
+    ];
+
     return $form;
 }
 
@@ -96,6 +122,11 @@ function _wagam_webform_additional_general_settings(&$form, FormStateInterface $
         $entity = $formObject->getEntity();
         $entity->setThirdPartySetting('wagam_webform', 'branche', $form_state->getValue('branche'));
         $entity->setThirdPartySetting('wagam_webform', 'niveau_cible', $form_state->getValue('niveau_cible'));
+        $entity->setThirdPartySetting('wagam_webform', 'temps_estime', $form_state->getValue('temps_estime'));
+
+        $related = EntityAutocomplete::extractEntityIdFromAutocompleteInput($form_state->getValue('related_lesson'));
+        $entity->setThirdPartySetting('wagam_webform', 'related_lesson', $related);
+
         $entity->save();
     }
 }

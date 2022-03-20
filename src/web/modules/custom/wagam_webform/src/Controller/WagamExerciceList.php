@@ -156,7 +156,8 @@ class WagamExerciceList extends ControllerBase
           'btn-secondary',
           'col-12'
         ],
-        'href' => $form->toLink()->getUrl()->toString(),
+        'href' => Url::fromRoute('wagam.form_overview', ['webform' => $form->id()])->toString(),
+//        'href' => $form->toLink()->getUrl()->toString(),
       ],
     ];
 
