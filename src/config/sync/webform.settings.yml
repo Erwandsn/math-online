@@ -66,8 +66,8 @@ settings:
   default_submission_access_denied_message: 'Veuillez vous connecter pour acc&eacute;der &agrave; cette soumission.'
   default_submission_exception_message: 'Unable to process this submission. Please contact the site administrator.'
   default_submission_locked_message: 'Cette soumission a &eacute;t&eacute; verrouill&eacute;e.'
-  default_previous_submission_message: 'You have already submitted this webform. <a href="#">View your previous submission</a>.'
-  default_previous_submissions_message: 'You have already submitted this webform. <a href="#">View your previous submissions</a>.'
+  default_previous_submission_message: 'Vous avez d&eacute;ja fait cette exercice,&nbsp;<a href="#">Cliquez ici</a> pour voir la correction de votre pr&eacute;c&eacute;dente session..'
+  default_previous_submissions_message: 'Vous avez d&eacute;ja fait cette exercice,&nbsp;<a href="#">Cliquez ici</a> pour voir la correction de votre pr&eacute;c&eacute;dente session..'
   default_autofill_message: 'Cette soumission a &eacute;t&eacute; pr&eacute;-remplie gr&acirc;ce &agrave; votre pr&eacute;c&eacute;dente soumission.'
   form_classes: "container-inline clearfix\r\nform--inline clearfix\r\nmessages messages--error\r\nmessages messages--warning\r\nmessages messages--status\r\n"
   button_classes: ''

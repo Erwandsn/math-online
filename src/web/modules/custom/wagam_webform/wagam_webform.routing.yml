@@ -5,3 +5,21 @@ wagam.exercie.list:
     _title: 'Nos exercices'
   requirements:
     _permission: 'change own username'
+wagam.form_overview:
+  path: '/questionnaire/detail/{webform}'
+  defaults:
+    _controller: '\Drupal\wagam_webform\Controller\WagamFormOverview::overviewView'
+    _title: 'Détail du formulaire'
+  requirements:
+    _permission: 'change own username'
+  options:
+    parameters:
+      webform:
+        type: entity:webform
+wagam.form_related_lesson.autocomplete:
+  path: '/autocomplete/wagam-lessons'
+  defaults:
+    _controller: '\Drupal\wagam_webform\Controller\JsonApiLessonsController::handleAutocomplete'
+    _format: json
+  requirements:
+    _permission: 'access content'

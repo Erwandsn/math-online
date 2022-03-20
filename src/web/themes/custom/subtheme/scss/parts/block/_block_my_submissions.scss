@@ -1,0 +1,29 @@
+@import '../../base/variables';
+
+.submission-item-teaser{
+  border: none;
+  border-bottom: 1px solid $light-battleship-grey;
+  padding: 0.5rem 0;
+  .score-wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: $ligh-dark-grey;
+    border-radius: 50%;
+    width: 106px;
+    height: 106px;
+    &::before{
+      content: '';
+      background: url("/themes/custom/subtheme/assets/trophy.png") no-repeat;
+      width: 50px;
+      height: 50px;
+      background-size: contain;
+      display: block;
+    }
+  }
+  .score-area{
+    margin: 0;
+  }
+}
+
