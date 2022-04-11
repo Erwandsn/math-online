@@ -1,0 +1,5 @@
+wagam_webform.submission:
+  js:
+    js/submission-correction.js: {}
+  dependencies:
+    - core/jquery

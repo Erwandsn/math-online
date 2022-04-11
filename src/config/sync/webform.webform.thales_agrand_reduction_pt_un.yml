@@ -95,6 +95,24 @@ elements: |-
         max_score: '1'
         expected: ij_bc_secante
         case_sensitive: false
+  question_3:
+    '#type': webform_wizard_page
+    '#title': 'Question 3'
+    q3_container:
+      '#type': webform_flexbox
+      '#align_items': center
+      combien_font_3_1:
+        '#type': webform_score_textfield
+        '#title': 'Combien font 3 + 1'
+        '#title_display': before
+        '#autocomplete': ''
+        '#required': true
+        '#required_error': 'Veuillez sélectionner une réponse'
+        '#webform_score_plugin': equals
+        '#webform_score_plugin_configuration':
+          max_score: '1'
+          expected: '3'
+          case_sensitive: false
 css: ''
 javascript: ''
 settings:

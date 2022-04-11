@@ -81,7 +81,7 @@ class WagamFormOverview extends ControllerBase
           ],
           'content' => [
             'title' => [
-              '#markup' => '<h3 class="text-align-center">Mes résultats</h3>',
+              '#markup' => '<h3 class="text-align-center result-wrapper-title">Mes résultats</h3>',
             ],
             'submissions_block' =>  $submission_detail->build(),
           ]

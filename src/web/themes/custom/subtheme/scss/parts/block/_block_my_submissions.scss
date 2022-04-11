@@ -27,3 +27,38 @@
   }
 }
 
+.webfrom-submission-wrapper{
+  margin: 2rem 0;
+  .result-wrapper-title{
+    font-family: $font-bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 1.375rem;
+  }
+}
+
+.webform-detail-wrapper{
+  .related-title{
+    margin-top: 1rem;
+    font-family: $font-bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 1.375rem;
+    text-align: center;
+  }
+}
+
+
+@include breakpoint("small"){
+  .webform-detail-wrapper{
+    .related-title{
+      margin-top: 0;
+    }
+  }
+  .webfrom-submission-wrapper{
+    margin: 0;
+    .result-wrapper-title{
+      margin-bottom: 1.5rem;
+    }
+  }
+}

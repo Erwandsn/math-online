@@ -1,0 +1,74 @@
+@import '../../base/variables';
+
+.webform-submission{
+    .webform-navigation-header{
+        border-bottom: 2px solid $ligh-dark-grey;
+    }
+    .score{
+        display: flex;
+        align-items: center;
+        .numerator{
+            margin-left: 0.5rem;
+        }
+        .denominator{
+            &:before{
+                content: '/';
+                margin: 0 0.5rem;
+            }
+        }
+    }
+    .submission-title{
+        font-size: 2rem;
+        text-align: center;
+        margin: 1rem 0;
+    }
+
+    .btn-prev,
+    .back-recap{
+        &::before{
+            content: '\f053';
+            font-family: $font-awesome-5-free;
+            font-weight: 700;
+            margin-right: 0.5rem;
+        }
+    }
+    .btn-next{
+        &::after{
+            content: '\f054';
+            font-family: $font-awesome-5-free;
+            font-weight: 700;
+            margin-left: 0.5rem;
+        }
+    }
+    .state{
+        .current{
+            background-color: $vert;
+            border-radius: 50%;
+            padding: 0.5rem .75rem;
+            text-align: center;
+            color: $white;
+        }
+    }
+
+    .question-wrapper{
+        padding: 2rem 0;
+    }
+
+    .user-answer{
+        color: $simple-blue;
+    }
+
+    .ennonce-wrapper{
+        .question-title{
+            font-family: $font-bold;
+        }
+    }
+}
+
+@include breakpoint('small'){
+    .webform-submission{
+        .submission-title{
+            margin: 2rem 0;
+        }
+    }
+}

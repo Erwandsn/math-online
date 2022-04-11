@@ -6,6 +6,7 @@ use Drupal\Core\Block\BlockManagerInterface;
 use Drupal\Core\Controller\ControllerBase;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Form\FormBuilderInterface;
+use Drupal\Core\Render\RendererInterface;
 use Drupal\Core\Session\AccountProxyInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
@@ -20,12 +21,15 @@ class HomeController extends ControllerBase
 
   protected $plugingBlockManager;
 
-  public function __construct(AccountProxyInterface $currentUser, EntityTypeManagerInterface $entityTypeManager, FormBuilderInterface $formBuilder, BlockManagerInterface $blockManager)
+  protected $renderer;
+
+  public function __construct(AccountProxyInterface $currentUser, EntityTypeManagerInterface $entityTypeManager, FormBuilderInterface $formBuilder, BlockManagerInterface $blockManager, RendererInterface $rendererInterface)
   {
     $this->currentUser = $currentUser;
     $this->entityTypeManager = $entityTypeManager;
     $this->formBuilder = $formBuilder;
     $this->plugingBlockManager = $blockManager;
+    $this->renderer = $rendererInterface;
   }
 
   public static function create(ContainerInterface $container){
@@ -33,7 +37,8 @@ class HomeController extends ControllerBase
       $container->get('current_user'),
       $container->get('entity_type.manager'),
       $container->get('form_builder'),
-      $container->get('plugin.manager.block')
+      $container->get('plugin.manager.block'),
+      $container->get('renderer')
     );
   }
 
@@ -92,6 +97,8 @@ class HomeController extends ControllerBase
         'card' => $built_account_block['card'],
       ]
     ];
+
+    $this->renderer->addCacheableDependency($build, $account_block);
 
     return $build;
   }

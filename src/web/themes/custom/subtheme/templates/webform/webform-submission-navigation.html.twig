@@ -1,0 +1,38 @@
+{#
+/**
+ * @file
+ * Default theme implementation to navigate webform submission.
+ *
+ * Available variables:
+ * - prev_url: URL to the previous webform submission.
+ * - next_url: URL to the next webform submission.
+ * - webform_id: The webform ID. Provided for context.
+ * - webform_title: The webform title. Provided for context.
+ *
+ * @see template_preprocess_webform_submission_navigation()
+ *
+ * @ingroup themeable
+ */
+#}
+<div class='webform-navigation-header'>
+  <div class='row'>
+    <div class='back-area col-4 col-md-3'>
+      {{ back_button }}
+    </div>
+    <div class='col-8 text-align-right'>
+      {{ previous_question_button }}
+      {{ next_question_button }}
+    </div>
+  </div>
+  <div class='row'>
+    <h1 class='submission-title col-12'>Correction de {{ webform_title }}</h1>
+    <div class='state-area col-6 col-md-2 offset-md-4 text-align-center'>
+        <p class='state'>Question <span class='current'>1</span> sur {{ nb_questions }}</p>
+    </div>
+    <div class='score-area col-6 col-md-2'>
+        <p class='score'>
+          Mon score : {{ score }}
+        </p>
+    </div>
+  </div>
+</div>

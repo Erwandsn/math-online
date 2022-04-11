@@ -41,9 +41,14 @@ RUN php composer-setup.php
 RUN php -r "unlink('composer-setup.php');"
 RUN mv composer.phar /usr/local/bin/composer
 
+#Installation de drush
+RUN wget -O drush.phar https://github.com/drush-ops/drush-launcher/releases/latest/download/drush.phar
+RUN mv drush.phar /usr/local/bin/drush
+RUN chmod +x /usr/local/bin/drush
+
 #Gestion des actions au start
 COPY sh/container-up.sh /tmp
-RUN sed -i 's/\r$//' /tmp/container-up.sh  && \  
+RUN sed -i 's/\r$//' /tmp/container-up.sh  && \
         chmod +x /tmp/container-up.sh
 RUN chmod +x /tmp/container-up.sh
 CMD sh /tmp/container-up.sh

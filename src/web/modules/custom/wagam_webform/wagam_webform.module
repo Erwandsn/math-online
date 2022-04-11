@@ -1,10 +1,15 @@
 <?php
 
+use Drupal\Component\Render\FormattableMarkup;
 use Drupal\Core\Entity\Element\EntityAutocomplete;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Serialization\Yaml;
+use Drupal\Core\Url;
+use Drupal\media\Entity\Media;
 use Drupal\node\Entity\Node;
 use Drupal\taxonomy\Entity\Term;
 use Drupal\webform\Entity\Webform;
+use Drupal\webform\Entity\WebformSubmission;
 use Drupal\webform\EntitySettings\WebformEntitySettingsGeneralForm;
 
 function wagam_webform_form_alter(&$form, FormStateInterface $form_state)
@@ -90,11 +95,13 @@ function _wagam_webform_get_additional_form($entity)
     ];
 
     $lesson = $entity->getThirdPartySetting('wagam_webform', 'related_lesson');
-    $node_lesson = Node::load($lesson);
+    if(!empty($lesson)){
+        $node_lesson = Node::load($lesson);
+    }
     $form['related_lesson'] = [
         '#type' => 'entity_autocomplete',
         '#target_type' => 'node',
-        '#default_value' => $node_lesson,
+        '#default_value' => $node_lesson ?? NULL,
         '#title' => t('Chapitre ou Leçon associée'),
         '#description' => t('Associer un chapitre ou une leçon à cet exercice afin de la guider l\'utisateur.'),
         '#required' => TRUE,
@@ -125,8 +132,210 @@ function _wagam_webform_additional_general_settings(&$form, FormStateInterface $
         $entity->setThirdPartySetting('wagam_webform', 'temps_estime', $form_state->getValue('temps_estime'));
 
         $related = EntityAutocomplete::extractEntityIdFromAutocompleteInput($form_state->getValue('related_lesson'));
+        if(empty($related)){
+            $related = $form_state->getValue('related_lesson');
+        }
         $entity->setThirdPartySetting('wagam_webform', 'related_lesson', $related);
 
         $entity->save();
     }
+}
+
+function wagam_webform_preprocess_webform_submission_navigation(&$variables)
+{
+    // dd($variables);
+
+    /** @var WebformSubmission $submission */
+    $submission = $variables['webform_submission'];
+    $webform = $submission->getWebform();
+
+    //Traitement du header de submission.
+    _process_submission_header($variables, $webform, $submission);
+
+    $variables['#attached']['library'][] = 'wagam_webform/wagam_webform.submission';
+}
+
+function wagam_webform_preprocess_webform_submission(&$variables)
+{
+    //Traitement de la correction des questions
+    // dd($variables);
+
+    /** @var Webform */
+    $webform = $variables['webform'];
+    /** @var WebformSubmission */
+    $submission = $variables['webform_submission'];
+    $flatten_elements = $webform->getElementsInitializedAndFlattened();
+    // dd($flatten_elements);
+
+    $submission_correction = [];
+
+    $current_container = '';
+
+    $entity_manager = \Drupal::entityTypeManager();
+    foreach($flatten_elements as $key => $element)
+    {
+        if($element['#type'] === 'webform_wizard_page')
+        {
+            $submission_correction[$key] = [
+                '#type' => 'container',
+                '#attributes' => [
+                    'class' => [
+                        'row',
+                        'question-wrapper',
+                        count($submission_correction) > 0 ? 'd-none' : 'current-question',
+                    ],
+                ],
+            ];
+            $current_container = $key;
+        }
+
+        if($element['#type'] === 'webform_entity_view'){
+            $entity = $entity_manager->getStorage($element['#target_type'])->load($element['#selected_entity']);
+            if($entity instanceof Media){
+                $viewable_media = $entity_manager->getViewBuilder('media')->view($entity, 'default');
+                $submission_correction[$current_container][$key] = [
+                    '#type' => 'container',
+                    '#attributes' => [
+                        'class' => [
+                            'col-12',
+                            'col-md-6',
+                        ],
+                    ],
+                    'content' => $viewable_media,
+                ];
+            }
+        }
+
+        //Texte riche
+        if($element['#type'] === 'processed_text')
+        {
+            $submission_correction[$current_container][$key] = [
+                '#type' => 'container',
+                '#attributes' => [
+                    'class'  => [
+                        'col-12',
+                        'col-md-6',
+                        'ennonce-wrapper',
+                    ],
+                ],
+                'title' => ['#markup' => new FormattableMarkup('<h2 class="@classes">Énnoncé</h2>', ['@classes' => 'question-title'])],
+                'content' => $element,
+            ];
+        }
+
+        if($element['#type'] === 'webform_markup'){
+            $submission_correction[$current_container][$key] = [
+                '#type' => 'container',
+                '#attributes' => [
+                    'class'  => [
+                        'col-12',
+                        'col-md-6',
+                        'ennonce-wrapper',
+                    ],
+                ],
+                'title' => ['#markup' => '<h2>Énnoncé</h2>'],
+                'content' =>[
+                    '#markup' => $element['#markup'],
+                ],
+            ];
+        }
+
+        //Element
+        if($element['#type'] === 'webform_score_radios'){
+
+
+            $submission_correction[$current_container][$key] = [
+                '#type' => 'container',
+                '#attributes' => [
+                    'class' => [
+                        'user-prop',
+                        'col-12',
+                        'col-md-6',
+                        'offset-md-2',
+                    ],
+                ],
+                'content' => [
+                    '#type' => 'html_tag',
+                    '#tag' => 'ul',
+                    'items' => [],
+                ],
+            ];
+
+
+            foreach($element['#options'] as $prop_val => $prop){
+                $classes = [];
+                if($prop_val === $submission->getData()[$key]){
+                    $classes[] = 'user-answer';
+                }
+                $prop_markup = new FormattableMarkup('@text', ['@text' => $prop]);
+                $submission_correction[$current_container][$key]['content']['items'][] = [
+                    '#type' => 'html_tag',
+                    '#tag' => 'li',
+                    '#attributes' => [
+                        'class' => $classes,
+                    ],
+                    'content' => [
+                        '#markup' => $prop_markup,
+                    ],
+                ];
+            }
+        }
+    }
+
+    $variables['correction'] = $submission_correction;
+
+}
+
+/**
+ * Traitement des informations du headear de webform.
+ */
+function _process_submission_header(&$variables, $webform, $submission){
+    $score = $submission->get('webform_score')->first();
+    $score_markup = new FormattableMarkup('<span class="numerator">@num</span><span class="denominator">@denom</span>', ['@num' => $score->numerator, '@denom' => $score->denominator]);
+
+    $variables['nb_questions'] = count(Yaml::decode($webform->get('elements')));
+    $variables['back_button'] = [
+        '#title' => 'Retour au recapitulatif',
+        '#type' => 'link',
+        '#attributes' => [
+            'class' => [
+              'btn',
+              'btn-primary',
+              'back-recap',
+            ],
+        ],
+        '#url' => Url::fromRoute('wagam.form_overview', ['webform' => $variables['webform_id']]),
+    ];
+    $variables['previous_question_button'] = [
+        '#type' => 'html_tag',
+        '#tag' => 'button',
+        '#attributes' => [
+            'class' => [
+                'btn',
+                'btn-prev',
+                'd-none',
+            ],
+            'id' => 'previous-quest-action',
+        ],
+        'content' => [
+            '#markup' => 'Question précédente',
+        ],
+    ];
+
+    $variables['next_question_button'] = [
+        '#type' => 'html_tag',
+        '#tag' => 'button',
+        '#attributes' => [
+            'class' => [
+                'btn',
+                'btn-next',
+            ],
+            'id' => 'next-quest-action',
+        ],
+        'content' => [
+            '#markup' => 'Question suivante',
+        ],
+    ];
+
+    $variables['score'] = $score_markup;
 }
