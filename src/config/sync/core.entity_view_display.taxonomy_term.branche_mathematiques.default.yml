@@ -3,8 +3,11 @@ langcode: fr
 status: true
 dependencies:
   config:
+    - field.field.taxonomy_term.branche_mathematiques.field_code_couleur
+    - field.field.taxonomy_term.branche_mathematiques.field_illustration_de_fond
     - taxonomy.vocabulary.branche_mathematiques
   module:
+    - svg_image
     - text
 id: taxonomy_term.branche_mathematiques.default
 targetEntityType: taxonomy_term
@@ -17,6 +20,27 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 0
+    region: content
+  field_code_couleur:
+    type: string
+    label: visually_hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_illustration_de_fond:
+    type: image
+    label: visually_hidden
+    settings:
+      image_link: ''
+      image_style: ''
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
+    third_party_settings: {  }
+    weight: 2
     region: content
 hidden:
   langcode: true

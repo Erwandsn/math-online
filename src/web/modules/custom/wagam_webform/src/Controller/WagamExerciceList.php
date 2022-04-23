@@ -3,6 +3,7 @@
 namespace Drupal\wagam_webform\Controller;
 
 use Drupal\Component\Render\FormattableMarkup;
+use Drupal\Core\Block\BlockManagerInterface;
 use Drupal\Core\Controller\ControllerBase;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Render\Element\Form;
@@ -16,17 +17,21 @@ class WagamExerciceList extends ControllerBase
 {
   protected $renderManager;
 
-  public function __construct(EntityTypeManagerInterface $entityTypeManager, RendererInterface $renderer)
+  protected $blockManager;
+
+  public function __construct(EntityTypeManagerInterface $entityTypeManager, RendererInterface $renderer, BlockManagerInterface $blockManager)
   {
     $this->entityTypeManager = $entityTypeManager;
     $this->renderManager = $renderer;
+    $this->blockManager = $blockManager;
   }
 
   public static function create(ContainerInterface $container)
   {
     return new static(
       $container->get('entity_type.manager'),
-      $container->get('renderer')
+      $container->get('renderer'),
+      $container->get('plugin.manager.block')
     );
   }
 
@@ -79,96 +84,19 @@ class WagamExerciceList extends ControllerBase
     ];
 
     foreach($form_list as $id => $form){
-      $build['content'][$id] = $this->buildCard($form)['card'];
-    }
-
-    return $build;
-  }
-
-  private function buildCard(WebformInterface $form){
-    $build['card'] = [
-      '#type' => 'container',
-      '#attributes' => [
+      $block = $this->blockManager->createInstance('wagam_form_detail', ['webform' => $form, 'type' => 'teaser'])-> build();
+      unset($block['related_lesson']);
+      $block['#type'] = 'container';
+      $block['#attributes'] = [
         'class' => [
-          'card',
+          'webform-detail-wrapper',
           'col-12',
           'col-md-4',
           'align-self-strech',
         ],
-      ],
-    ];
-
-    $build['card']['card_header'] = [
-      '#type' => 'container',
-      '#attributes' => [
-        'class' => [
-          'card-header',
-        ],
-      ],
-    ];
-
-    $build['card']['card_header']['title'] = [
-      '#type' => 'html_tag',
-      '#tag' => 'h3',
-      '#value' => $form->get('title'),
-      '#attributes' => [
-        'class' => [
-          'card-title',
-        ]
-      ]
-    ];
-
-
-    $build['card']['card_body'] = [
-      '#type' => 'container',
-      '#attributes' => [
-        'class' => [
-          'card-body',
-          'd-flex',
-          'flex-column',
-          'justify-content-between'
-        ],
-      ],
-    ];
-
-    $build['card']['card_body']['text_wrapper'] = [
-      '#type' => 'container',
-      '#attributes' => [
-        'class' => [
-          'card-text',
-          'row',
-          'd-flex',
-          'flex-row',
-          'align-items-center',
-        ]
-      ]
-    ];
-
-    $nb_question_markup = new FormattableMarkup('<p class="nb-question"><i class="fas fa-question"></i> @nb @label</p>', ['@nb' => '0', '@label' => $this->t('Quesions')]);
-    $build['card']['card_body']['text_wrapper']['nb_question']['#markup'] = $nb_question_markup->__toString();
-
-    $build['card']['card_body']['launch'] = [
-      '#type' => 'html_tag',
-      '#tag' => 'a',
-      '#attributes' => [
-        'class' =>[
-          'btn',
-          'btn-secondary',
-          'col-12'
-        ],
-        'href' => Url::fromRoute('wagam.form_overview', ['webform' => $form->id()])->toString(),
-//        'href' => $form->toLink()->getUrl()->toString(),
-      ],
-    ];
-
-    $build['card']['card_body']['launch']['icon'] = [
-      '#markup' => '<i class="fas fa-rocket"></i>'
-    ];
-
-    $build['card']['card_body']['launch']['text'] = [
-      '#markup' => $this
-        ->t('Lancer l\'éxercice'),
-    ];
+      ];
+      $build['content'][$id] = $block;
+    }
 
     return $build;
   }

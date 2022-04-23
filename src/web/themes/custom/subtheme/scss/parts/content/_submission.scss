@@ -41,11 +41,19 @@
         }
     }
     .state{
+        display: flex;
+        align-items: center;
         .current{
+            margin: 0 0.5rem;
             background-color: $vert;
             border-radius: 50%;
-            padding: 0.5rem .75rem;
+            display: inline-block;
+            width: 2rem;
+            height: 2rem;
             text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             color: $white;
         }
     }
@@ -54,11 +62,11 @@
         padding: 2rem 0;
     }
 
-    .user-answer{
-        color: $simple-blue;
-    }
-
     .ennonce-wrapper{
+        padding: 1.5rem .5rem;
+        h2{
+            font-family: $font-bold;
+        }
         .question-title{
             font-family: $font-bold;
         }

@@ -1,0 +1,19 @@
+uuid: df100462-6cb3-4766-a8d5-6367977897d5
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_code_couleur
+    - taxonomy.vocabulary.branche_mathematiques
+id: taxonomy_term.branche_mathematiques.field_code_couleur
+field_name: field_code_couleur
+entity_type: taxonomy_term
+bundle: branche_mathematiques
+label: 'Code couleur'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

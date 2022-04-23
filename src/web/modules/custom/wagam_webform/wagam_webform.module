@@ -243,20 +243,29 @@ function wagam_webform_preprocess_webform_submission(&$variables)
         //Element
         if($element['#type'] === 'webform_score_radios'){
 
-
+            $correct_answer = $element['#webform_score_plugin_configuration']['expected'];
+            $title = new FormattableMarkup('<h2 class="@classes">@title</h2>', ['@classes' => 'user-prop-title', '@title' => t('Réponses')]);
             $submission_correction[$current_container][$key] = [
                 '#type' => 'container',
                 '#attributes' => [
                     'class' => [
                         'user-prop',
                         'col-12',
-                        'col-md-6',
+                        'col-md-8',
                         'offset-md-2',
                     ],
+                ],
+                'title' => [
+                    '#markup' => $title->__toString(),
                 ],
                 'content' => [
                     '#type' => 'html_tag',
                     '#tag' => 'ul',
+                    '#attributes' => [
+                        'class' => [
+                            'answer-list',
+                        ],
+                    ],
                     'items' => [],
                 ],
             ];
@@ -266,6 +275,9 @@ function wagam_webform_preprocess_webform_submission(&$variables)
                 $classes = [];
                 if($prop_val === $submission->getData()[$key]){
                     $classes[] = 'user-answer';
+                }
+                if($prop_val == $correct_answer){
+                    $classes[] = 'correct-answer';
                 }
                 $prop_markup = new FormattableMarkup('@text', ['@text' => $prop]);
                 $submission_correction[$current_container][$key]['content']['items'][] = [
@@ -278,6 +290,7 @@ function wagam_webform_preprocess_webform_submission(&$variables)
                         '#markup' => $prop_markup,
                     ],
                 ];
+
             }
         }
     }

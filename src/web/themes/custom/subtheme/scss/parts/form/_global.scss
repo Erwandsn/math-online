@@ -4,6 +4,9 @@ body{
   font-size: 16px;
   color: $dark-grey;
 }
+.main-content{
+  min-height: 70vh;
+}
 
 .form-type-managed-file{
   .image-widget{

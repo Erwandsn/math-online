@@ -13,6 +13,7 @@
       color: $dark-grey;
       &:hover{
         background-color: lighten($orange, 25%);
+        color: darken($white, 15%);
       }
     }
     .is-active{

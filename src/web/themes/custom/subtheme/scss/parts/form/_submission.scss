@@ -1,0 +1,52 @@
+@import '../../base/variables';
+
+.user-prop-title{
+    font-family: $font-bold;
+    padding: 1rem 0;
+}
+
+.user-prop{
+    border-top: 1px solid $ligh-dark-grey;
+    padding: 1.5rem 1rem;
+}
+.user-answer{
+    color: $rouge;
+    &:before{
+        content: '\f00d';
+        font-family: $font-awesome-5-free;
+        margin-right: 0.5rem;
+        font-weight: 700;
+    }
+}
+
+.correct-answer{
+    color: $vert !important;
+    font-weight: 700;
+    &:before{
+        content: '\f00c';
+        font-family: $font-awesome-5-free;
+        margin-right: 0.5rem;
+        font-weight: 700;
+    }
+}
+
+.user-answer{
+    &.correct-answer{
+        &::before{
+            content: '\f560';
+        }
+    }
+}
+
+
+.answer-list{
+    display: flex;
+    padding: 0;
+    li{
+        list-style: none;
+        padding: .5rem .75rem;
+        &:first-child{
+            padding-left: 0;
+        }
+    }
+}

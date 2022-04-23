@@ -3,12 +3,33 @@ langcode: fr
 status: true
 dependencies:
   config:
+    - field.field.taxonomy_term.branche_mathematiques.field_code_couleur
+    - field.field.taxonomy_term.branche_mathematiques.field_illustration_de_fond
+    - image.style.thumbnail
     - taxonomy.vocabulary.branche_mathematiques
+  module:
+    - svg_image
 id: taxonomy_term.branche_mathematiques.default
 targetEntityType: taxonomy_term
 bundle: branche_mathematiques
 mode: default
 content:
+  field_code_couleur:
+    type: string_textfield
+    weight: 1
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_illustration_de_fond:
+    type: image_image
+    weight: 3
+    region: content
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
   name:
     type: string_textfield
     weight: 0
