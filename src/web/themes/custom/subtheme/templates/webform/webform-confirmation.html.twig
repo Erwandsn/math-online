@@ -1,0 +1,35 @@
+{#
+/**
+ * @file
+ * Default theme implementation to webform confirmation.
+ *
+ * Available variables:
+ * - progress: Progress bar.
+ * - message: Confirmation message.
+ * - back_url: URL to the previous webform submission.
+ *
+ * @see template_preprocess_webform_confirmation()
+ *
+ * @ingroup themeable
+ */
+#}
+{{ attach_library('webform/webform.confirmation') }}
+
+<div{{ attributes.addClass('webform-confirmation') }}>
+  <h1 class='fresh-score-title text-align-center'>
+    Votre note au test "{{ webform.get('title') }}"
+  </h1>
+  <div class="fresh-submission-score">
+    <div class='illustration animate__animated animate__flip'>
+    </div>
+    <p class='fresh-score'>
+        <span class='num'>{{ webform_submission.webform_score.get(0).value.numerator }}</span>
+         /
+        <span class='den'>{{ webform_submission.webform_score.get(0).value.denominator }}</span>
+    </p>
+  </div>
+  <a href="{{ path('entity.webform.user.submissions', {'webform' : webform.id(), 'submission_view' : webform_submission.id() }) }}">
+    Voir la correction
+  </a>
+
+</div>

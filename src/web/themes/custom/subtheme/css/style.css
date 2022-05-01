@@ -400,6 +400,47 @@ h1 {
   font-family: "Montserrat-Bold", sans-serif;
 }
 
+.fresh-submission-score {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.fresh-submission-score .illustration {
+  width: 25vh;
+  height: 25vh;
+  background-color: #00995D;
+  border-radius: 50%;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fresh-submission-score .illustration:before {
+  content: '\f00c';
+  font-family: "Font Awesome 5 Free", sans-serif;
+  font-size: 3.25rem;
+  font-weight: 700;
+  border: 4px solid #fff;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fresh-score {
+  padding: 1.5rem 0;
+  font-size: 1.25rem;
+  font-family: "Montserrat-Bold", sans-serif;
+}
+
+.fresh-score-title {
+  padding: 0 0 2.5rem 0;
+}
+
 @media (min-width: 767px) {
   .webform-submission .submission-title {
     margin: 2rem 0;
@@ -854,7 +895,7 @@ h1 {
 
 .webform-detail-wrapper .form-props {
   padding: 1.5rem 1rem;
-  border: 1px solid #081b4b;
+  border: 1px solid var(--branche-color);
   border-top: none;
   border-radius: 0 0 25px 25px;
   margin: 0;

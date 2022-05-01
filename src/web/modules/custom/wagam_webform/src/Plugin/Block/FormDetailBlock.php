@@ -163,11 +163,12 @@ class FormDetailBlock extends BlockBase implements ContainerFactoryPluginInterfa
               '#type' => 'html_tag',
               '#tag' => 'li',
               'content' => [
-                '#markup' => $this->t('@count questions.', ['@count' => count(Yaml::decode($webform->get('elements')))])
+                '#markup' =>  !empty($webform->get('elements')) ? $this->t('@count questions.', ['@count' => count(Yaml::decode($webform->get('elements')))]) : '',
               ],
               '#attributes' => [
                 'class' => [
                   'col-6',
+                  empty($webform->get('elements')) ? 'd-none' : '',
                 ],
               ],
             ],
