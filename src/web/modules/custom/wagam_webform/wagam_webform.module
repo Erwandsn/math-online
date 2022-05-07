@@ -50,6 +50,17 @@ function wagam_webform_form_alter(&$form, FormStateInterface $form_state)
 
 
       $form['actions']['submit']['#submit'][] = '_wagam_webform_additional_general_settings';
+    }elseif(isset($form['#quiz']) && $form['#form_id'] == 'quiz_question_answering_form'){
+
+        // dd($form);
+        foreach($form['question'] as $key => &$question){
+            if($key % 2 == 0 && !array_search('quiz-question-page', $question['#attributes']['class'], true)){
+                // dd($question);
+                $question['#attributes']['class'][] = 'bg-question';
+            }
+
+            $question['#attributes']['class'][] = 'first-lvl-element';
+        }
     }
 }
 
@@ -351,4 +362,153 @@ function _process_submission_header(&$variables, $webform, $submission){
     ];
 
     $variables['score'] = $score_markup;
+}
+
+function wagam_webform_preprocess_quiz_result(&$variables){
+    // dd($variables);
+    /** @var \Drupal\quiz\Entity\QuizResult $quiz_result */
+    $quiz_result = $variables['quiz_result'];
+    $quiz = $quiz_result->getQuiz();
+    $score = $quiz_result->score();
+
+    foreach($variables['content']['questions'] as $key => $question){
+        if($key != '#weight'){
+            $render = [
+                '#type' => 'container',
+                '#attributes' => [
+                    'class' => [
+                        'row',
+                        'question-wrapper',
+                        $key != array_key_first($variables['content']['questions']) ? 'd-none' : 'current-question',
+                    ]
+                ],
+                'question' => $question,
+            ];
+
+            $variables['content']['questions'][$key] = $render;
+        }
+    }
+
+    $variables['content']['heading'] = [
+        '#type' => 'container',
+        '#attributes' => [
+            'class' => [
+                'row',
+                'quiz-navigation-header',
+            ],
+        ],
+        'controls' => [
+            '#type' => 'container',
+            '#attributes' => [
+                'class' => [
+                    'row'
+                ],
+            ],
+            'back' => [
+                '#type' => 'container',
+                '#attributes' => [
+                    'class' => [
+                        'back-area',
+                        'col-6',
+                    ],
+                ],
+                'btn' => [
+                    '#title' => 'Retour au recap',
+                    '#type' => 'link',
+                    '#attributes' => [
+                        'class' => [
+                            'btn',
+                            'btn-primary',
+                            'back-recap',
+                        ],
+                    ],
+                    '#url' => Url::fromRoute('entity.quiz.canonical', ['quiz' => $quiz->id()]),
+                ]
+            ],
+            'steps' =>[
+                '#type' => 'container',
+                '#attributes' => [
+                    'class' => [
+                        'col-6',
+                        'text-align-right',
+                    ],
+                ],
+                'previous' => [
+                    '#type' => 'html_tag',
+                    '#tag' => 'button',
+                    '#attributes' => [
+                        'class' => [
+                            'btn',
+                            'btn-prev',
+                            'd-none',
+                        ],
+                        'id' => 'previous-quest-action',
+                    ],
+                    'content' => [
+                        '#markup' => 'Question précédente',
+                    ],
+                ],
+                'next' => [
+                    '#type' => 'html_tag',
+                    '#tag' => 'button',
+                    '#attributes' => [
+                        'class' => [
+                            'btn',
+                            'btn-next',
+                        ],
+                        'id' => 'next-quest-action',
+                    ],
+                    'content' => [
+                        '#markup' => 'Question suivante',
+                    ],
+                ],
+            ],
+        ],
+        'title' => [
+            '#markup' => new FormattableMarkup('<h1 class="submission-title">Correction de @title </h1>', ['@title' => $quiz->get('title')->first()->getString()]),
+        ],
+        'state-area' => [
+            '#type' => 'container',
+            '#attributes' => [
+                'class' => [
+                    'state-area',
+                    'col-6',
+                    'col-md-2',
+                    'offset-md-4',
+                    'text-align-center'
+                ],
+            ],
+            'state' => [
+                '#markup' =>  new FormattableMarkup('<p class="state">Question <span class="current">@current</span> sur @total</p>', ['@current' => 1, '@total' => $score['possible_score']]),
+            ],
+        ],
+        'score-area' => [
+            '#type' => 'container',
+            '#attributes' => [
+                'class' => [
+                    'score-area',
+                    'col-6',
+                    'col-md-2',
+                ],
+            ],
+            'content' => [
+                '#markup' => new FormattableMarkup('<p class="score">Mon score : <span class="numerator">@num</span><span class="denominator">@den</span></p>', ['@num' => $score['numeric_score'],'@den' => $score['possible_score']]),
+            ],
+        ],
+        '#weight' => 0,
+    ];
+    // dd($score);
+    $variables['content_attributes'][] = 'quiz-submission';
+    if(isset($variables['content']['score'])){
+        unset($variables['content']['score']);
+    }
+
+    //Javascript libs
+    $variables['#attached']['library'][] = 'wagam_webform/wagam_webform.submission';
+}
+
+function wagam_webform_preprocess_quiz(&$variables){
+    //Quiz result
+    // dd(\Drupal::routeMatch()->getRouteName());
+    // dd($variables);
 }

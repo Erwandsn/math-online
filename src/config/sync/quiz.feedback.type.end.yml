@@ -1,0 +1,32 @@
+uuid: 506cc8ae-647a-48d5-83e7-d27859320679
+langcode: fr
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: 87jkjzcqZgjPwKvaOVKWkhwAhuQwJboNSfAQkx5Rbdk
+id: end
+label: 'Après le quiz'
+description: 'Afficher le retour d''information après le quiz'
+component:
+  context_definitions:
+    quiz_result:
+      type: 'entity:quiz_result'
+      label: 'Résultat du quiz'
+      description: 'Quiz result to evaluate feedback'
+  provided_context_definitions: {  }
+  expression:
+    id: rules_and
+    uuid: e797c27d-c914-47ac-b5e3-c45ddb57372a
+    weight: 0
+    conditions:
+      -
+        id: rules_condition
+        uuid: 354e2aeb-9558-4144-a180-366b9ccc7017
+        weight: 0
+        condition_id: rules_data_is_empty
+        negate: true
+        context_values: {  }
+        context_mapping:
+          data: quiz_result.time_end
+        context_processors: {  }
+        provides_mapping: {  }

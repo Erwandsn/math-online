@@ -1,5 +1,16 @@
 @import '../../base/variables';
 
+.quiz-navigation-header{
+    border-bottom: 2px solid $ligh-dark-grey;
+}
+
+.question-wrapper{
+    min-height: 50vh;
+    display: flex;
+    align-items: center;
+}
+
+.quiz-submission,
 .webform-submission{
     .webform-navigation-header{
         border-bottom: 2px solid $ligh-dark-grey;
@@ -111,10 +122,43 @@
     }
 }
 
-@include breakpoint('small'){
-    .webform-submission{
-        .submission-title{
-            margin: 2rem 0;
+.question-wrapper{
+    position: relative;
+    .table{
+        border: none;
+        max-width: 500px;
+        margin: auto;
+        padding: 2.5rem 0;
+        tr{
+            background-color: $white;
+            td{
+                box-shadow: none;
+            }
         }
+        thead{
+            &::before{
+                content: 'Réponses';
+                font-size: 1rem;
+                font-family: $font-bold;
+            }
+            th{
+                display: none;
+                color: $orange;
+                font-size: 1rem;
+            }
+        }
+    }
+    .quiz-report-score-container{
+        position: absolute;
+        top: 0;
+        left: 1rem;
+        padding: 0.5rem .75rem;
+    }
+
+}
+
+@include breakpoint('small'){
+    .submission-title{
+        margin: 2rem 0;
     }
 }

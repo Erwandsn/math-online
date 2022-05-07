@@ -9,8 +9,8 @@ settings:
   default_ajax_effect: slide
   default_ajax_speed: 500
   default_submit_button_label: 'Valider mes réponses'
-  default_reset_button_label: Réinitialiser
-  default_delete_button_label: Supprimer
+  default_reset_button_label: Reset
+  default_delete_button_label: Delete
   default_form_submit_once: true
   default_form_open_message: 'Ce formulaire n&#39;est actuellement pas ouvert aux soumissions.'
   default_form_close_message: 'D&eacute;sol&eacute;... Ce formulaire est clos aux nouvelles soumissions.'

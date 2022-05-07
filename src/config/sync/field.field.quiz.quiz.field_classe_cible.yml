@@ -1,0 +1,29 @@
+uuid: 8bd3a59d-13e6-487f-be2e-ae961aba4ca8
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.quiz.field_classe_cible
+    - quiz.type.quiz
+    - taxonomy.vocabulary.niveau_scolaire
+id: quiz.quiz.field_classe_cible
+field_name: field_classe_cible
+entity_type: quiz
+bundle: quiz
+label: 'Classe cible'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      niveau_scolaire: niveau_scolaire
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

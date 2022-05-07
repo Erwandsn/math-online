@@ -14,6 +14,7 @@ dependencies:
     - taxonomy.vocabulary.niveau_scolaire
     - taxonomy.vocabulary.tags
   module:
+    - ajax_quiz
     - comment
     - contextual
     - file
@@ -21,6 +22,7 @@ dependencies:
     - media
     - node
     - path
+    - quiz
     - system
     - taxonomy
     - toolbar
@@ -36,6 +38,7 @@ weight: -7
 is_admin: false
 permissions:
   - 'access administration pages'
+  - 'access ajax quiz'
   - 'access any webform configuration'
   - 'access content'
   - 'access content overview'
@@ -43,6 +46,8 @@ permissions:
   - 'access files overview'
   - 'access media overview'
   - 'access own webform configuration'
+  - 'access quiz overview'
+  - 'access quiz_question overview'
   - 'access site in maintenance mode'
   - 'access site reports'
   - 'access taxonomy overview'
@@ -61,11 +66,17 @@ permissions:
   - 'create illustration_exercice media'
   - 'create image media'
   - 'create lecon content'
+  - 'create multichoice quiz_question'
   - 'create page content'
+  - 'create page quiz_question'
+  - 'create quiz quiz'
+  - 'create quiz_result'
+  - 'create quiz_result_answer'
   - 'create terms in branche_mathematiques'
   - 'create terms in categorie_de_niveau_scolaire'
   - 'create terms in niveau_scolaire'
   - 'create terms in tags'
+  - 'create truefalse quiz_question'
   - 'create url aliases'
   - 'create webform'
   - 'delete any chapitre content'
@@ -73,17 +84,23 @@ permissions:
   - 'delete any image media'
   - 'delete any lecon content'
   - 'delete any page content'
+  - 'delete any quiz quiz'
   - 'delete any webform'
+  - 'delete multichoice quiz_question'
   - 'delete own chapitre content'
   - 'delete own illustration_exercice media'
   - 'delete own image media'
   - 'delete own lecon content'
   - 'delete own page content'
+  - 'delete own quiz quiz'
+  - 'delete own quiz_result'
   - 'delete own webform'
+  - 'delete page quiz_question'
   - 'delete terms in branche_mathematiques'
   - 'delete terms in categorie_de_niveau_scolaire'
   - 'delete terms in niveau_scolaire'
   - 'delete terms in tags'
+  - 'delete truefalse quiz_question'
   - 'edit any chapitre content'
   - 'edit any illustration_exercice media'
   - 'edit any image media'
@@ -98,20 +115,42 @@ permissions:
   - 'edit own page content'
   - 'edit own video media'
   - 'edit own webform'
+  - 'edit question titles'
   - 'edit terms in branche_mathematiques'
   - 'edit terms in categorie_de_niveau_scolaire'
   - 'edit terms in niveau_scolaire'
   - 'edit terms in tags'
   - 'revert all revisions'
+  - 'score own quiz'
   - 'translate interface'
+  - 'update any quiz quiz'
+  - 'update any quiz_result'
   - 'update media'
+  - 'update multichoice quiz_question'
+  - 'update own quiz quiz'
+  - 'update own quiz_result'
+  - 'update page quiz_question'
+  - 'update quiz_result_answer'
+  - 'update truefalse quiz_question'
   - 'view all revisions'
+  - 'view any quiz question correct response'
+  - 'view any quiz quiz'
+  - 'view any quiz_result'
   - 'view any submission score'
   - 'view any webform submission'
+  - 'view multichoice quiz_question'
+  - 'view own quiz'
+  - 'view own quiz quiz'
   - 'view own submission score'
   - 'view own unpublished content'
   - 'view own unpublished media'
+  - 'view own unpublished quiz'
   - 'view own webform submission'
+  - 'view page quiz_question'
+  - 'view quiz_question'
+  - 'view quiz_result_answer'
+  - 'view results for own quiz'
   - 'view the administration theme'
+  - 'view truefalse quiz_question'
   - 'view user email addresses'
   - 'wagam manage home'

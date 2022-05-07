@@ -34,7 +34,7 @@ display:
           entity_type: node
           entity_field: title
           plugin_id: field
-          label: Titre
+          label: Title
           exclude: false
           alter:
             alter_text: false
@@ -206,7 +206,7 @@ display:
         options:
           submit_button: Apply
           reset_button: false
-          reset_button_label: Réinitialiser
+          reset_button_label: Reset
           exposed_sorts_label: 'Sort by'
           expose_sort_order: true
           sort_asc_label: Asc

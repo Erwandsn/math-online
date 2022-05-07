@@ -1,0 +1,20 @@
+uuid: eed871c0-a87b-4313-ad7f-b5adda6da07b
+langcode: fr
+status: true
+dependencies:
+  module:
+    - quiz
+    - taxonomy
+id: quiz.field_classe_cible
+field_name: field_classe_cible
+entity_type: quiz
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

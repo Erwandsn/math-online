@@ -5,6 +5,7 @@ module:
   admin_toolbar: 0
   admin_toolbar_tools: 0
   adminimal_admin_toolbar: 0
+  ajax_quiz: 0
   automated_cron: 0
   big_pipe: 0
   block: 0
@@ -19,12 +20,15 @@ module:
   contact: 0
   contextual: 0
   crop: 0
+  csv_serialization: 0
   ctools: 0
   datetime: 0
+  datetime_range: 0
   dblog: 0
   dynamic_page_cache: 0
   easy_breadcrumb: 0
   editor: 0
+  entity: 0
   entity_reference_revisions: 0
   field: 0
   field_group: 0
@@ -49,9 +53,16 @@ module:
   page_cache: 0
   path: 0
   path_alias: 0
+  quiz: 0
+  quiz_multichoice: 0
+  quiz_page: 0
+  quiz_truefalse: 0
+  range: 0
   rdf: 0
+  rest: 0
+  rules: 0
   search: 0
-  shortcut: 0
+  serialization: 0
   svg_image: 0
   system: 0
   taxonomy: 0
@@ -59,8 +70,11 @@ module:
   token: 0
   toolbar: 0
   tour: 0
+  typed_data: 0
   update: 0
   user: 0
+  views_bulk_operations: 0
+  views_data_export: 0
   views_ui: 0
   wagam_blocks: 0
   wagam_dashboard: 0

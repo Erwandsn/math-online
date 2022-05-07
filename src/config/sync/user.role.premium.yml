@@ -3,6 +3,8 @@ langcode: fr
 status: true
 dependencies:
   module:
+    - ajax_quiz
+    - quiz
     - webform
     - webform_score
 id: premium
@@ -10,5 +12,8 @@ label: Premium
 weight: -8
 is_admin: null
 permissions:
+  - 'access ajax quiz'
+  - 'create quiz_result'
+  - 'create quiz_result_answer'
   - 'view own submission score'
   - 'view own webform submission'

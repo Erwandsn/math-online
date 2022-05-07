@@ -1,0 +1,29 @@
+uuid: 556dae7a-f54e-453e-9d21-f1f4b16f9002
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.quiz.field_branche_du_quiz
+    - quiz.type.quiz
+    - taxonomy.vocabulary.branche_mathematiques
+id: quiz.quiz.field_branche_du_quiz
+field_name: field_branche_du_quiz
+entity_type: quiz
+bundle: quiz
+label: 'Branche du quiz'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      branche_mathematiques: branche_mathematiques
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

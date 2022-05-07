@@ -9,8 +9,8 @@ dependencies:
     - contact
     - filter
     - media
+    - quiz
     - search
-    - shortcut
     - system
 _core:
   default_config_hash: I44QAB4es39lNzMQWiJLq2dfjX7VRSOzT_5KzAcUq_M
@@ -21,11 +21,14 @@ is_admin: false
 permissions:
   - 'access comments'
   - 'access content'
-  - 'access shortcuts'
+  - 'access quiz'
   - 'access site-wide contact form'
   - 'change own username'
   - 'post comments'
   - 'search content'
   - 'skip comment approval'
   - 'use text format basic_html'
+  - 'view any quiz'
   - 'view media'
+  - 'view multichoice quiz_question'
+  - 'view own quiz_result'

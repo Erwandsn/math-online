@@ -25,7 +25,7 @@
     };
 
     const manageCounter = (element, type) => {
-      const current = $(element).parents('.webform-navigation-header').find('.state .current');
+      const current = $(element).parents('.quiz-navigation-header').find('.state .current');
       let count = 0;
       if(type === 'next'){
         count = parseInt(current.html()) + 1;
@@ -36,7 +36,7 @@
     }
 
     const nextPage = (element) => {
-      let questions = $(element).parents('.webform-submission').find('.question-wrapper');
+      let questions = $(element).parents('.quiz-submission').find('.question-wrapper');
       let nextQuestion = 0;
 
       questions.map((key, question) => {
@@ -62,11 +62,12 @@
     }
 
     const prevPage = (element) => {
-      let questions = $(element).parents('.webform-submission').find('.question-wrapper');
+      let questions = $(element).parents('.quiz-submission').find('.question-wrapper');
       let prevQuestion = 0;
 
       for(let i = questions.length; i > 0; i--){
         const question = questions[i-1];
+        console.log(question);
         if($(question).hasClass('current-question')){
           prevQuestion = i-1;
           $(question).removeClass('current-question');
