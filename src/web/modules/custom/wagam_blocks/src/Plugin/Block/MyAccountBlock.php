@@ -133,7 +133,7 @@ class MyAccountBlock extends BlockBase implements ContainerFactoryPluginInterfac
             'col-12',
           ],
         ],
-        '#url' => Url::fromRoute('wagam.exercie.list'),
+        '#url' => '/exercices-quiz',
       ];
 
       $build['card']['card_body']['start_link'] = [
