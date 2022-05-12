@@ -1,0 +1,7 @@
+wagam.quiz.list:
+  path: '/exercices-quiz'
+  defaults:
+    _controller: '\Drupal\wagam_quiz\Controller\WagamQuizList::quizListView'
+    _title: 'Votre selection d exercices'
+  requirements:
+    _permission: 'change own username'

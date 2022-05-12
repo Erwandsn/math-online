@@ -1,0 +1,50 @@
+<?php
+
+use Drupal\Component\Render\FormattableMarkup;
+use Drupal\Core\StringTranslation\TranslatableMarkup;
+use Drupal\Core\Url;
+
+function wagam_quiz_preprocess_quiz(&$variables){
+    if($variables['elements']['#view_mode'] === 'quiz_teaser'){
+        /** @var \Drupal\quiz\Entity\Quiz $quiz */
+        $quiz = $variables['quiz'];
+        $classe = $quiz->get('field_classe_cible')->first()->entity;
+        $classeMarkup = new FormattableMarkup('<p class="class" aria-label="Classe cible de l\'exercice"><i class="fas fa-user-graduate"></i>@classe</p>', ['@classe' => $classe->getName()]);
+        $variables['content']['field_class']['#markup'] = $classeMarkup;
+
+        //Branche
+        $branche = $quiz->get('field_branche_du_quiz')->first()->entity;
+        $color = $branche->get('field_code_couleur')->first()->getString();
+        $variables['theme_color'] = $color;
+        $branche_markup = new FormattableMarkup('<small class="branche" style="--branche-color: @color;">@branche</small>', ['@branche' => $branche->getName(), '@color' => $color]);
+        $variables['content']['field_branche']['#markup'] = $branche_markup;
+
+
+        //Start quiz link
+        $variables['content']['take']['link']['#attributes']['class'] = ['btn', 'btn-primary'];
+        $variables['content']['show'] = [
+            '#title' => new TranslatableMarkup('Voir le détail du Quiz'),
+            '#type' => 'link',
+            '#url' => Url::fromRoute('entity.quiz.canonical', ['quiz' => $quiz->id()]),
+            '#attributes' => [
+                'class' => [
+                    'btn',
+                    'btn-secondary',
+                ],
+            ],
+        ];
+    }
+}
+
+function wagam_quiz_preprocess_views_view__sexercer(&$variables){
+    // dd($variables);
+    $variables['title'] = new TranslatableMarkup('Votre selection d\'exercices');
+}
+
+function wagam_quiz_preprocess_views_view_unformatted(&$vars){
+    $view = $vars["view"];
+    $id = $view->id();
+    if($id == "sexercer"){
+        $vars['attributes']['class'] = ['col-12', ' cold-md-6', 'col-lg-4'];
+    }
+  }

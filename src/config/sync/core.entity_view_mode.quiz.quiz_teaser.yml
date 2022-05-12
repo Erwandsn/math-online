@@ -1,0 +1,10 @@
+uuid: 60642e7b-2adf-46a0-9726-a0c9735df61a
+langcode: fr
+status: true
+dependencies:
+  module:
+    - quiz
+id: quiz.quiz_teaser
+label: Quiz_teaser
+targetEntityType: quiz
+cache: true

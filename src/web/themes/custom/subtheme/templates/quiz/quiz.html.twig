@@ -1,0 +1,5 @@
+{% if elements['#view_mode'] == 'quiz_teaser' %}
+    {% include 'quiz--quiz-teaser.html.twig' %}
+{% else %}
+    {{ content }}
+{% endif %}

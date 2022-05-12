@@ -4,6 +4,7 @@
 //Content
 @import 'parts/content/node';
 @import 'parts/content/submission';
+@import 'parts/content/quiz--teaser';
 
 //Blocks
 @import 'parts/block/account_block';
@@ -30,3 +31,4 @@
 
 //Style views
 @import 'parts/views/views_cards';
+@import 'parts/views/views_quiz';
