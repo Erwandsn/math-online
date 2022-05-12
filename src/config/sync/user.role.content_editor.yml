@@ -28,8 +28,6 @@ dependencies:
     - toolbar
     - tour
     - wagam_home
-    - webform
-    - webform_score
 _core:
   default_config_hash: Wur9kcEOwY1Jal81NssKnz3RhVJxAvBwyWQBGcA_1Go
 id: content_editor
@@ -39,13 +37,11 @@ is_admin: false
 permissions:
   - 'access administration pages'
   - 'access ajax quiz'
-  - 'access any webform configuration'
   - 'access content'
   - 'access content overview'
   - 'access contextual links'
   - 'access files overview'
   - 'access media overview'
-  - 'access own webform configuration'
   - 'access quiz overview'
   - 'access quiz_question overview'
   - 'access site in maintenance mode'
@@ -54,9 +50,6 @@ permissions:
   - 'access toolbar'
   - 'access tour'
   - 'access user profiles'
-  - 'access webform help'
-  - 'access webform overview'
-  - 'access webform submission user'
   - 'administer nodes'
   - 'administer quiz'
   - 'administer quiz result types'
@@ -66,7 +59,6 @@ permissions:
   - 'administer site configuration'
   - 'administer url aliases'
   - 'administer users'
-  - 'administer webform element access'
   - 'create chapitre content'
   - 'create illustration_exercice media'
   - 'create image media'
@@ -83,7 +75,6 @@ permissions:
   - 'create terms in tags'
   - 'create truefalse quiz_question'
   - 'create url aliases'
-  - 'create webform'
   - 'delete any chapitre content'
   - 'delete any illustration_exercice media'
   - 'delete any image media'
@@ -91,7 +82,6 @@ permissions:
   - 'delete any page content'
   - 'delete any quiz quiz'
   - 'delete any quiz_result'
-  - 'delete any webform'
   - 'delete multichoice quiz_question'
   - 'delete own chapitre content'
   - 'delete own illustration_exercice media'
@@ -100,7 +90,6 @@ permissions:
   - 'delete own page content'
   - 'delete own quiz quiz'
   - 'delete own quiz_result'
-  - 'delete own webform'
   - 'delete page quiz_question'
   - 'delete results for own quiz'
   - 'delete terms in branche_mathematiques'
@@ -113,7 +102,6 @@ permissions:
   - 'edit any image media'
   - 'edit any lecon content'
   - 'edit any page content'
-  - 'edit any webform'
   - 'edit own chapitre content'
   - 'edit own comments'
   - 'edit own illustration_exercice media'
@@ -121,7 +109,6 @@ permissions:
   - 'edit own lecon content'
   - 'edit own page content'
   - 'edit own video media'
-  - 'edit own webform'
   - 'edit question titles'
   - 'edit terms in branche_mathematiques'
   - 'edit terms in categorie_de_niveau_scolaire'
@@ -143,16 +130,12 @@ permissions:
   - 'view any quiz question correct response'
   - 'view any quiz quiz'
   - 'view any quiz_result'
-  - 'view any submission score'
-  - 'view any webform submission'
   - 'view multichoice quiz_question'
   - 'view own quiz'
   - 'view own quiz quiz'
-  - 'view own submission score'
   - 'view own unpublished content'
   - 'view own unpublished media'
   - 'view own unpublished quiz'
-  - 'view own webform submission'
   - 'view page quiz_question'
   - 'view quiz_question'
   - 'view quiz_result_answer'
