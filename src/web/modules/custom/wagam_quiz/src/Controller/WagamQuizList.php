@@ -4,6 +4,7 @@ namespace Drupal\wagam_quiz\Controller;
 
 use Drupal\Component\Render\FormattableMarkup;
 use Drupal\Core\Controller\ControllerBase;
+use Drupal\Core\Form\FormState;
 use Drupal\views\Views;
 
 class WagamQuizList extends ControllerBase{
@@ -16,15 +17,14 @@ class WagamQuizList extends ControllerBase{
                     'quiz-list',
                 ],
             ],
+            'filters' => $this->getFilterForm(),
         ];
         $entityTypeManager = \Drupal::entityTypeManager();
         $taxonomy_storage = $entityTypeManager->getStorage('taxonomy_term');
         $classList = $taxonomy_storage->loadByProperties(['vid' => 'niveau_scolaire']);
         $brancheList = $taxonomy_storage->loadByProperties(['vid' => 'branche_mathematiques']);
 
-
         /** @var \Drupal\taxonomy\Entity\Term $classe */
-
         foreach($classList as $key => $classe){
             $classe_total_count = 0;
             $build[$key]['title'] = [
@@ -76,6 +76,13 @@ class WagamQuizList extends ControllerBase{
             }
         }
         return $build;
+    }
+
+    private function getFilterForm(){
+        $formBuilder = \Drupal::formBuilder();
+        $form_state = new FormState();
+        $filter_form = $formBuilder->buildForm('\Drupal\wagam_quiz\Form\WagamQuizListFilter', $form_state);
+        return $filter_form;
     }
 
 }

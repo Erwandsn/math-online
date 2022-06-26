@@ -1,0 +1,50 @@
+<div class="quiz quiz--full" style="--branche-color: {{ theme_color }};">
+    <div class="row quiz__banner col-12 col-lg-8 offset-lg-2">
+        <a href="{{ path('wagam.quiz.list') }}" class="btn col-1" aria-label="Retour"><i class="fas fa-arrow-left"></i></a>
+        <h1 class="quiz__title col-12">{{ content.title }}</h1>
+    </div>
+    <div class="quiz__detail row">
+        <div class="col-12 col-lg-8 offset-lg-2">
+            <ul class="quiz__props">
+                <li class="quiz__branche quiz__prop ">
+                    {{ content.field_branche_du_quiz }}
+                </li>
+                <li class="quiz__classe quiz__prop">
+                    {{ content.field_classe_cible }}
+                </li>
+                <li class="quiz__dificulty quiz__prop">
+                    {{ content.field_dificulty }}
+                </li>
+            </ul>
+        </div>
+
+        <div class="col-12 col-lg-8 offset-lg-2">
+            <div class="quiz__action d-grid">
+                {{ content.take }}
+            </div>
+        </div>
+        <div class="quiz__desc col-12 col-lg-8 offset-lg-2">
+            {{ content.body }}
+        </div>
+        <div class="quiz__body row">
+            <div class="col-12 col-lg-4 offset-lg-2">
+                <h2>Outils de remédiation</h2>
+                <div class='row'>
+                    {{ content.field_outils_de_remediation }}
+                </div>
+            </div>
+            <div class="col-12 col-lg-4">
+                <h2>Mes résultats</h2>
+                <div class="row">
+                    {{ content.results }}
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 col-lg-8 offset-lg-2">
+            <div class="quiz__more row">
+                <h2>Pour aller plus loin</h2>
+            </div>
+        </div>
+    </div>
+</div>

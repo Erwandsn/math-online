@@ -1,0 +1,27 @@
+uuid: dbfc4b30-db82-4a07-acf1-fd23def38895
+langcode: fr
+status: true
+dependencies:
+  config:
+    - quiz.result.type.quiz_result
+id: quiz_result.quiz_result.default
+targetEntityType: quiz_result
+bundle: quiz_result
+mode: default
+content:
+  questions:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  score:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  summary:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 3
+    region: content
+hidden: {  }

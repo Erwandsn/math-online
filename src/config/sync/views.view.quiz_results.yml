@@ -3,6 +3,7 @@ langcode: fr
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.quiz_result.teaser
     - system.menu.admin
   module:
     - csv_serialization
@@ -852,7 +853,23 @@ display:
     display_plugin: page
     position: 1
     display_options:
+      style:
+        type: default
+        options:
+          grouping: {  }
+          row_class: ''
+          default_row_class: true
+      row:
+        type: 'entity:quiz_result'
+        options:
+          relationship: none
+          view_mode: teaser
+      defaults:
+        show_admin_links: false
+        style: false
+        row: false
       display_description: 'Per-quiz results with answer export.'
+      show_admin_links: false
       display_extenders: {  }
       path: quiz/%quiz/results
       menu:

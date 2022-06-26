@@ -99,30 +99,37 @@
     margin: auto;
     .table{
       border: 2px solid $vert;
+      border-collapse: collapse;
+      border-radius: 1em;
     }
     th{
+      background-color: #00995D;
+      color: #fff;
+      padding: 0.45rem 1rem;
+      border-top-left-radius: 10px;
+      border-bottom-right-radius: 10px;
+      font-family: "Montserrat-Light", sans-serif;
       font-size: 1rem;
-      font-family: $font-bold;
-      color: $white;
-      background-color: $vert;
-      width: 100%;
-      height: 41px;
-      float: left;
-      border: none;
+      width: 41px;
       &:first-child{
         display: none;
       }
     }
     tbody{
       padding: 41px 0 0 0;
+      border-top: none;
     }
     tr{
       background-color: $white;
       td{
         box-shadow: none;
+        &:first-child{
+          width: 4rem;
+        }
         .js-form-type-radio{
           display: flex;
           justify-content: right;
+          width: 4rem;
         }
       }
     }
@@ -178,6 +185,23 @@
       font-weight: 800;
     }
   }
+  .form-actions{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    p{
+      width: 100%;
+      margin-bottom: 2rem;
+    }
+    .js-form-submit{
+      margin: 0 1rem;
+      &[data-drupal-selector="edit-navigation-back"]{
+        &:before{
+          content: "\f060";
+        }
+      }
+    }
+  }
 }
 
 @include breakpoint('large'){
@@ -195,6 +219,18 @@
     }
     .text-formatted{
       max-width: calc(100% - 410px);
+    }
+  }
+
+  .quiz-question-multichoice{
+    align-items: center;
+    .table-responsive{
+      justify-content: space-between;
+      width: 100%;
+    }
+
+    .field--type-text-long{
+      width: calc(100% - 500px);
     }
   }
 }

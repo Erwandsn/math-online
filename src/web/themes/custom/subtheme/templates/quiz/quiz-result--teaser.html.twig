@@ -1,0 +1,14 @@
+<div class='quiz-result quiz-result--teaser'>
+    {% if content.simple_score %}
+    <div class="quiz-result__note">
+            {# {{ content.score }} #}
+            <p classs="quiz-result__score">{{ content.simple_score }} %</p>
+    </div>
+    {% endif %}
+    <div class="quiz-result__detail">
+        <p class="quiz-result__time">Résultat du {{ content.date }}</p>
+        <a href="{{ content.correction }}" class="quiz-result__correction btn">Voir la correction</a>
+        <div class="quiz-result__score">
+        </div>
+    </div>
+</div>
