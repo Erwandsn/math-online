@@ -1,0 +1,125 @@
+@import '../../base/variables';
+
+//Difficulty widget
+.dificulty{
+    display: flex;
+    align-items: center;
+    &__widget{
+        border-color: $ligh-dark-grey;
+        width: 100px;
+        height: 30px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: .75rem;
+        border-radius: 1rem;
+    }
+    &__label{
+        margin: 0 0 0 1rem;
+    }
+    span{
+        background-color: $ligh-dark-grey;
+        border-radius: 50%;
+        width: 1rem;
+        height: 1rem;
+        &.active{
+            background-color: $simple-blue;
+        }
+    }
+}
+
+//Quiz full
+.quiz{
+    &__props{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+    }
+    &__prop{
+        width: 48%;
+        list-style: none;
+    }
+    &__title{
+        padding: 1rem 0;
+    }
+    &__desc{
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+        position: relative;
+        background-color: $light-grey;
+        z-index: 2;
+        &::before{
+            content: "";
+            width: 100vw;
+            height: 100%;
+            background-color: $light-grey;
+            position: absolute;
+            top: 0;
+            left: calc((((100vw - 100%) / 2) ) * -1);
+            z-index: 1;
+        }
+        p{
+            font-family: $font-medium;
+            &:last-child{
+                margin-bottom: 0;
+            }
+        }
+        .field--type-text-long{
+            position: relative;
+            z-index: 2;
+        }
+    }
+    &--full{
+        padding-bottom: 3rem;
+    }
+}
+
+.view{
+    &.view-quiz-results{
+        .view-content{
+            display: flex;
+            flex-direction: column;
+        }
+        .feed-icons{
+            display: none;
+        }
+    }
+}
+
+.quiz-result{
+    &--teaser{
+        border: 1px solid $ligh-dark-grey;
+        padding: 1rem;
+        border-radius: .5rem;
+        display: flex;
+    }
+    &__detail{
+        padding-left: 1rem;
+    }
+    &__score{
+        // width: 80px;
+        // height: 80px;
+        border-radius: 50%;
+        background-color: $vert;
+    }
+}
+
+@include breakpoint('large'){
+    .quiz{
+        &__desc{
+            &:before{
+                left: calc((((100vw - 100%) / 2) + 10px) * -1);
+            }
+            padding-top: 2.5rem;
+            padding-bottom: 2.5rem;
+
+        }
+        &--full{
+            padding-bottom: 5rem;
+        }
+    }
+}

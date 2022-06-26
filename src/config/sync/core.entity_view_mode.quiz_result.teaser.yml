@@ -1,0 +1,10 @@
+uuid: 12980f4b-1f64-40fa-bdf3-e42cc0fd728e
+langcode: fr
+status: true
+dependencies:
+  module:
+    - quiz
+id: quiz_result.teaser
+label: Teaser
+targetEntityType: quiz_result
+cache: true

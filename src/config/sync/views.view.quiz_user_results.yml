@@ -343,9 +343,17 @@ display:
           not: false
       filters: {  }
       style:
-        type: table
+        type: default
+        options:
+          grouping: {  }
+          row_class: ''
+          default_row_class: true
+          uses_fields: false
       row:
-        type: fields
+        type: 'entity:quiz_result'
+        options:
+          relationship: none
+          view_mode: default
       query:
         type: views_query
         options:

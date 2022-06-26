@@ -1,8 +1,13 @@
 <?php
 
 use Drupal\Component\Render\FormattableMarkup;
+use Drupal\Core\Datetime\DrupalDateTime;
 use Drupal\Core\StringTranslation\TranslatableMarkup;
 use Drupal\Core\Url;
+use Drupal\quiz\Entity\Quiz;
+use Drupal\quiz\Entity\QuizResult;
+use Drupal\views\Entity\View;
+use Drupal\views\Views;
 
 function wagam_quiz_preprocess_quiz(&$variables){
     if($variables['elements']['#view_mode'] === 'quiz_teaser'){
@@ -19,7 +24,6 @@ function wagam_quiz_preprocess_quiz(&$variables){
         $branche_markup = new FormattableMarkup('<small class="branche" style="--branche-color: @color;">@branche</small>', ['@branche' => $branche->getName(), '@color' => $color]);
         $variables['content']['field_branche']['#markup'] = $branche_markup;
 
-
         //Start quiz link
         $variables['content']['take']['link']['#attributes']['class'] = ['btn', 'btn-primary'];
         $variables['content']['show'] = [
@@ -33,11 +37,46 @@ function wagam_quiz_preprocess_quiz(&$variables){
                 ],
             ],
         ];
+    }else if($variables['elements']['#view_mode'] === 'full'){
+        /** @var Quiz $quiz */
+        $quiz = $variables['quiz'];
+        $variables['content']['take']['link']['#attributes']['class']= [
+            'btn',
+            'btn-primary',
+        ];
+
+        //Build result view.
+        $view = Views::getView('quiz_results');
+        $result_of_user = $view->buildRenderable('list', ['quiz' => $quiz->id(), 'uid' => \Drupal::currentUser()->getAccount()->id()]);
+        $variables['content']['results'] = $result_of_user;
+
+        //Color by branche
+        $branche = $quiz->get('field_branche_du_quiz')->first()->entity;
+        $color = $branche->get('field_code_couleur')->first()->getString();
+        $variables['theme_color'] = $color;
+    }
+}
+
+function wagam_quiz_preprocess_quiz_result__teaser(&$variables){
+    //Preprocessing quiz_result teaser
+    /** @var QuizResult $quiz_result */
+    $quiz_result = $variables['quiz_result'];
+    if(!empty($quiz_result)){
+        $quiz = $quiz_result->getQuiz();
+        $date = $quiz_result->getChangedTime();
+        $formtated = new DrupalDateTime();
+        $formtated->setTimestamp($date);
+        $variables['content']['date'] = $formtated->format('d/m/Y \à H:i');
+
+        //Link
+        $variables['content']['correction'] = "/quiz/".$quiz->id()."/result/".$quiz_result->id();
+        if(!$quiz_result->get('score')->isEmpty()){
+            $variables['content']['simple_score'] = $quiz_result->get('score')->first()->getValue()['value'];
+        }
     }
 }
 
 function wagam_quiz_preprocess_views_view__sexercer(&$variables){
-    // dd($variables);
     $variables['title'] = new TranslatableMarkup('Votre selection d\'exercices');
 }
 
@@ -47,4 +86,39 @@ function wagam_quiz_preprocess_views_view_unformatted(&$vars){
     if($id == "sexercer"){
         $vars['attributes']['class'] = ['col-12', ' cold-md-6', 'col-lg-4'];
     }
-  }
+}
+
+
+function wagam_quiz_preprocess_quiz_progress(array &$vars) {
+    // dd($vars);
+}
+
+function wagam_quiz_preprocess_field__field_dificulty(&$vars){
+    /** @var \Drupal\options\Plugin\Field\FieldType\ListStringItem $difficulty */
+    $difficulty = [
+        'field' => $vars['element']['#items'][0] ?? NULL,
+        'label' => $vars['element']['#items'][0]->getDataDefinition()->getSettings()['allowed_values'][$vars['element']['#items'][0]->getValue()['value']],
+        'val' => $vars['element']['#items'][0]->getValue()['value'],
+    ];
+
+    if(!empty($difficulty)){
+        $build = [
+            "#type" => "container",
+            "#attributes" => [
+                'class' => 'dificulty'
+            ]
+        ];
+        $classe = 'active';
+        $build[] = ['#markup' => '<div class="dificulty__widget">'];
+        foreach ($difficulty['field']->getDataDefinition()->getSettings()['allowed_values'] as $key => $value) {
+            $build[] = ['#markup' => new FormattableMarkup('<span class="@val"></span>', ['@val' => $classe])];
+            if($key == $difficulty['val']){
+                $classe = '';
+            }
+        }
+        $build[] = ['#markup' => '</div>'];
+        $build[] = ['#markup' => new FormattableMarkup('<p aria-label="Difficulté" class="dificulty__label">@val</p>', ['@val' => $difficulty['label']])];
+
+        $vars['items'] = $build;
+    }
+}

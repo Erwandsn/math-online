@@ -1,0 +1,24 @@
+uuid: 50c5093a-5102-42c5-b521-5f6d4d153f27
+langcode: fr
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.quiz_result.teaser
+    - quiz.result.type.quiz_result
+id: quiz_result.quiz_result.teaser
+targetEntityType: quiz_result
+bundle: quiz_result
+mode: teaser
+content:
+  score:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  summary:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+hidden:
+  questions: true

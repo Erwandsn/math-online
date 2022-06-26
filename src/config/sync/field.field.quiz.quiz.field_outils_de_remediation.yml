@@ -1,0 +1,29 @@
+uuid: 097926ab-09d4-416e-b5f5-cd0d72fe813a
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.quiz.field_outils_de_remediation
+    - node.type.lecon
+    - quiz.type.quiz
+id: quiz.quiz.field_outils_de_remediation
+field_name: field_outils_de_remediation
+entity_type: quiz
+bundle: quiz
+label: 'Outils de remédiation'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      lecon: lecon
+    sort:
+      field: title
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: chapitre
+field_type: entity_reference

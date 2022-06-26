@@ -1,0 +1,33 @@
+uuid: 6583a751-c9e4-492a-9f63-960e173358aa
+langcode: fr
+status: true
+dependencies:
+  module:
+    - options
+    - quiz
+id: quiz.field_dificulty
+field_name: field_dificulty
+entity_type: quiz
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: '0'
+      label: Facile
+    -
+      value: '1'
+      label: Medium
+    -
+      value: '3'
+      label: Confirmé
+    -
+      value: '2'
+      label: Difficile
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

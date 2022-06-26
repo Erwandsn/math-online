@@ -6,6 +6,8 @@ dependencies:
     - core.entity_view_mode.quiz.quiz_teaser
     - field.field.quiz.quiz.field_branche_du_quiz
     - field.field.quiz.quiz.field_classe_cible
+    - field.field.quiz.quiz.field_dificulty
+    - field.field.quiz.quiz.field_outils_de_remediation
     - quiz.type.quiz
   module:
     - text
@@ -39,6 +41,8 @@ content:
 hidden:
   field_branche_du_quiz: true
   field_classe_cible: true
+  field_dificulty: true
+  field_outils_de_remediation: true
   quiz_date: true
   takes: true
   time_limit: true

@@ -1,0 +1,20 @@
+uuid: 565538ad-ea95-48ca-9804-3cc92514590a
+langcode: fr
+status: true
+dependencies:
+  module:
+    - node
+    - quiz
+id: quiz.field_outils_de_remediation
+field_name: field_outils_de_remediation
+entity_type: quiz
+type: entity_reference
+settings:
+  target_type: node
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

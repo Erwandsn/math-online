@@ -1,0 +1,21 @@
+uuid: d7bc85a5-378c-4cb6-9273-cb3ba7e26f3a
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.quiz.field_dificulty
+    - quiz.type.quiz
+  module:
+    - options
+id: quiz.quiz.field_dificulty
+field_name: field_dificulty
+entity_type: quiz
+bundle: quiz
+label: Difficultée
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

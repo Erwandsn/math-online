@@ -12,6 +12,7 @@ module:
   block_content: 0
   breakpoint: 0
   ckeditor: 0
+  ckeditor_mathjax: 0
   color: 0
   comment: 0
   config: 0
@@ -48,6 +49,7 @@ module:
   media_library_form_element: 0
   menu_link_content: 0
   menu_ui: 0
+  mysql: 0
   node: 0
   options: 0
   page_cache: 0

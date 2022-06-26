@@ -27,6 +27,7 @@ dependencies:
     - taxonomy
     - toolbar
     - tour
+    - update
     - wagam_home
 _core:
   default_config_hash: Wur9kcEOwY1Jal81NssKnz3RhVJxAvBwyWQBGcA_1Go
@@ -142,5 +143,6 @@ permissions:
   - 'view results for own quiz'
   - 'view the administration theme'
   - 'view truefalse quiz_question'
+  - 'view update notifications'
   - 'view user email addresses'
   - 'wagam manage home'
